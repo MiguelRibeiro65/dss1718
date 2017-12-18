@@ -279,73 +279,73 @@
 
 
   "Comp": [{
-      "sigla":"MD",
+      "acron":"MD",
       "nome": "Mineração de Dados",
       "diasem": "ter",
       "per": "M"
     },
     {
-      "sigla":"VC",
+      "acron":"VC",
       "nome": "Visão por Computador",
       "diasem": "qui",
       "per": "T"
     },
     {
-      "sigla":"CP",
+      "acron":"CP",
       "nome": "Computação Paralela",
       "diasem": "qua",
       "per": "M"
     },
     {
-      "sigla":"SSI",
+      "acron":"SSI",
       "nome": "Segurança de Sistemas Informáticos",
       "diasem": "ter",
       "per": "T"
     },
     {
-      "sigla":"PDSJ",
+      "acron":"PDSJ",
       "nome": "Processamento de Dados com Streams de Java",
       "diasem": "qua",
       "per": "M"
     },
     {
-      "sigla":"AEBD",
+      "acron":"AEBD",
       "nome": "Administração e Exploração de Bases de Dados",
       "diasem": "ter",
       "per": "M"
     },
     {
-      "sigla":"ER",
+      "acron":"ER",
       "nome": "Engenharia de Requisitos",
       "diasem": "sex",
       "per": "T"
     },
     {
-      "sigla":"GR",
+      "acron":"GR",
       "nome": "Gestão de Redes",
       "diasem": "qui",
       "per": "M"
     },
     {
-      "sigla":"ATS",
+      "acron":"ATS",
       "nome": "Análise e Teste de Software",
       "diasem": "ter",
       "per": "T"
     },
     {
-      "sigla":"SPLN",
+      "acron":"SPLN",
       "nome": "Scripting no Processamento de Linguagem Natural",
       "diasem": "sex",
       "per": "M"
     },
     {
-      "sigla":"SDB",
+      "acron":"SDB",
       "nome": "System Deployment and Benchmarking",
       "diasem": "qua",
       "per": "M"
     },
     {
-      "sigla":"IATA",
+      "acron":"IATA",
       "nome": "Inteligência Ambiente - Tecnologias e Aplicações",
       "diasem": "qua",
       "per": "M"
@@ -356,177 +356,177 @@
   "Licenciatura": [{
         "codigo":"H501N1",
         "nome": "Álgebra Linear EI",
-        "sigla": "AL"
+        "acron": "AL"
       },
       {
         "codigo":"H501N2",
         "nome": "Cálculo",
-        "sigla": "Calc"
+        "acron": "Calc"
       },
       {
         "codigo":"H501N3",
         "nome": "Tópicos de Matemática Discreta",
-        "sigla": "TMD"
+        "acron": "TMD"
       },
       {
         "codigo":"H501N4",
         "nome": "Programação Funcional",
-        "sigla": "PF"
+        "acron": "PF"
       },
       {
         "codigo":"H501N5",
         "nome": "Elementos de Engenharia de Sistemas",
-        "sigla": "EES"
+        "acron": "EES"
       },
       {
         "codigo":"H501N6",
         "nome": "Laboratórios de Informática I",
-        "sigla": "LI1"
+        "acron": "LI1"
       },
       {
         "codigo":"H502N1",
         "nome": "Sistemas de Computação",
-        "sigla": "SC"
+        "acron": "SC"
       },
       {
         "codigo":"H502N2",
         "nome": "Análise",
-        "sigla": "ANALISE"
+        "acron": "ANALISE"
       },
       {
         "codigo":"H502N3",
         "nome": "Tópicos de Física Moderna",
-        "sigla": "TFM"
+        "acron": "TFM"
       },
       {
         "codigo":"H502N4",
         "nome": "Lógica EI",
-        "sigla": "Log"
+        "acron": "Log"
       },
       {
         "codigo":"H502N5",
         "nome": "Programação Imperativa",
-        "sigla": "PI"
+        "acron": "PI"
       },
       {
         "codigo":"H502N6",
         "nome": "Laboratórios de Informática II",
-        "sigla": "LI2"
+        "acron": "LI2"
       },
       {
         "codigo":"H503N1",
         "nome": "Introdução aos Sistemas Dinâmicos",
-        "sigla": "ISD"
+        "acron": "ISD"
       },
       {
         "codigo":"H503N2",
         "nome": "Estatística Aplicada",
-        "sigla": "EA"
+        "acron": "EA"
       },
       {
         "codigo":"H503N3",
         "nome": "Engenharia Económica",
-        "sigla": "EE"
+        "acron": "EE"
       },
       {
         "codigo":"H503N4",
         "nome": "Arquitetura de Computadores",
-        "sigla": "AC"
+        "acron": "AC"
       },
       {
         "codigo":"H503N5",
         "nome": "Comunicação de Dados",
-        "sigla": "CD"
+        "acron": "CD"
       },
       {
         "codigo":"H503N6",
         "nome": "Algoritmos e Complexidade",
-        "sigla": "ALG"
+        "acron": "ALG"
       },
       {
         "codigo":"H504N1",
         "nome": "Sistemas Operativos",
-        "sigla": "SO"
+        "acron": "SO"
       },
       {
         "codigo":"H504N2",
         "nome": "Programação Orientada aos Objetos",
-        "sigla": "POO"
+        "acron": "POO"
       },
       {
         "codigo":"H504N3",
         "nome": "Eletromagnetismo EE",
-        "sigla": "EM"
+        "acron": "EM"
       },
       {
         "codigo":"H504N5",
         "nome": "Cálculo de Programas",
-        "sigla": "CP"
+        "acron": "CP"
       },
       {
         "codigo":"H504N6",
         "nome": "Laboratórios de Informática III",
-        "sigla": "LI3"
+        "acron": "LI3"
       },
       {
         "codigo":"H505N1",
         "nome": "Bases de Dados",
-        "sigla": "BD"
+        "acron": "BD"
       },
       {
         "codigo":"H505N2",
         "nome": "Desenvolvimento de Sistemas de Software",
-        "sigla": "DSS"
+        "acron": "DSS"
       },
       {
         "codigo":"H505N3",
         "nome": "Modelos Determinísticos de Investigação Operacional",
-        "sigla": "MDIO"
+        "acron": "MDIO"
       },
       {
         "codigo":"H505N4",
         "nome": "Sistemas Distribuídos",
-        "sigla": "SD"
+        "acron": "SD"
       },
       {
         "codigo":"H505N5",
         "nome": "Redes de Computadores",
-        "sigla": "RC"
+        "acron": "RC"
       },
       {
         "codigo":"H505N6",
         "nome": "Métodos Numéricos e Otimização não Linear",
-        "sigla": "MNOnL"
+        "acron": "MNOnL"
       },
       {
         "codigo":"H506N1",
         "nome": "Sistemas de Representação de Conhecimento e Raciocínio",
-        "sigla": "SRCR"
+        "acron": "SRCR"
       },
       {
         "codigo":"H506N2",
         "nome": "Computação Gráfica",
-        "sigla": "CG"
+        "acron": "CG"
       },
       {
         "codigo":"H506N3",
         "nome": "Modelos Estocásticos de Investigação Operacional",
-        "sigla": "MEIO"
+        "acron": "MEIO"
       },
       {
         "codigo":"H506N4",
         "nome": "Comunicações por Computador",
-        "sigla": "CC"
+        "acron": "CC"
       },
       {
         "codigo":"H506N5",
         "nome": "Processamento de Linguagens",
-        "sigla": "PL"
+        "acron": "PL"
       },
       {
         "codigo":"H506N6",
         "nome": "Laboratórios de Informática IV",
-        "sigla": "LI4"
+        "acron": "LI4"
       }
   ]
 }
