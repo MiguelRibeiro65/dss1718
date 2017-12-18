@@ -114,7 +114,7 @@ public class AlunoDAO implements Map<String,Aluno> {
             stm.setString(1,(String)key);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) 
-                   al = new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getInt("estatuto"));
+                   al = new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getString("password"),rs.getInt("estatuto"));
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -155,12 +155,13 @@ public class AlunoDAO implements Map<String,Aluno> {
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT INTO aluno\n" +
-                "VALUES (?, ?, ?, ?)\n" +
-                "ON DUPLICATE KEY UPDATE nome=VALUES(nome),  email=VALUES(email), estatuto=VALUES(estatuto)", Statement.RETURN_GENERATED_KEYS);
+                "VALUES (?, ?, ?, ?,?)\n" +
+                "ON DUPLICATE KEY UPDATE nome=VALUES(nome),  email=VALUES(email),password=VALUES(password), estatuto=VALUES(estatuto)", Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, value.getNumero());
             stm.setString(2, value.getNome());
             stm.setString(3, value.getEmail());
-            stm.setInt(4, value.getEstatuto());
+            stm.setString(4,value.getPassword());
+            stm.setInt(5, value.getEstatuto());
             stm.executeUpdate();
             
             ResultSet rs = stm.getGeneratedKeys();
@@ -244,7 +245,7 @@ public class AlunoDAO implements Map<String,Aluno> {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM aluno");
             while (rs.next()) {
-                col.add(new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getInt("estatuto")));
+                col.add(new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getString("password"),rs.getInt("estatuto")));
             }
             
         } catch (Exception e) {

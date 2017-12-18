@@ -1,54 +1,32 @@
 package main.business;
 
-public class Docente {
+public class Docente extends Utilizador{
 	
-    private int id;    
-    private String nome;
-    private String email;
+    private String numero;    
     
     public Docente() {
-        id=0;
-        nome=null;
-        email=null;
+        super(null,null,null);
+        numero=null;
     }
 
-    public Docente(int id, String nome, String email,int estatuto) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        
-    }
+    public Docente(String numero, String nome, String email,String password) {
+        super(nome,email,password);
+        this.numero = numero;
+   }
 
     public Docente(Docente a){
-        id=a.getID();
-        nome=a.getNome();
-        email=a.getEmail();
+        super(a);
+        numero=a.getNumero();
     }
 
-    public int getID() {
-        return id;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setID(int id) {
-        this.id = id;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
     public Docente clone() {
         return new Docente(this);
     }
@@ -60,9 +38,7 @@ public class Docente {
 
         Docente docente = (Docente) o;
 
-        if (id != docente.id) return false;
-        if (nome != null ? !nome.equals(docente.nome) : docente.nome != null) return false;
-        if (email != null ? !email.equals(docente.email) : docente.email != null) return false;
+        if (numero != docente.numero) return false;
         return true;
     }
 

@@ -6,7 +6,6 @@
 package main.business;
 
 
-import main.business.Turno;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -60,18 +59,6 @@ public class Cadeira {
         this.acron = acron;
     }
     
-    public int sizePraticos() {
-        return (int)this.turnos.stream().filter(t -> t instanceof TurnoTP).count();
-    }
-
-    public Turno getPratico(int i) {
-        return this.turnos.stream().filter(t -> t instanceof TurnoTP).collect(Collectors.toList()).get(i);
-    }
-
-    public void deleteRep(ArrayList<Turno> horario) {
-       turnos = (ArrayList<Turno>)turnos.stream().filter(t -> t.coincide(horario)==0).collect(Collectors.toList());
-    }
-
     public Cadeira clone() {
         return new Cadeira(this);
     }
@@ -80,9 +67,6 @@ public class Cadeira {
         if (obj == this) return true;
         if (obj == null || obj.getClass() != this.getClass()) return false;
         Cadeira u = (Cadeira) obj;
-        if (!Objects.equals(this.turnos, u.turnos)) 
-            return false;
-
         return u.getID().equals(id)
                 && u.getNome().equals(nome)
                 && u.getAcron().equals(acron);

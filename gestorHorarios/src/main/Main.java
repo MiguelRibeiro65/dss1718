@@ -4,7 +4,7 @@
  */
 package main;
 
-import main.business.SGT;
+import main.business.GestorTurnos;
 import main.presentation.MainWindow;
 
 /**
@@ -14,7 +14,7 @@ import main.presentation.MainWindow;
 public class Main {
     
     public static void main(String[] args) {
-        SGT sgt = new SGT();
+        GestorTurnos sgt = new GestorTurnos();
         
         MainWindow mw = new MainWindow(sgt);
         
