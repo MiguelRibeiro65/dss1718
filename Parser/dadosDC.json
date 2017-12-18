@@ -1,0 +1,532 @@
+{
+  "Perfis": [
+    {
+    "nome":"BI",
+      "UCS":[
+        {
+          "uc": "UC1",
+          "nome": "BI-UC1-Sistemas Operacionais",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC2",
+          "nome": "BI-UC2-Data Warehousing",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC3",
+          "nome": "BI-UC3-Processamento Analítico de Dados",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC4",
+          "nome": "BI-UC4-Análise de Dados",
+          "diasem": "sex"
+        }
+      ]
+    },
+    {
+    "nome":"SDC",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "SDC-UC1-Criptografia e Segurança da Informação",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC2",
+          "nome": "SDC-UC2-Paradigmas de Sistemas Distribuídos",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC3",
+          "nome": "SDC-UC3-Segurança de Sistemas Informáticos",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC4",
+          "nome": "SDC-UC4-Sistemas Distribuídos Confiáveis",
+          "diasem": "seg"
+        }
+      ]
+    },
+    {
+    "nome":"EA",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "EA-UC1-Infraestruturas de Centro de Dados",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC2",
+          "nome": "EA-UC2-Administração de Base de Dados",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC3",
+          "nome": "EA-UC3-Arquiteturas Aplicacionais",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC4",
+          "nome": "EA-UC4-Sistemas Interativos",
+          "diasem": "ter"
+        }
+      ]
+    },
+    {
+    "nome":"ESS",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "ESS-UC1-Engenharia de Requisitos",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC2",
+          "nome": "ESS-UC2-Arquiteturas de Software",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC3",
+          "nome": "ESS-UC3-Gestão do Processo de Software",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC4",
+          "nome": "ESS-UC4-Engenharia Web",
+          "diasem": "qui"
+        }
+      ]
+    },
+    {
+      "nome": "CPD",
+      "UCS": [
+        {
+          "uc": "UC1",
+          "nome": "CPD-UC1-Arquiteturas Avançadas",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC2",
+          "nome": "CPD-UC2-Paradigmas de Computação Paralela",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC3",
+          "nome": "CPD-UC3-Algoritmos Paralelos",
+          "diasem": "ter"
+        },
+        {
+          "uc":"UC4",
+          "nome": "CPD-UC4-Engenharia dos Sistemas de Computação",
+          "diasem": "ter"
+        }
+      ]
+    },
+    {
+      "nome":"CG",
+      "UCS": [
+        {
+          "uc":"UC1",
+          "nome": "CG-UC1-Visualização e Iluminação I",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC2",
+          "nome": "CG-UC2-Visão por Computador",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC3",
+          "nome":"CG-UC3-Visualização e Iluminação II",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC4",
+          "nome": "CG-UC4-Tecnologias e Aplicações",
+          "diasem": "qui"
+        }
+      ]
+    },
+    {
+      "nome":"ERS",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "ERS-UC1-Tecnologias e Protocolos de Rede",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC2",
+          "nome": "ERS-UC2-Gestão de Redes",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC3",
+          "nome": "ERS-UC3-Redes Multi Serviços",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC4",
+          "nome": "ERS-UC4-Serviços e Sistemas Multimédia",
+          "diasem": "sex"
+        }
+      ]
+    },
+    {
+      "nome":"Bio",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "Bio-UC1-Algoritmos para Análise de Sequências Biológicas",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC2",
+          "nome": "Bio-UC2-Laboratórios de Bioinformática",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC3",
+          "nome": "Bio-UC3-Algoritmos Avançados de Bioinformática",
+          "diasem": "sex"
+        },
+        {
+          "uc":"UC4",
+          "nome": "Bio-UC4-Extração de Conhecimento de Bases de Dados Biológicas",
+          "diasem": "sex"
+        }
+      ]
+    },
+    {
+      "nome":"SI",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "SI-UC1-Agentes Inteligentes",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC2",
+          "nome": "SI-UC2-Aprendizaem e Extração de Conhecimento",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC3",
+          "nome": "SI-UC3-Computação Natural",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC4",
+          "nome": "SI-UC4-Sistemas Autónomos",
+          "diasem": "seg"
+        }
+      ]
+    },
+    {
+      "nome":"MFES",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "MFES-UC1-Especificação e Modelação",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC2",
+          "nome": "MFES-UC2-Análise e Teste de Software",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC3",
+          "nome": "MFES-UC3-Arquitetura e Cálculo",
+          "diasem": "qui"
+        },
+        {
+          "uc":"UC4",
+          "nome": "MFES-UC4-Verificaçao Formal",
+          "diasem": "qui"
+        }
+      ]
+    },
+    {
+      "nome":"PLC",
+      "UCS":[
+        {
+          "uc":"UC1",
+          "nome": "PLC-UC1-Gramáticas na Compreensão de Software",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC2",
+          "nome": "PLC-UC2-Processamento e Representação de Informação",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC3",
+          "nome": "PLC-UC3-Scripting no Processamento de Linguagem Natural",
+          "diasem": "seg"
+        },
+        {
+          "uc":"UC4",
+          "nome": "PLC-UC4-Processamento e Representação de Conhecimento",
+          "diasem": "seg"
+        }
+      ]
+    }
+  ],
+
+
+  "Comp": [{
+      "sigla":"MD",
+      "nome": "Mineração de Dados",
+      "diasem": "ter",
+      "per": "M"
+    },
+    {
+      "sigla":"VC",
+      "nome": "Visão por Computador",
+      "diasem": "qui",
+      "per": "T"
+    },
+    {
+      "sigla":"CP",
+      "nome": "Computação Paralela",
+      "diasem": "qua",
+      "per": "M"
+    },
+    {
+      "sigla":"SSI",
+      "nome": "Segurança de Sistemas Informáticos",
+      "diasem": "ter",
+      "per": "T"
+    },
+    {
+      "sigla":"PDSJ",
+      "nome": "Processamento de Dados com Streams de Java",
+      "diasem": "qua",
+      "per": "M"
+    },
+    {
+      "sigla":"AEBD",
+      "nome": "Administração e Exploração de Bases de Dados",
+      "diasem": "ter",
+      "per": "M"
+    },
+    {
+      "sigla":"ER",
+      "nome": "Engenharia de Requisitos",
+      "diasem": "sex",
+      "per": "T"
+    },
+    {
+      "sigla":"GR",
+      "nome": "Gestão de Redes",
+      "diasem": "qui",
+      "per": "M"
+    },
+    {
+      "sigla":"ATS",
+      "nome": "Análise e Teste de Software",
+      "diasem": "ter",
+      "per": "T"
+    },
+    {
+      "sigla":"SPLN",
+      "nome": "Scripting no Processamento de Linguagem Natural",
+      "diasem": "sex",
+      "per": "M"
+    },
+    {
+      "sigla":"SDB",
+      "nome": "System Deployment and Benchmarking",
+      "diasem": "qua",
+      "per": "M"
+    },
+    {
+      "sigla":"IATA",
+      "nome": "Inteligência Ambiente - Tecnologias e Aplicações",
+      "diasem": "qua",
+      "per": "M"
+    }
+  ],
+
+
+  "Licenciatura": [{
+        "codigo":"H501N1",
+        "nome": "Álgebra Linear EI",
+        "sigla": "AL"
+      },
+      {
+        "codigo":"H501N2",
+        "nome": "Cálculo",
+        "sigla": "Calc"
+      },
+      {
+        "codigo":"H501N3",
+        "nome": "Tópicos de Matemática Discreta",
+        "sigla": "TMD"
+      },
+      {
+        "codigo":"H501N4",
+        "nome": "Programação Funcional",
+        "sigla": "PF"
+      },
+      {
+        "codigo":"H501N5",
+        "nome": "Elementos de Engenharia de Sistemas",
+        "sigla": "EES"
+      },
+      {
+        "codigo":"H501N6",
+        "nome": "Laboratórios de Informática I",
+        "sigla": "LI1"
+      },
+      {
+        "codigo":"H502N1",
+        "nome": "Sistemas de Computação",
+        "sigla": "SC"
+      },
+      {
+        "codigo":"H502N2",
+        "nome": "Análise",
+        "sigla": "ANALISE"
+      },
+      {
+        "codigo":"H502N3",
+        "nome": "Tópicos de Física Moderna",
+        "sigla": "TFM"
+      },
+      {
+        "codigo":"H502N4",
+        "nome": "Lógica EI",
+        "sigla": "Log"
+      },
+      {
+        "codigo":"H502N5",
+        "nome": "Programação Imperativa",
+        "sigla": "PI"
+      },
+      {
+        "codigo":"H502N6",
+        "nome": "Laboratórios de Informática II",
+        "sigla": "LI2"
+      },
+      {
+        "codigo":"H503N1",
+        "nome": "Introdução aos Sistemas Dinâmicos",
+        "sigla": "ISD"
+      },
+      {
+        "codigo":"H503N2",
+        "nome": "Estatística Aplicada",
+        "sigla": "EA"
+      },
+      {
+        "codigo":"H503N3",
+        "nome": "Engenharia Económica",
+        "sigla": "EE"
+      },
+      {
+        "codigo":"H503N4",
+        "nome": "Arquitetura de Computadores",
+        "sigla": "AC"
+      },
+      {
+        "codigo":"H503N5",
+        "nome": "Comunicação de Dados",
+        "sigla": "CD"
+      },
+      {
+        "codigo":"H503N6",
+        "nome": "Algoritmos e Complexidade",
+        "sigla": "ALG"
+      },
+      {
+        "codigo":"H504N1",
+        "nome": "Sistemas Operativos",
+        "sigla": "SO"
+      },
+      {
+        "codigo":"H504N2",
+        "nome": "Programação Orientada aos Objetos",
+        "sigla": "POO"
+      },
+      {
+        "codigo":"H504N3",
+        "nome": "Eletromagnetismo EE",
+        "sigla": "EM"
+      },
+      {
+        "codigo":"H504N5",
+        "nome": "Cálculo de Programas",
+        "sigla": "CP"
+      },
+      {
+        "codigo":"H504N6",
+        "nome": "Laboratórios de Informática III",
+        "sigla": "LI3"
+      },
+      {
+        "codigo":"H505N1",
+        "nome": "Bases de Dados",
+        "sigla": "BD"
+      },
+      {
+        "codigo":"H505N2",
+        "nome": "Desenvolvimento de Sistemas de Software",
+        "sigla": "DSS"
+      },
+      {
+        "codigo":"H505N3",
+        "nome": "Modelos Determinísticos de Investigação Operacional",
+        "sigla": "MDIO"
+      },
+      {
+        "codigo":"H505N4",
+        "nome": "Sistemas Distribuídos",
+        "sigla": "SD"
+      },
+      {
+        "codigo":"H505N5",
+        "nome": "Redes de Computadores",
+        "sigla": "RC"
+      },
+      {
+        "codigo":"H505N6",
+        "nome": "Métodos Numéricos e Otimização não Linear",
+        "sigla": "MNOnL"
+      },
+      {
+        "codigo":"H506N1",
+        "nome": "Sistemas de Representação de Conhecimento e Raciocínio",
+        "sigla": "SRCR"
+      },
+      {
+        "codigo":"H506N2",
+        "nome": "Computação Gráfica",
+        "sigla": "CG"
+      },
+      {
+        "codigo":"H506N3",
+        "nome": "Modelos Estocásticos de Investigação Operacional",
+        "sigla": "MEIO"
+      },
+      {
+        "codigo":"H506N4",
+        "nome": "Comunicações por Computador",
+        "sigla": "CC"
+      },
+      {
+        "codigo":"H506N5",
+        "nome": "Processamento de Linguagens",
+        "sigla": "PL"
+      },
+      {
+        "codigo":"H506N6",
+        "nome": "Laboratórios de Informática IV",
+        "sigla": "LI4"
+      }
+  ]
+}
