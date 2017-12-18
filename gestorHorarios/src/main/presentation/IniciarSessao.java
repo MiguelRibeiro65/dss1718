@@ -5,6 +5,7 @@
  */
 package main.presentation;
 
+import javax.swing.JOptionPane;
 import main.business.GestorTurnos;
 
 /**
@@ -107,13 +108,13 @@ public class IniciarSessao extends javax.swing.JFrame {
                 String numero = jTextField1.getText();
                 String password = jPasswordField1.getText();
                 gestorTurnos.iniciarSessao(numero,password);
-                Frame frame = new Frame(gestorHorarios);
+                JOptionPane.showMessageDialog( null,"sessao iniciada");
+                //Frame frame = new Frame(gestorHorarios);
                 this.dispose();
-                frame.setVisible(true);
+                //frame.setVisible(true);
         }
         catch(Exception e) {
-            PresentationException exception = new PresentationException(null,true,e.getMessage());
-            exception.setVisible(true);
+            JOptionPane.showMessageDialog( null,e.getMessage(), "Error",JOptionPane.ERROR_MESSAGE);
         }
     
     }//GEN-LAST:event_jButton1ActionPerformed
