@@ -15,9 +15,9 @@ import java.sql.SQLException;
 public class Connect {   
     
     private static final String URL = "localhost";
-    private static final String DB = "turma";
-    private static final String USERNAME = "myusername"; //TODO: alterar
-    private static final String PASSWORD = "mypassword"; //TODO: alterar
+    private static final String DB = "bdHorarios";
+    private static final String USERNAME = "root"; //TODO: alterar
+    private static final String PASSWORD = "root"; //TODO: alterar
     
     /**
      * Estabelece ligação à base de dados
