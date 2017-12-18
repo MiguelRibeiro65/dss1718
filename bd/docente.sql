@@ -49,3 +49,5 @@ insert into docente (numero, nome, email, password) values (47, 'Suzann Brydson'
 insert into docente (numero, nome, email, password) values (48, 'Kate Spring', 'kspring1b@chicagotribune.com', 'ZJKxHqh');
 insert into docente (numero, nome, email, password) values (49, 'Hedwig Spensly', 'hspensly1c@facebook.com', 'cVDWskowj');
 insert into docente (numero, nome, email, password) values (50, 'Stanley Cocklie', 'scocklie1d@i2i.jp', 'gG72cA02VO');
+
+SELECT * FROM docente
