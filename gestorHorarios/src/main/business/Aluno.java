@@ -4,33 +4,21 @@ import java.util.ArrayList;
 
 public class Aluno extends Utilizador {
 
-    public String numero;
     private int estatuto;
 
     public Aluno() {
-        super(null,null,null);
-        numero=null;
+        super(null,null,null,null);
         estatuto=0;
     }
 
     public Aluno(String numero, String nome, String email,String password,int estatuto) {
-        super(nome,email,password);
-        this.numero = numero;
+        super(numero,nome,email,password);
         this.estatuto = estatuto;
     }
 
     public Aluno(Aluno a){
         super(a);
-        numero=a.getNumero();
         estatuto=a.getEstatuto();
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
     }
 
     public int getEstatuto() {
@@ -52,7 +40,7 @@ public class Aluno extends Utilizador {
 
         Aluno aluno = (Aluno) o;
 
-        if (numero != null ? !numero.equals(aluno.numero) : aluno.numero != null) return false;
+        //if (numero != null ? !numero.equals(aluno.numero) : aluno.numero != null) return false;
         if (estatuto != aluno.estatuto) return false;
         return true;
     }

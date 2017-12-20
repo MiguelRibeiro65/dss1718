@@ -8,6 +8,7 @@ package main.data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -16,6 +17,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import main.business.Turno;
 import main.business.Turno;
 import main.business.TurnoT;
@@ -142,8 +145,33 @@ private Connection conn;
     
     @Override
     public Set<String> keySet() {
-        throw new NullPointerException("Not implemented!");
+        Set<String> set = null;
+        try {
+            conn = Connect.connect();
+            set = new HashSet<>();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM turno;");
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                set.add(rs.getString("idTurno"));
+            }   
+        }
+        catch(SQLException e){
+            System.out.printf(e.getMessage());
+        } catch (ClassNotFoundException ex) { 
+        Logger.getLogger(TurnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+    } 
+        finally{
+            try{
+                Connect.close(conn);
+            }
+            catch(Exception e){
+                System.out.printf(e.getMessage());
+            }
+        }
+        return set;
     }
+            
+    
     
     /**
      * Insere um aluno na base de dados
@@ -224,7 +252,7 @@ private Connection conn;
     }
     
     /**
-     * Retorna o número de entradas na base de dados
+     * Retorna o número de turnos na base de dados
      * @return 
      */
     @Override
@@ -246,7 +274,7 @@ private Connection conn;
     }
     
     /**
-     * Obtém todos os alunos da base de dados
+     * Obtém todos os turnos da base de dados
      * @return 
      */
     @Override

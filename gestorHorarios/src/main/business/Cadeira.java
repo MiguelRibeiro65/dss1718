@@ -7,36 +7,34 @@ package main.business;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 
 public class Cadeira {
     
-    private String id;
     private String nome;
     private String acron;
+    private ArrayList<String> alunos;
 
     public Cadeira() {
-        id=null;
         nome=null;
         acron=null;
+        alunos=null;
     }
 
-    public Cadeira(String id,String nome,String acron) {
-        this.id = id;
+    public Cadeira(String nome,String acron) {
         this.nome = nome;
         this.acron = acron;
+        this.alunos = new ArrayList<>();
     }
 
     public Cadeira(Cadeira uc) {
-        this.id = uc.getID();
         this.nome = uc.getNome();
         this.acron = uc.getAcron();
-    }
-
-    public String getID() {
-        return this.id;
+        this.alunos = uc.getAlunos();
     }
 
     public String getNome() {
@@ -47,16 +45,23 @@ public class Cadeira {
         return this.acron;
     }
 
-    public void setID(String id) {
-        this.id = id;
+    public ArrayList<String> getAlunos() {
+        return this.alunos;
     }
-
+  
     public void setNome(String nome) {
         this.nome = nome;
     }
 
     public void setAcron(String acron) {
         this.acron = acron;
+    }
+    
+    public void setAlunos(ArrayList<String> alunos) {
+        this.alunos = new ArrayList<>();
+        for(String s : alunos) {
+            this.alunos.add(s);
+        }        
     }
     
     public Cadeira clone() {
@@ -67,8 +72,7 @@ public class Cadeira {
         if (obj == this) return true;
         if (obj == null || obj.getClass() != this.getClass()) return false;
         Cadeira u = (Cadeira) obj;
-        return u.getID().equals(id)
-                && u.getNome().equals(nome)
+              return  u.getNome().equals(nome)
                 && u.getAcron().equals(acron);
     }
     

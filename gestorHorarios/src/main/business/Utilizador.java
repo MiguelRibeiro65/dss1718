@@ -1,24 +1,27 @@
 package main.business;
 
 public class Utilizador {
-
+    private String numero;
     private String nome;
     private String email;
     private String password; 
             
     public Utilizador() {
+        numero=null;
         nome=null;
         email=null;
         password=null;
     }
     
-    public Utilizador(String nome, String email,String password) {
+    public Utilizador(String numero,String nome, String email,String password) {
+        this.numero = numero;
         this.nome = nome;
         this.email = email;
         this.password = password;
     }
 
     public Utilizador(Utilizador a){
+        numero=a.getNumero();
         nome=a.getNome();
         email=a.getEmail();
         password=a.getPassword();
@@ -30,6 +33,14 @@ public class Utilizador {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
     public String getEmail() {

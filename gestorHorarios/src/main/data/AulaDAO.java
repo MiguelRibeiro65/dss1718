@@ -109,11 +109,11 @@ public class AulaDAO implements Map<String,Aula>{
                    stm = conn.prepareStatement("SELECT * FROM Aluno_has_Aula WHERE Aula_id=?");
                    stm.setString(1,(String)key);
                    ResultSet rs1 = stm.executeQuery();
-                   
+                   if (rs1.isBeforeFirst())
                    while(rs1.next()) presencas.add(rs1.getString("Aluno_numero"));
-                   
-                   al = new Aula(rs.getInt("id"),Date.valueOf(rs.getString("data")),rs.getString("Turno_idTurno"),presencas);
-            }
+                   al = new Aula(Date.valueOf(rs.getString("data")),rs.getString("Turno_idTurno")); 
+        }
+                    
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -152,23 +152,24 @@ public class AulaDAO implements Map<String,Aula>{
         Aula al = null;
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO aula\n" +
-                "VALUES (?, ?, ?)\n");
-            stm.setInt(1, value.getID());
-            stm.setString(2, value.getData().toString());
-            stm.setString(3, value.getIdTurno());
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO aula(data,Turno_idTurno)\n" +
+                "VALUES (?, ?)\n");
+            stm.setString(1, value.getData().toString());
+            stm.setString(2, value.getIdTurno());
             stm.executeUpdate();
             ResultSet rs = stm.getGeneratedKeys();
             if(rs.next()) {
                 int newId = rs.getInt(1);
                 value.setID(newId);
             }
-            stm = conn.prepareStatement("INSERT INTO aluno_has_aula\n" +
-                "VALUES (?, ?)\n");
-            for(String id : value.getPresencas()){
-                stm.setString(1, id);
-                stm.setInt(2,value.getID());
-                stm.executeUpdate();
+            if(!value.getPresencas().isEmpty()){
+                stm = conn.prepareStatement("INSERT INTO aluno_has_aula\n" +
+                    "VALUES (?,?)\n");
+                for(String id : value.getPresencas()){
+                    stm.setString(1, id);
+                    stm.setInt(2,value.getID());
+                    stm.executeUpdate();
+                }
             }
                         
             al = value;
@@ -249,9 +250,15 @@ public class AulaDAO implements Map<String,Aula>{
                 PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_Aula WHERE Aula_id=?");
                 stm1.setInt(1,rs.getInt("id"));
                 ResultSet rs1 = stm1.executeQuery();
+                Aula a = new Aula(Date.valueOf(rs.getString("data")),String.valueOf(rs.getInt("Turno_idTurno")));
+                col.add(a);
+                if(rs1.next()){
                 ArrayList<String> presencas = new ArrayList<>();
                 while(rs1.next()) presencas.add(rs1.getString("Aluno_numero"));
-                col.add(new Aula(rs.getInt("id"),Date.valueOf(rs.getString("data")),String.valueOf(rs.getInt("Turno_idTurno")),presencas));
+                a.setPresencas(presencas);
+                }
+                
+                
             }
             
         } catch (Exception e) {

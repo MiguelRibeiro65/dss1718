@@ -5,6 +5,25 @@
         <group name="Group 20171129-02:14:50">
             <file>file:/Users/ruicouto/Desktop/TurmaDemo/src/main/data/Connect.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Turno.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Aluno.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/AlunoDAO.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/AulaDAO.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/TurnoT.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Cadeira.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/CadeiraDAO.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/FrameDocente.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/FrameAluno.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/PresentationException.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Docente.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/IniciarSessao.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Utilizador.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Aula.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/Main.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/GestorTurnos.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/DocenteDAO.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/TurnoTP.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -5,7 +5,10 @@
  */
 package main.presentation;
 
+import java.awt.Frame;
 import javax.swing.JOptionPane;
+import main.business.DirecaoCurso;
+import main.business.Docente;
 import main.business.GestorTurnos;
 
 /**
@@ -46,9 +49,13 @@ public class IniciarSessao extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Número");
+        jLabel1.setText("Login");
 
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Password");
 
@@ -105,19 +112,27 @@ public class IniciarSessao extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
-                String numero = jTextField1.getText();
+                String email = jTextField1.getText();
                 String password = jPasswordField1.getText();
-                gestorTurnos.iniciarSessao(numero,password);
-                JOptionPane.showMessageDialog( null,"sessao iniciada");
-                //Frame frame = new Frame(gestorHorarios);
+                gestorTurnos.iniciarSessao(email,password);
+                Frame frame = null;
+                if (gestorTurnos.getSessao() instanceof DirecaoCurso) 
+                    frame = new FrameDirecao(gestorTurnos);
+                else if (gestorTurnos.getSessao() instanceof Docente)
+                    frame = new FrameDocente(gestorTurnos);
+                frame.setVisible(true);
                 this.dispose();
-                //frame.setVisible(true);
+                
         }
         catch(Exception e) {
             JOptionPane.showMessageDialog( null,e.getMessage(), "Error",JOptionPane.ERROR_MESSAGE);
         }
     
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
 
 

@@ -156,7 +156,7 @@ public class DocenteDAO implements Map<String,Docente> {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT INTO docente\n" +
                 "VALUES (?, ?, ?, ?)\n" +
-                "ON DUPLICATE KEY UPDATE nome=VALUES(nome),  email=VALUES(email),password=VALUES(password)", Statement.RETURN_GENERATED_KEYS);
+                "ON DUPLICATE KEY UPDATE nome=VALUES(nome),email=VALUES(email),password=VALUES(password)", Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, value.getNumero());
             stm.setString(2, value.getNome());
             stm.setString(3, value.getEmail());

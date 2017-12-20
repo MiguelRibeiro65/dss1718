@@ -25,11 +25,9 @@ public class Aula {
         presencas=null;
     }
     
-    public Aula(int id, Date data, String idTurno, ArrayList<String> presencas) {
-        this.id = id;
+    public Aula(Date data, String idTurno) {
         this.data = data;
         this.idTurno = idTurno;
-        this.presencas = new ArrayList<>(presencas);
     }
     
     public int getID() {
@@ -61,6 +59,8 @@ public class Aula {
     }
     
     public void setPresencas(ArrayList<String> presencas) {
-        this.presencas=presencas;
+        ArrayList<String> n = new ArrayList<>();
+        for(String s:presencas) n.add(s);
+        this.presencas = n;
     }
 }
