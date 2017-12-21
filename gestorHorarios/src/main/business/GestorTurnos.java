@@ -3,15 +3,20 @@ package main.business;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import main.data.DocenteDAO;
 import main.data.AlunoDAO;
 import main.data.AulaDAO;
 import main.data.CadeiraDAO;
 import main.data.DirecaoCursoDAO;
 import main.data.TurnoDAO;
+import main.data.TrocaDAO;
 
 /**
  * Facade para a camada de business.
@@ -27,6 +32,7 @@ public class GestorTurnos {
     private CadeiraDAO cadeirasDAO;
     private DocenteDAO docentesDAO;
     private TurnoDAO turnosDAO;
+    private TrocaDAO trocasDAO;
     private DirecaoCursoDAO direcaoCursoDAO;
    
     public GestorTurnos() {
@@ -36,6 +42,7 @@ public class GestorTurnos {
         cadeirasDAO = new CadeiraDAO();
         docentesDAO = new DocenteDAO();
         turnosDAO = new TurnoDAO();
+        trocasDAO = new TrocaDAO();
         direcaoCursoDAO = new DirecaoCursoDAO();
     }
 
@@ -90,7 +97,30 @@ public class GestorTurnos {
         aulasDAO.put(null,a);
     }
     
-    public Map<String,String> getTurnosAluno(String key) {
+    public Map<String,String> getTurnosAluno() {
+        String key = sessao.getNumero();
         return turnosDAO.getA(key);
     }
-}
+
+    public List<String> getCadeirasAluno() {
+        String key = sessao.getNumero();
+        return cadeirasDAO.getA(key);
+    }
+
+    public int adicionarTroca(String t1,String t2) {
+        Collection<Troca> trocas = trocasDAO.values();
+        
+        List<Troca> possib = trocas.stream().filter(x -> x.getIdTurno().equals(t1)).collect(Collectors.toList());
+        if(possib.isEmpty()) {
+            trocasDAO.put("key", new Troca(0,t2,sessao.getNumero()));
+            return 0;
+        }
+        trocasDAO.remove(possib.get(0).getId());
+        String u1=sessao.getNumero();
+        String u2=possib.get(0).getIdAluno();
+        turnosDAO.updateTurnoAluno(u1,t1,t2);
+        turnosDAO.updateTurnoAluno(u2,t2,t1);
+        return 1;
+    }
+
+}//.collect(Collectors.toList())

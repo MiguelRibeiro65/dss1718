@@ -120,6 +120,7 @@ public class IniciarSessao extends javax.swing.JFrame {
                     frame = new FrameDirecao(gestorTurnos);
                 else if (gestorTurnos.getSessao() instanceof Docente)
                     frame = new FrameDocente(gestorTurnos);
+                else frame = new FrameAluno(gestorTurnos);
                 frame.setVisible(true);
                 this.dispose();
                 

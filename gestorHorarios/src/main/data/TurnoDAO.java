@@ -14,7 +14,9 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -116,10 +118,10 @@ private Connection conn;
                 ResultSet rs1 = stm1.executeQuery();
                 ArrayList<String> alunos = new ArrayList<>();
                 while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
-                                
+                DayOfWeek dia = DayOfWeek.valueOf("MONDAY");                
                 if(rs.getInt("tipo")==1)
-                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("UC_idUC"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
-                else c = new TurnoT(rs.getString("idTurno"),rs.getString("UC_idUC"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
+                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
+                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -127,6 +129,29 @@ private Connection conn;
             Connect.close(conn);
         }
         return c;
+    }
+    
+        /**
+     * Obter os turnos de um aluno dado o seu id
+     * @param key
+     * @return 
+     */
+    
+    public Map<String,String> getA(Object key) {
+        Map<String,String> turnos = new HashMap<>(); 
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM turno\nINNER JOIN aluno_has_turno\nON turno.idTurno=aluno_has_turno.Turno_idTurno");
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()) {
+                turnos.put(rs.getString("idTurno"),rs.getString("uc_acron"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return turnos;
     }
     
     @Override
@@ -251,6 +276,22 @@ private Connection conn;
         return c;
     }
     
+    public void updateTurnoAluno(String aluno,String turnoA,String turnoN) {
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("UPDATE aluno_has_turno\n" + "SET turno_idTurno = ?\n" + "WHERE aluno_numero = ?,turno_idTurno = ?;");
+            stm.setString(1,turnoN);
+            stm.setString(2,aluno);
+            stm.setString(3,turnoA);
+            stm.executeUpdate();
+            stm.executeQuery();
+        } catch (Exception e) {
+            throw new NullPointerException(e.getMessage());
+        } finally {
+            Connect.close(conn);
+        }
+    }
+    
     /**
      * Retorna o número de turnos na base de dados
      * @return 
@@ -293,8 +334,8 @@ private Connection conn;
                 
                 
                 if(rs.getInt("tipo")==1)
-                    col.add(new TurnoTP(rs.getString("idTurno"),rs.getString("UC_idUC"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
-                else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("UC_idUC"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
+                    col.add(new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
+                else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
            }
             
         } catch (Exception e) {

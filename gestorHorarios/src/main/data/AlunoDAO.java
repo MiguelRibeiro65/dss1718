@@ -25,6 +25,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
@@ -100,6 +101,9 @@ public class AlunoDAO implements Map<String,Aluno> {
         throw new NullPointerException("public boolean equals(Object o) not implemented!");
     }
     
+    
+    
+               
     /**
      * Obter um aluno, dado o seu número
      * @param key
@@ -114,8 +118,22 @@ public class AlunoDAO implements Map<String,Aluno> {
             stm.setString(1,(String)key);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) 
-                   al = new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getString("password"),rs.getInt("estatuto"));
-            
+                al = new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getString("password"),rs.getInt("estatuto"));
+                   
+                PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_uc WHERE aluno_numero=?");
+                stm1.setString(1,rs.getString((String)key));
+                ResultSet rs1 = stm1.executeQuery();
+                ArrayList<String> ucs = new ArrayList<>();
+                while(rs1.next()) ucs.add(rs1.getString("uc_acron"));
+                al.setUcs(ucs);
+                
+                PreparedStatement stm2 = conn.prepareStatement("SELECT * FROM Aluno_has_turno WHERE aluno_numero=?");
+                stm2.setString(1,rs.getString((String)key));
+                ResultSet rs2 = stm1.executeQuery();
+                ArrayList<String> turnos = new ArrayList<>();
+                while(rs2.next()) turnos.add(rs2.getString("uc_acron"));
+                al.setTurnos(turnos);   
+                   
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -168,6 +186,20 @@ public class AlunoDAO implements Map<String,Aluno> {
             if(rs.next()) {
                 String newId = rs.getString(1);
                 value.setNumero(newId);
+            }
+            
+            stm = conn.prepareStatement("INSERT INTO aluno_has_turno\n"+"VALUES (?,?)");
+            for (String id : value.getTurnos()){
+                stm.setString(1,value.getNumero());
+                stm.setString(2,id);
+                stm.executeUpdate();
+            }
+            
+            stm = conn.prepareStatement("INSERT INTO aluno_has_uc\n"+"VALUES (?,?)");
+            for (String id : value.getUcs()){
+                stm.setString(1,value.getNumero());
+                stm.setString(2,id);
+                stm.executeUpdate();
             }
             
             al = value;

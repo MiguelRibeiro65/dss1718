@@ -12,11 +12,11 @@ package main.business;
 public class DirecaoCurso extends Utilizador{
 
     public DirecaoCurso() {
-        super(null,null,null);
+        super(null,null,null,null);
     }
     
     public DirecaoCurso(String nome,String email,String password) {
-        super(nome,email,password);
+        super("0",nome,email,password);
     }
 
 }

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class TurnoT extends Turno{
 
-    public TurnoT(String id,String idUC, DayOfWeek dia, LocalTime inicio, LocalTime fim,String docente,int capac,ArrayList<String> al){
-        super(id,idUC,dia,inicio,fim,docente,capac,al);
+    public TurnoT(String id,String idUC, DayOfWeek dia, LocalTime inicio, LocalTime fim,String docente,int capac){
+        super(id,idUC,dia,inicio,fim,docente,capac);
     }
 
 }

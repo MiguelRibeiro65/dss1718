@@ -5,15 +5,37 @@ import java.util.ArrayList;
 public class Aluno extends Utilizador {
 
     private int estatuto;
-
+    private ArrayList<String> ucs;
+    private ArrayList<String> turnos;
+    
     public Aluno() {
         super(null,null,null,null);
         estatuto=0;
+        ucs=null;
+        turnos=null;
     }
 
     public Aluno(String numero, String nome, String email,String password,int estatuto) {
         super(numero,nome,email,password);
         this.estatuto = estatuto;
+        this.ucs = new ArrayList<String>();
+        this.turnos = new ArrayList<String>();
+    }
+
+    public ArrayList<String> getUcs() {
+        return ucs;
+    }
+
+    public void setUcs(ArrayList<String> ucs) {
+        this.ucs = ucs;
+    }
+
+    public ArrayList<String> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(ArrayList<String> turnos) {
+        this.turnos = turnos;
     }
 
     public Aluno(Aluno a){

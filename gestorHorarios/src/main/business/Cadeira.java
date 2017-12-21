@@ -17,24 +17,20 @@ public class Cadeira {
     
     private String nome;
     private String acron;
-    private ArrayList<String> alunos;
 
     public Cadeira() {
         nome=null;
         acron=null;
-        alunos=null;
     }
 
     public Cadeira(String nome,String acron) {
         this.nome = nome;
         this.acron = acron;
-        this.alunos = new ArrayList<>();
     }
 
     public Cadeira(Cadeira uc) {
         this.nome = uc.getNome();
         this.acron = uc.getAcron();
-        this.alunos = uc.getAlunos();
     }
 
     public String getNome() {
@@ -44,10 +40,6 @@ public class Cadeira {
     public String getAcron() {
         return this.acron;
     }
-
-    public ArrayList<String> getAlunos() {
-        return this.alunos;
-    }
   
     public void setNome(String nome) {
         this.nome = nome;
@@ -55,13 +47,6 @@ public class Cadeira {
 
     public void setAcron(String acron) {
         this.acron = acron;
-    }
-    
-    public void setAlunos(ArrayList<String> alunos) {
-        this.alunos = new ArrayList<>();
-        for(String s : alunos) {
-            this.alunos.add(s);
-        }        
     }
     
     public Cadeira clone() {

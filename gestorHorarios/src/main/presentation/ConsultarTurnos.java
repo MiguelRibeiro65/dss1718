@@ -5,6 +5,7 @@
  */
 package main.presentation;
 
+import java.util.List;
 import java.util.Map;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -18,6 +19,7 @@ import main.business.Utilizador;
 public class ConsultarTurnos extends javax.swing.JDialog {
     
     GestorTurnos gestorTurnos;
+    private DefaultTableModel table;
     /**
      * Creates new form ConsultarTurnos
      */
@@ -25,15 +27,8 @@ public class ConsultarTurnos extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         gestorTurnos = g;
-        String col[] = {"UC","Turno"};
-        DefaultTableModel model = new DefaultTableModel(null,col);
-        JTable table = new JTable(model);
-        Utilizador u = g.getSessao();
-        Map<String,String> turnos = g.getTurnosAluno(u.getNumero());
-        for(String t : turnos.keySet()){
-            String c = turnos.get(t);
-            model.insertRow(table.getRowCount(),new Object[]{c,t});
-        }
+        doTable();
+        
     }
 
     /**
@@ -52,13 +47,13 @@ public class ConsultarTurnos extends javax.swing.JDialog {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "UC", "Turno"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -68,19 +63,39 @@ public class ConsultarTurnos extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 108, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    public void doTable() {
+        String colunas[] = {"UC","Turno"};
+        table = new DefaultTableModel(colunas,0){
+        @Override
+        public boolean isCellEditable (int row, int column){
+            return false;
+        }
+        };
+        jTable1.setModel(table);
+        jScrollPane1.setViewportView(jTable1);
+        
+        Map<String,String> turnos = gestorTurnos.getTurnosAluno();
+        for(String t : turnos.keySet()){
+            String c = turnos.get(t);
+            table.addRow(new Object[]{c,t});
+        }
 
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

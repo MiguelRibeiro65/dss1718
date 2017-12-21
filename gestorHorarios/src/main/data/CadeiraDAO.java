@@ -13,7 +13,9 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import main.business.Aluno;
@@ -108,13 +110,7 @@ public class CadeiraDAO implements Map<String,Cadeira> {
             stm.setString(1,(String)key);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) { 
-                PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_uc WHERE uc_acron=?");
-                stm1.setString(1,rs.getString("acron"));
-                ResultSet rs1 = stm1.executeQuery();
-                ArrayList<String> alunos = new ArrayList<>();
-                while(rs1.next()) alunos.add(rs1.getString("aluno_numero"));
                 c = new Cadeira(rs.getString("nome"),rs.getString("acron"));
-                c.setAlunos(alunos);
             }
             
         } catch (Exception e) {
@@ -124,6 +120,30 @@ public class CadeiraDAO implements Map<String,Cadeira> {
         }
         return c;
     }
+    
+        /**
+     * Obter os ucs de um aluno dado o seu id
+     * @param key
+     * @return 
+     */
+    
+    public List<String> getA(Object key) {
+        List<String> ucs = new ArrayList<>(); 
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM uc\nINNER JOIN aluno_has_uc\nON uc.acron=aluno_has_uc.uc_acron");
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()) {
+                ucs.add(rs.getString("uc_acron"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return ucs;
+    }
+    
     
     @Override
     public int hashCode() {
@@ -168,15 +188,6 @@ public class CadeiraDAO implements Map<String,Cadeira> {
                 value.setAcron(newId);
             }
             
-            stm = conn.prepareStatement("INSERT INTO aluno_has_uc\n" +
-                "VALUES (?, ?)\n");
-            if(!value.getAlunos().isEmpty()) {
-                for(String id : value.getAlunos()){
-                    stm.setString(1, id);
-                    stm.setString(2,value.getAcron());
-                    stm.executeUpdate();
-                }
-            }
             c = value;
         } catch (Exception e) {
             e.printStackTrace();
@@ -253,13 +264,7 @@ public class CadeiraDAO implements Map<String,Cadeira> {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM uc");
             while (rs.next()) {
-                PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_uc WHERE uc_acron=?");
-                stm1.setString(1,rs.getString("acron"));
-                ResultSet rs1 = stm1.executeQuery();
-                ArrayList<String> alunos = new ArrayList<>();
-                while(rs1.next()) alunos.add(rs1.getString("aluno_numero"));
                 c = new Cadeira(rs.getString("nome"),rs.getString("acron"));
-                c.setAlunos(alunos);
                 col.add(c);
                 
             }

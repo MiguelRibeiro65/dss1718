@@ -18,9 +18,8 @@ public class Turno {
     private LocalTime fim;
     private int capacidade;
     private String docente;
-    private ArrayList<String> alunos;
 
-    public Turno(String id,String idUC,DayOfWeek dia,LocalTime inicio,LocalTime fim, String docente, int capacidade,ArrayList<String> alunos) {
+    public Turno(String id,String idUC,DayOfWeek dia,LocalTime inicio,LocalTime fim, String docente, int capacidade) {
         this.id = id;
         this.idUC = idUC;
         this.dia = dia;
@@ -28,7 +27,6 @@ public class Turno {
         this.fim = fim;
         this.docente = docente;
         this.capacidade = capacidade;
-        this.alunos = alunos;
     }
 
     public Turno(Turno t) {
@@ -39,7 +37,6 @@ public class Turno {
         this.fim = t.getFim();
         this.capacidade = t.getCapacidade();
         this.docente = t.getDocente();
-        this.alunos = t.getAlunos();
     }
 
     public String getID() {
@@ -69,11 +66,7 @@ public class Turno {
     public int getCapacidade() {
         return this.capacidade;
     }
-    
-    public ArrayList<String> getAlunos() {
-        return this.alunos;
-    }
-    
+       
     public void setID(String id) {
         this.id = id;
     }
