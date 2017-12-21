@@ -6,6 +6,7 @@
 package main.presentation;
 
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import main.business.Docente;
 import main.business.GestorTurnos;
 
@@ -205,7 +206,8 @@ public class FrameDocente extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1FocusGained
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JDialog j = new GerirTurnos(gestorTurnos);
+        JFrame j = new GerirTurnos(gestorTurnos);
+        j.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

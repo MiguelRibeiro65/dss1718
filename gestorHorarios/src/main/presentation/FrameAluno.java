@@ -23,8 +23,8 @@ public class FrameAluno extends javax.swing.JFrame {
         initComponents();
         this.gestorTurnos = gestorTurnos;
         Utilizador u = gestorTurnos.getSessao();
-        jLabel5.setText(u.getNumero());
-        jLabel6.setText(u.getNome());
+        jLabel6.setText(u.getNumero());
+        jLabel5.setText(u.getNome());
         jLabel7.setText(u.getEmail());
         jPasswordField1.setText(u.getPassword());
     }

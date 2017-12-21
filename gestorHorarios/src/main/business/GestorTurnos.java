@@ -134,8 +134,123 @@ public class GestorTurnos {
                                     .collect(Collectors.toList());
     }
 
-    public List<Cadeira> getCadeiras() {
-        return cadeirasDAO.values().stream().collect(Collectors.toList());
+    public Collection<Cadeira> getCadeiras() {
+        return cadeirasDAO.values();
+        
     }
 
-}//.collect(Collectors.toList())
+    public Turno getTurno(String turno) {
+        return turnosDAO.get(turno);
+    }
+
+    public void removerTurno(String turno) {
+        turnosDAO.remove(turno);
+    }
+    
+    public void gerarTurnos() {
+        List<String> horario = new ArrayList<>();
+        List<String> t = new ArrayList<>();
+        List<String> p = new ArrayList<>();
+        int n;
+        for(Aluno a : alunosDAO.values()){
+            for(String uc : a.getUcs()){
+                for(String s: turnosDAO.getC(uc)){
+                if (verificarTipo(s)==1) t.add(s);
+                else p.add(s);
+            }
+            n=nTurnos(1,t);
+            atribuiTurnos(t,horario,n);
+            n+=nTurnos(2,p);
+            atribuiTurnos(p,horario,n);
+            }
+    
+        }
+    }
+
+     
+
+    
+    public void atribuiTurnos(List<String> turnos,List<String> horario,int n) {
+        if (horario.size()==n) return;
+        if (turnos.isEmpty()) {horario.clear();return;}
+
+        for (int i=0;i<turnos.size();i++) {
+                String t = turnos.get(i);
+                if(nAulas(t)==2) {
+                    horario.add(t);
+                    horario.add(turnos.get(i+1));
+                }
+                else {
+                    horario.add(t);
+                }
+                atribuiTurnos(deleteRep(turnos,horario),horario,n);
+            }
+        }
+    
+    
+    
+    private int nAulas(String turno) {
+        String[] split = turno.split("-");
+        for(String s:split) if(s.equals("A")) return 2;
+        return 1;
+    }
+    
+    public List<String> deleteRep(List<String> turnos,List<String> horario) {
+        List<String> turnosAux = new ArrayList<>();
+            
+        for(String s1 : turnos) {
+            Turno t1 = turnosDAO.get(s1);
+            for(String s2 : horario){
+                Turno t2 = turnosDAO.get(s2);
+                if(t1.coincide(t2)==1) turnosAux.add(s1);
+            }
+        }
+        return turnosAux;
+    }
+
+    private int verificarTipo(String turnoAtual) {
+        String[] split = turnoAtual.split("-");
+        int n;
+        for(n=0;!split[n].isEmpty();n++){
+            if(temNumeros(split[n])) break;
+        }
+        if (split[n].startsWith("T")) return 1;
+        else return 2;
+    }
+    
+    private Boolean temNumeros(String arg) {
+        String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
+        for(int n=0;n<10;n++){
+            if(arg.endsWith(nums[n])) return true;
+        }
+        return false;
+    }
+
+    private int nTurnos(int i, List<String> turnos) {
+            int n=0;
+            int ret=0;
+            String [] split;
+            if(n==1){
+                for(String turno : turnos) {
+                    split = turno.split("-");
+                    for(n=0;!split[n].isEmpty();n++){
+                        if(split[n].equals("T1")) {
+                            if(split[n+1].equals("A")) ret+=2;
+                            else ret+=1;
+                        }
+                    }
+                }
+            } else {
+                for(String turno : turnos) {
+                    split = turno.split("-");
+                    for(n=0;!split[n].isEmpty();n++){
+                        if(split[n].equals("P1")) {
+                            if(split[n+1].equals("A")) ret+=2;
+                            else ret+=1;
+                        }
+                    }
+                }
+            }
+            return ret;
+    }
+}

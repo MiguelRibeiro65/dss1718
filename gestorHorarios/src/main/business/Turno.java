@@ -65,6 +65,14 @@ public class Turno {
     public int getCapacidade() {
         return this.capacidade;
     }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public void setDocente(String docente) {
+        this.docente = docente;
+    }
        
     public void setID(String id) {
         this.id = id;
@@ -85,20 +93,24 @@ public class Turno {
     public void setFim(String fim) {
         this.fim = fim;
     }
-/*
-    public int coincide(ArrayList<Turno> horario){
-        String i;
-        String f;
-        for(Turno t : horario) {
-            if (LocalTime.parse(this.inicio).isAfter(LocalTime.parse(t.getInicio()))) i = inicio;
-            else i = t.getInicio();
-            if(LocalTime.parse(this.fim).isBefore(LocalTime.parse(t.getFim()))) f = fim;
-            else f = t.getFim();
-            if(LocalTime.parse(i).isBefore(LocalTime.parse(f))) return 1;
-        }
+
+    public int coincide(Turno turno){
+        LocalTime i;
+        LocalTime f;
+        LocalTime inicio1 = LocalTime.parse(this.inicio);
+        LocalTime inicio2 = LocalTime.parse(turno.getInicio());
+        LocalTime fim1 = LocalTime.parse(this.fim);
+        LocalTime fim2 = LocalTime.parse(turno.getFim());
+        
+        if (inicio1.isAfter(inicio2)) i = inicio1;
+        else i = inicio2;
+            if(fim1.isBefore(fim2)) f = fim1;
+            else f = fim2;
+            if(i.isBefore(f)) return 1;
+        
         return 0;
     }
-*/
+
     public Turno clone() {
         return new Turno(this);
     }

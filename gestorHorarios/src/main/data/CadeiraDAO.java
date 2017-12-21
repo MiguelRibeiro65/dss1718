@@ -268,7 +268,6 @@ public class CadeiraDAO implements Map<String,Cadeira> {
                 col.add(c);
                 
             }
-            
         } catch (Exception e) {
             e.printStackTrace();
         }

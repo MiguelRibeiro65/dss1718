@@ -60,5 +60,6 @@ public class Cadeira {
               return  u.getNome().equals(nome)
                 && u.getAcron().equals(acron);
     }
+
     
 }

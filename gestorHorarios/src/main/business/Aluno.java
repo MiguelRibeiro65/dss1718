@@ -50,7 +50,8 @@ public class Aluno extends Utilizador {
     public void setEstatuto(int estatuto) {
         this.estatuto = estatuto;
     }
-
+    
+    
     public Aluno clone() {
         return new Aluno(this);
     }

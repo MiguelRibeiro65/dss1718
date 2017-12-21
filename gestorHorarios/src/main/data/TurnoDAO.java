@@ -120,8 +120,8 @@ private Connection conn;
                 while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
                                
                 if(verificarTipo(rs.getString("idTurno"))==2)
-                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
-                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
+                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("Docente_id"),rs.getInt("capacidade"));
+                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("Docente_id"),rs.getInt("capacidade"));
                 
             }
         } catch (Exception e) {
@@ -155,6 +155,29 @@ private Connection conn;
         return turnos;
     }
     
+        /**
+     * Obter os turnos de um uc dado o seu id
+     * @param key
+     * @return 
+     */
+    
+    public List<String> getC(Object key) {
+        List<String> turnos = new ArrayList<>(); 
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM turno WHERE uc_acron=?");
+            stm.setString(1,(String)key);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()) {
+                turnos.add(rs.getString("idTurno"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return turnos;
+    }
     
     
     @Override
@@ -212,8 +235,9 @@ private Connection conn;
         Turno c = null;
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO turno\n" +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)\n" , Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO turno\n" +    
+                "VALUES (?, ?, ?, ?, ?, ?, ?)\n" + 
+                    "ON DUPLICATE KEY UPDATE dia=VALUES(dia),inicio=VALUES(inicio),fim=VALUES(fim),capacidade=VALUES(capacidade),Docente_id=VALUES(Docente_id)" , Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, value.getID());
             stm.setString(2, value.getDia());
             stm.setString(3, value.getInicio());
@@ -271,6 +295,7 @@ private Connection conn;
         return c;
     }
     
+        
     public void updateTurnoAluno(String aluno,String turnoA,String turnoN) {
         try {
             conn = Connect.connect();
@@ -357,6 +382,8 @@ private Connection conn;
         }
         return false;
     } 
+
+   
     
     
 }
