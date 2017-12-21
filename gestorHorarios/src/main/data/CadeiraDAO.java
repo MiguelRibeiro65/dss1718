@@ -177,7 +177,7 @@ public class CadeiraDAO implements Map<String,Cadeira> {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT INTO uc\n" +
                 "VALUES (?, ?)\n" +
-                "ON DUPLICATE KEY UPDATE nome=VALUES(nome),  acron=VALUES(acron)", Statement.RETURN_GENERATED_KEYS);
+                "ON DUPLICATE KEY UPDATE nome=VALUES(nome)", Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, value.getAcron());
             stm.setString(2, value.getNome());
             stm.executeUpdate();

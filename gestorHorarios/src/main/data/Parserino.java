@@ -17,17 +17,19 @@ import main.business.*;
  * @author maria
  */
 public class Parserino {
-   private final static String path = "GestorHorarios//src//main//data//dados//ucsDC.json";
-   private final static String pathtp = "GestorHorarios//src//main//data//dados//turnosTP.json";
-   private final static String patht ="GestorHorarios//src//main//data//dados//turnosT.json";
+   private final static String path = "src//main//data//dados//ucsDC.json";
+   private final static String pathtp = "src//main//data//dados//turnosTP.json";
+   private final static String patht ="src//main//data//dados//turnosT.json";
+   private GestorTurnos gst;
    
-   public static void main(String[] args) throws FileNotFoundException {
+   public Parserino(GestorTurnos a) throws FileNotFoundException{
+       gst = a;
        getUCS();
        getTurnosTP();
        getTurnosT();
-       
    }
-   public static void getUCS() throws FileNotFoundException{
+   
+   public void getUCS() throws FileNotFoundException{
     
         JsonReader reader = new JsonReader(new FileReader(path));
        
@@ -36,29 +38,29 @@ public class Parserino {
         Type cadeira  = new TypeToken<ArrayList<Cadeira>>(){}.getType();
         ArrayList<Cadeira> cadeiras = gson.fromJson(reader,cadeira);
         for(Cadeira a : cadeiras){
-        System.out.println(a.getNome());
+        gst.adicionarCadeira(a);
     }
    }
    
-   public static void getTurnosTP() throws FileNotFoundException{
+   public void getTurnosTP() throws FileNotFoundException{
         JsonReader reader = new JsonReader(new FileReader(pathtp));
        
         Gson gson = new Gson();
         Type turnostp = new TypeToken<ArrayList<Turno>>(){}.getType();
         ArrayList<Turno> tps = gson.fromJson(reader,turnostp);
         for(Turno a : tps){
-        System.out.println(a.getID());
+        gst.adicionarTurno(a);
     }
    }
    
-   public static void getTurnosT() throws FileNotFoundException{
+   public void getTurnosT() throws FileNotFoundException{
         JsonReader reader = new JsonReader(new FileReader(patht));
        
         Gson gson = new Gson();
         Type turnost = new TypeToken<ArrayList<Turno>>(){}.getType();
         ArrayList<Turno> ts = gson.fromJson(reader,turnost);
         for(Turno a : ts){
-        System.out.println(a.getID());
+        gst.adicionarTurno(a);
         }
     }
 }

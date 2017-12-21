@@ -78,9 +78,8 @@ public class GestorTurnos {
         alunosDAO.put(a.getNumero(),a);
     }
     
-    public void adicionarCadeira(String nome,String acron){
-        Cadeira value = new Cadeira(nome,acron);
-        cadeirasDAO.put(acron, value);
+    public void adicionarCadeira(Cadeira a){
+        cadeirasDAO.put(a.getAcron(), a);
     }
 
     public void adicionarDocente(String numero, String nome, String email, String password) {
@@ -100,6 +99,10 @@ public class GestorTurnos {
     public Map<String,String> getTurnosAluno() {
         String key = sessao.getNumero();
         return turnosDAO.getA(key);
+    }
+    
+    public void adicionarTurno(Turno a){
+        turnosDAO.put(a.getID(), a);
     }
 
     public List<String> getCadeirasAluno() {

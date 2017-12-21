@@ -116,12 +116,9 @@ private Connection conn;
                 PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_turno WHERE Turno_idTurno=?");
                 stm1.setString(1,rs.getString("idTurno"));
                 ResultSet rs1 = stm1.executeQuery();
-                ArrayList<String> alunos = new ArrayList<>();
-                while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
-                DayOfWeek dia = DayOfWeek.valueOf("MONDAY");                
-                if(rs.getInt("tipo")==1)
-                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
-                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
+                ArrayList<String> alunos = new ArrayList<String>();
+                while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));               
+                c = new Turno(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -211,28 +208,20 @@ private Connection conn;
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT INTO turno\n" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)\n" +
-                "ON DUPLICATE KEY UPDATE dia=VALUES(dia),  inicio=VALUES(inicio), fim=VALUES(fim), docente=VALUES(docente)", Statement.RETURN_GENERATED_KEYS);
+                "ON DUPLICATE KEY UPDATE dia=VALUES(dia),  inicio=VALUES(inicio), fim=VALUES(fim), docente_id=VALUES(docente)", Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, value.getID());
-            stm.setString(2, value.getIdUC());
-            stm.setString(3, value.getDia().toString());
-            stm.setString(4, value.getInicio().toString());
-            stm.setString(5, value.getFim().toString());
+            stm.setString(2, value.getDia());
+            stm.setString(3, value.getInicio());
+            stm.setString(4, value.getFim());
+            stm.setInt(5, value.getCapacidade());
             stm.setString(6, value.getDocente());
-            stm.setInt(7, value.getCapacidade());
+            stm.setString(7, value.getIdUC());
             stm.executeUpdate();
             
             ResultSet rs = stm.getGeneratedKeys();
-            if(rs.next()) {
+            if(rs.next()){
                 String newId = rs.getString(1);
                 value.setID(newId);
-            }
-            
-            stm = conn.prepareStatement("INSERT INTO aluno_has_turno\n" +
-                "VALUES (?, ?)\n");
-            for(String id : value.getAlunos()){
-                stm.setString(1, id);
-                stm.setInt(2,Integer.valueOf(value.getID()));
-                stm.executeUpdate();
             }
             
             c = value;
@@ -329,13 +318,11 @@ private Connection conn;
                 PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_turno WHERE Turno_idTurno=?");
                 stm1.setString(1,rs.getString("idTurno"));
                 ResultSet rs1 = stm1.executeQuery();
-                ArrayList<String> alunos = new ArrayList<>();
-                while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
                 
                 
-                if(rs.getInt("tipo")==1)
-                    col.add(new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
-                else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
+                Turno a = new Turno(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
+                col.add(a);
+                //else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
            }
             
         } catch (Exception e) {
