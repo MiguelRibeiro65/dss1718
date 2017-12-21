@@ -9,20 +9,21 @@ import java.util.*;
 public class ListasUC {
 
     private String acron;
-    private ArrayList<String> alunos = null;
+    private String aluno;
+
     
     public void ListasUC(){
         this.acron = "Ola";
-        this.alunos = new ArrayList<String>();
+        this.aluno = "Mundo";
     }
-    public void ListasUC(String acron, ArrayList<String> a){
+    public void ListasUC(String acron, String a){
         this.acron = acron;
-        this.alunos = a;
+        this.aluno = a;
     }
     
     public void ListasUC(ListasUC a){
         this.acron = a.acron;
-        this.alunos = a.alunos;
+        this.aluno = a.aluno;
     }
     
     public String getAcron() {
@@ -33,12 +34,12 @@ public class ListasUC {
         this.acron = acron;
     }
 
-    public ArrayList<String> getAlunos() {
-        return alunos;
+    public String getAluno() {
+        return aluno;
     }
 
-    public void setAlunos(ArrayList<String> alunos) {
-        this.alunos = alunos;
+    public void setAluno(String alunos) {
+        this.aluno = alunos;
     }
 
 }
