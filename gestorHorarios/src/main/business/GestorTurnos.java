@@ -82,6 +82,10 @@ public class GestorTurnos {
         Cadeira value = new Cadeira(nome,acron);
         cadeirasDAO.put(acron, value);
     }
+    
+    public void adicionarCadeira(Cadeira value){
+        cadeirasDAO.put(value.getAcron(), value);
+    }
 
     public void adicionarDocente(String numero, String nome, String email, String password) {
         Docente d = new Docente(numero,nome,email,password);
@@ -108,19 +112,23 @@ public class GestorTurnos {
     }
 
     public int adicionarTroca(String t1,String t2) {
-        Collection<Troca> trocas = trocasDAO.values();
-        
-        List<Troca> possib = trocas.stream().filter(x -> x.getIdTurno().equals(t1)).collect(Collectors.toList());
-        if(possib.isEmpty()) {
+        String u1=sessao.getNumero();
+        String u2 = trocasDAO.getAlunoTroca(t1,t2);
+        if(u2==null) {
             trocasDAO.put("key", new Troca(0,t2,sessao.getNumero()));
             return 0;
         }
-        trocasDAO.remove(possib.get(0).getId());
-        String u1=sessao.getNumero();
-        String u2=possib.get(0).getIdAluno();
+        trocasDAO.remove(u2,t1);
         turnosDAO.updateTurnoAluno(u1,t1,t2);
         turnosDAO.updateTurnoAluno(u2,t2,t1);
         return 1;
+    }
+
+    public List<String> getTurnosUC(String uc) {
+        return turnosDAO.values().stream()
+                                    .filter(u -> u.getIdUC().equals(uc))
+                                    .map(u -> u.getID())
+                                    .collect(Collectors.toList());
     }
 
 }//.collect(Collectors.toList())

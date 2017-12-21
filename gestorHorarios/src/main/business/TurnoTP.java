@@ -5,13 +5,12 @@
  */
 package main.business;
 
-import java.time.DayOfWeek;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
 
 public class TurnoTP extends Turno{
 
-    public TurnoTP(String id,String idUC, DayOfWeek dia, LocalTime inicio, LocalTime fim,String docente,int capac){
+    public TurnoTP(String id,String idUC, String dia, String inicio, String fim,String docente,int capac){
         super(id,idUC,dia,inicio,fim,docente,capac);
     }
 }

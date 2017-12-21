@@ -120,18 +120,18 @@ public class AlunoDAO implements Map<String,Aluno> {
             if (rs.next()) 
                 al = new Aluno(rs.getString("numero"),rs.getString("nome"),rs.getString("email"),rs.getString("password"),rs.getInt("estatuto"));
                    
-                PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_uc WHERE aluno_numero=?");
-                stm1.setString(1,rs.getString((String)key));
+                PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM aluno_has_uc WHERE aluno_numero=?");
+                stm1.setString(1,(String)key);
                 ResultSet rs1 = stm1.executeQuery();
                 ArrayList<String> ucs = new ArrayList<>();
                 while(rs1.next()) ucs.add(rs1.getString("uc_acron"));
                 al.setUcs(ucs);
                 
-                PreparedStatement stm2 = conn.prepareStatement("SELECT * FROM Aluno_has_turno WHERE aluno_numero=?");
-                stm2.setString(1,rs.getString((String)key));
-                ResultSet rs2 = stm1.executeQuery();
+                PreparedStatement stm2 = conn.prepareStatement("SELECT * FROM aluno_has_turno WHERE Aluno_numero=?");
+                stm2.setString(1,(String)key);
+                ResultSet rs2 = stm2.executeQuery();
                 ArrayList<String> turnos = new ArrayList<>();
-                while(rs2.next()) turnos.add(rs2.getString("uc_acron"));
+                while(rs2.next()) turnos.add(rs2.getString("Turno_idTurno"));
                 al.setTurnos(turnos);   
                    
         } catch (Exception e) {

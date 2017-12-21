@@ -5,21 +5,20 @@
  */
 package main.business;
 
-import java.time.DayOfWeek;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
 
 public class Turno {
     
     private String id;
     private String idUC;
-    private DayOfWeek dia;
-    private LocalTime inicio;
-    private LocalTime fim;
+    private String dia;
+    private String inicio;
+    private String fim;
     private int capacidade;
     private String docente;
 
-    public Turno(String id,String idUC,DayOfWeek dia,LocalTime inicio,LocalTime fim, String docente, int capacidade) {
+    public Turno(String id,String idUC,String dia,String inicio,String fim, String docente, int capacidade) {
         this.id = id;
         this.idUC = idUC;
         this.dia = dia;
@@ -47,15 +46,15 @@ public class Turno {
         return this.idUC;
     }
     
-    public DayOfWeek getDia() {
+    public String getDia() {
         return this.dia;
     }
 
-    public LocalTime getInicio() {
+    public String getInicio() {
         return this.inicio;
     }
 
-    public LocalTime getFim() {
+    public String getFim() {
         return this.fim;
     }
 
@@ -75,21 +74,21 @@ public class Turno {
         this.idUC = id;
     }
     
-    public void setDia(DayOfWeek dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
-    public void setInicio(LocalTime inicio) {
+    public void setInicio(String inicio) {
         this.dia = dia;
     }
 
-    public void setFim(LocalTime fim) {
+    public void setFim(String fim) {
         this.fim = fim;
     }
-
+/*
     public int coincide(ArrayList<Turno> horario){
-        LocalTime i;
-        LocalTime f;
+        String i;
+        String f;
         for(Turno t : horario) {
             if (inicio.isAfter(t.getInicio())) i = inicio;
             else i = t.getInicio();
@@ -99,7 +98,7 @@ public class Turno {
         }
         return 0;
     }
-
+*/
     public Turno clone() {
         return new Turno(this);
     }

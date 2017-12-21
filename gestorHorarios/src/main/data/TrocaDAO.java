@@ -117,6 +117,32 @@ public class TrocaDAO implements Map<String,Troca>{
         return al;
     }
     
+    public String getAlunoTroca(String t1,String t2){
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM troca WHERE turno_idTurno=?");
+            stm.setString(1,t1);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()) {
+                String aluno = rs.getString("aluno_numero");
+                stm = conn.prepareStatement("SELECT * FROM aluno_has_turno WHERE Aluno_numero=?");
+                stm.setString(1,aluno);
+                ResultSet rs2 = stm.executeQuery();
+                while(rs2.next()){
+                    if(rs2.getString("Turno_idTurno").equals(t2)) return rs2.getString("Aluno_idAluno");
+                }
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return null;
+    }
+    
+    
+    
     @Override
     public int hashCode() {
         return this.conn.hashCode();

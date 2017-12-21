@@ -119,9 +119,9 @@ private Connection conn;
                 ArrayList<String> alunos = new ArrayList<>();
                 while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
                 DayOfWeek dia = DayOfWeek.valueOf("MONDAY");                
-                if(rs.getInt("tipo")==1)
-                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
-                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),dia,LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos);
+                if(verificarTipo(rs.getString("idTurno"))==2)
+                    c = new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
+                else c = new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("docente"),rs.getInt("capacidade"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -153,6 +153,8 @@ private Connection conn;
         }
         return turnos;
     }
+    
+    
     
     @Override
     public int hashCode() {
@@ -227,13 +229,7 @@ private Connection conn;
                 value.setID(newId);
             }
             
-            stm = conn.prepareStatement("INSERT INTO aluno_has_turno\n" +
-                "VALUES (?, ?)\n");
-            for(String id : value.getAlunos()){
-                stm.setString(1, id);
-                stm.setInt(2,Integer.valueOf(value.getID()));
-                stm.executeUpdate();
-            }
+            
             
             c = value;
         } catch (Exception e) {
@@ -333,9 +329,9 @@ private Connection conn;
                 while(rs1.next()) alunos.add(rs1.getString("Aluno_numero"));
                 
                 
-                if(rs.getInt("tipo")==1)
-                    col.add(new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
-                else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),DayOfWeek.valueOf(rs.getString("dia")),LocalTime.parse(rs.getString("inicio")),LocalTime.parse(rs.getString("fim")),rs.getString("docente"),rs.getInt("capacidade"),alunos));
+                if(verificarTipo(rs.getString("idTurno"))==2)
+                    col.add(new TurnoTP(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("Docente_id"),rs.getInt("capacidade")));
+                else col.add(new TurnoT(rs.getString("idTurno"),rs.getString("uc_acron"),rs.getString("dia"),rs.getString("inicio"),rs.getString("fim"),rs.getString("Docente_id"),rs.getInt("capacidade")));
            }
             
         } catch (Exception e) {
@@ -346,6 +342,25 @@ private Connection conn;
         }
         return col;
     }
+    
+    private int verificarTipo(String turnoAtual) {
+        String[] split = turnoAtual.split("-");
+        int n;
+        for(n=0;!split[n].isEmpty();n++){
+            if(temNumeros(split[n])) break;
+        }
+        if (split[n].startsWith("T")) return 1;
+        else return 2;
+    }
+    
+    private Boolean temNumeros(String arg) {
+        String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
+        for(int n=0;n<10;n++){
+            if(arg.endsWith(nums[n])) return true;
+        }
+        return false;
+    } 
+    
     
 }
 

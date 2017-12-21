@@ -32,6 +32,7 @@ public class AdicionarTroca extends javax.swing.JDialog {
         this.gestorTurnos = gestorTurnos;
         jComboBox1.removeAllItems();
         jComboBox2.removeAllItems();
+        jComboBox3.removeAllItems();
         Aluno a = (Aluno) gestorTurnos.getSessao();
         for(String s:gestorTurnos.getCadeirasAluno()) jComboBox1.addItem(s);
         //String uc = (String)jComboBox1.getItemAt(0);
@@ -145,10 +146,10 @@ public class AdicionarTroca extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String uc = (String) jComboBox1.getSelectedItem();
         String turnoAtual = (String)jComboBox2.getSelectedItem();
-        JDialog j = new EfectuarTroca(gestorTurnos,turnoAtual);
-        j.setVisible(true);
-        if(gestorTurnos.adicionarTroca(turno)==0) JOptionPane.showMessageDialog(null,"Nao foi possivel trocar de momento. Encontra-se na lista de espera");
+        String turnoPretendido = (String) jComboBox3.getSelectedItem();
+        if(gestorTurnos.adicionarTroca(turnoAtual,turnoPretendido)==0) JOptionPane.showMessageDialog(null,"Nao foi possivel trocar de momento. Encontra-se na lista de espera");
         else JOptionPane.showMessageDialog(null,"Troca efectuada com sucesso");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -160,7 +161,8 @@ public class AdicionarTroca extends javax.swing.JDialog {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String uc = (String) jComboBox1.getSelectedItem();
         jComboBox2.removeAllItems();
-        Stream<String> turnos = turnosAluno.keySet().stream().filter(p -> turnosAluno.get(p).equals(uc));//.filter(p -> p.toString().equals(uc)).map(x -> x.getKey())
+        Aluno a = (Aluno) gestorTurnos.getSessao();
+        Stream<String> turnos = gestorTurnos.getTurnosUC(uc).stream().filter(p -> a.getTurnos().contains(p));
         for(Object s:turnos.toArray()) jComboBox2.addItem((String)s);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -169,10 +171,12 @@ public class AdicionarTroca extends javax.swing.JDialog {
         String uc = (String)jComboBox1.getSelectedItem();
         jComboBox3.removeAllItems();
         verificarTipo(turnoAtual);
-        
+        List<String> turnos = gestorTurnos.getTurnosUC(uc);
+        for(String s:turnos) jComboBox3.addItem(s);
     }//GEN-LAST:event_jComboBox2ActionPerformed
     
     private int verificarTipo(String turnoAtual) {
+        if (turnoAtual==null) return 0;
         String[] split = turnoAtual.split("-");
         int n;
         for(n=0;!split[n].isEmpty();n++){
