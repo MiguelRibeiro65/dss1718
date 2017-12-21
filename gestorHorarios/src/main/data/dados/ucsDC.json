@@ -1,0 +1,353 @@
+[
+        {
+          "nome": "SDC-UC1-Criptografia e Segurança da Informação",
+          "acron":"SDC-SFI"
+        },
+        {
+          "nome": "SDC-UC2-Paradigmas de Sistemas Distribuídos",
+          "acron":"SDC-PSD"
+        },
+        {
+          "nome": "SDC-UC3-Segurança de Sistemas Informáticos",
+          "acron":"SDC-SSI"
+        },
+        {
+          "nome": "SDC-UC4-Sistemas Distribuídos Confiáveis",
+          "acron":"SDC-SDC"
+        },
+        {
+          "nome": "EA-UC1-Infraestruturas de Centro de Dados",
+          "acron":"EA-ICD"
+        },
+        {
+          "nome": "EA-UC2-Administração de Base de Dados",
+          "acron":"EA-ABD"
+        },
+        {
+          "nome": "EA-UC3-Arquiteturas Aplicacionais",
+          "acron":"EA-AA"
+        },
+        {
+        "nome": "EA-UC4-Sistemas Interativos",
+        "acron":"EA-SI"
+        },
+        {
+          "nome": "ESS-UC1-Engenharia de Requisitos",
+          "acron":"ESS-ER"
+        },
+        {
+          "nome": "ESS-UC2-Arquiteturas de Software",
+          "acron":"ESS-AS"
+        },
+        {
+          "nome": "ESS-UC3-Gestão do Processo de Software",
+          "acron":"ESS-GPS"
+        },
+        {
+          "nome": "ESS-UC4-Engenharia Web",
+          "acron":"ESS-EW"
+        },
+        {
+          "nome": "CPD-UC1-Arquiteturas Avançadas",
+          "acron": "CPD-AA"
+        },
+        {
+          "nome": "CPD-UC2-Paradigmas de Computação Paralela",
+          "acron":"CPD-PCP"
+        },
+        {
+          "nome": "CPD-UC3-Algoritmos Paralelos",
+          "acron":"CPD-AP"
+        },
+        {
+          "nome": "CPD-UC4-Engenharia dos Sistemas de Computação",
+          "acron":"CPD-ESC"
+        },
+        {
+         "nome": "CG-UC1-Visualização e Iluminação I",
+         "acron":"CG-VII"
+        },
+        {
+          "nome": "CG-UC2-Visão por Computador",
+          "acron":"CG-VC"
+        },
+        {
+          "nome":"CG-UC3-Visualização e Iluminação II",
+          "acron":"CG-VIII"
+        },
+        {
+          "nome": "CG-UC4-Tecnologias e Aplicações",
+          "acron":"CG-TA"
+        },
+        {
+          "nome": "ERS-UC1-Tecnologias e Protocolos Internet",
+          "acron":"ERS-TPI"
+        },
+        {
+          "nome": "ERS-UC2-Gestão de Redes",
+          "acron":"ERS-GR"
+        },
+        {
+          "nome": "ERS-UC3-Redes Multi Serviços",
+          "acron":"ERS-RMS"
+        },
+        {
+          "nome": "ERS-UC4-Serviços e Sistemas Multimédia",
+          "acron":"ERS-SSM"
+        },
+        {
+          "nome": "BIO-UC1-Algoritmos para Análise de Sequências Biológicas",
+          "acron":"BIO-AASB"
+        },
+        {
+          "nome": "BIO-UC2-Laboratórios de Bioinformática",
+          "acron":"BIO-LB"
+        },
+        {
+          "nome": "BIO-UC3-Algoritmos Avançados de Bioinformática",
+          "acron":"BIO-AAB"
+        },
+        {
+          "nome": "BIO-UC4-Extração de Conhecimento de Bases de Dados Biológicas",
+          "acron":"BIO-ECBDB"
+        },
+        {
+          "nome": "SI-UC1-Agentes Inteligentes",
+          "acron":"SI-AI"
+          
+        },
+        {
+          "nome": "SI-UC2-Aprendizaem e Extração de Conhecimento",
+          "acron":"SI-AEC"
+        },
+        {
+          "nome": "SI-UC3-Computação Natural",
+          "acron":"SI-CN"
+        },
+        {
+          "nome": "SI-UC4-Sistemas Autónomos",
+          "acron":"SI-SA"
+        },
+        {
+          "nome": "MFES-UC1-Especificação e Modelação",
+          "acron":"MFES-EM"
+        },
+        {
+          "nome": "MFES-UC2-Análise e Teste de Software",
+          "acron":"MFES-ATS"
+        },
+        {
+          "nome": "MFES-UC3-Arquitetura e Cálculo",
+          "acron":"MFES-AC"
+        },
+        {
+          "nome": "MFES-UC4-Verificaçao Formal",
+          "acron":"MFES-VF"
+        },
+        {
+          "nome": "PLC-UC1-Gramáticas na Compreensão de Software",
+          "acron":"PLC-GCS"
+        },
+        {
+          "nome": "PLC-UC2-Processamento e Representação de Informação",
+          "acron":"PLC-PRI"
+        },
+        {
+          "nome": "PLC-UC3-Scripting no Processamento de Linguagem Natural",
+          "acron":"PLC-SPLN"
+        },
+        {
+          "nome": "PLC-UC4-Processamento e Representação de Conhecimento",
+          "acron":"PLC-PRC"
+        },
+        {
+      "nome": "Mineração de Dados",
+      "acron":"MD"
+    },
+    {
+      "nome": "Visão por Computador",
+      "acron":"VC"
+    },
+    {
+      "nome": "Computação Paralela",
+      "acron":"CP"
+    },
+    {
+      "nome": "Segurança de Sistemas Informáticos",
+      "acron":"SSI"
+    },
+    {
+      "nome": "Processamento de Dados com Streams de Java",
+      "acron":"PDSJ"
+    },
+    {
+      "nome": "Administração e Exploração de Bases de Dados",
+      "acron":"AEBD"
+    },
+    {
+      "nome": "Engenharia de Requisitos",
+      "acron":"ER"
+    },
+    {
+      "nome": "Gestão de Redes",
+      "acron":"GR"
+    },
+    {
+      "nome": "Análise e Teste de Software",
+      "acron":"ATS"
+    },
+    {
+      "nome": "Scripting no Processamento de Linguagem Natural",
+      "acron":"SPLN"
+    },
+    {
+      "nome": "System Deployment and Benchmarking",
+      "acron":"SDB"
+    },
+    {
+
+      "nome": "Inteligência Ambiente - Tecnologias e Aplicações",
+      "acron":"IATA"
+    },
+    {
+        "nome": "Álgebra Linear EI",
+        "acron": "AL"
+      },
+      {
+        "nome": "Cálculo",
+        "acron" : "CALC" 
+      },
+      {
+        "nome": "Tópicos de Matemática Discreta",
+        "acron": "TMD"
+      },
+      {
+        "nome": "Programação Funcional",
+        "acron": "PF"
+      },
+      {
+        "nome": "Elementos de Engenharia de Sistemas",
+        "acron": "EES"
+      },
+      {
+        "nome": "Laboratórios de Informática I",
+        "acron": "LI1"
+      },
+      {
+        "nome": "Sistemas de Computação",
+        "acron": "SC"
+      },
+      {
+        "nome": "Análise",
+        "acron": "ANALISE"
+      },
+      {
+        "nome": "Tópicos de Física Moderna",
+        "acron": "TFM"
+      },
+      {
+        "nome": "Lógica EI",
+        "acron": "Log"
+      },
+      {
+        "nome": "Programação Imperativa",
+        "acron": "PI"
+      },
+      {
+        "nome": "Laboratórios de Informática II",
+        "acron": "LI2"
+      },
+      {
+        "nome": "Introdução aos Sistemas Dinâmicos",
+        "acron": "ISD"
+      },
+      {
+        "nome": "Estatística Aplicada",
+        "acron": "EA"
+      },
+      {
+        "nome": "Engenharia Económica",
+        "acron": "EE"
+      },
+      {
+        "nome": "Arquitetura de Computadores",
+        "acron": "AC"
+      },
+      {
+        "nome": "Comunicação de Dados",
+        "acron": "CD"
+      },
+      {
+        "nome": "Algoritmos e Complexidade",
+        "acron": "ALG"
+      },
+      {
+        "nome": "Sistemas Operativos",
+        "acron": "SO"
+      },
+      {
+        "nome": "Programação Orientada aos Objetos",
+        "acron": "POO"
+      },
+      {
+        "nome": "Eletromagnetismo EE",
+        "acron": "EM"
+      },
+      {
+        "nome": "Cálculo de Programas",
+        "acron": "CalcProg"
+      },
+      {
+        "nome": "Laboratórios de Informática III",
+        "acron": "LI3"
+      },
+      {
+        "nome": "Bases de Dados",
+        "acron": "BD"
+      },
+      {
+        "nome": "Desenvolvimento de Sistemas de Software",
+        "acron": "DSS"
+      },
+      {
+        "nome": "Modelos Determinísticos de Investigação Operacional",
+        "acron": "MDIO"
+      },
+      {
+        "nome": "Sistemas Distribuídos",
+        "acron": "SD"
+      },
+      {
+        "nome": "Redes de Computadores",
+        "acron": "RC"
+      },
+      {
+        "nome": "Métodos Numéricos e Otimização não Linear",
+        "acron": "MNOnL"
+      },
+      {
+        "nome": "Sistemas de Representação de Conhecimento e Raciocínio",
+        "acron": "SRCR"
+      },
+      {
+        "nome": "Computação Gráfica",
+        "acron": "CG"
+      },
+      {
+        "nome": "Modelos Estocásticos de Investigação Operacional",
+        "acron": "MEIO"
+      },
+      {
+        "nome": "Comunicações por Computador",
+        "acron": "CC"
+      },
+      {
+        "nome": "Processamento de Linguagens",
+        "acron": "PL"
+      },
+      {
+        "nome": "Laboratórios de Informática IV",
+        "acron": "LI4"
+      }
+  ]
+
