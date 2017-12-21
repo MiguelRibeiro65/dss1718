@@ -9,9 +9,15 @@ public class Docente extends Utilizador{
     public Docente(String numero, String nome, String email,String password) {
         super(numero,nome,email,password);
    }
+    
 
     public Docente(Docente a){
         super(a);
+    }
+    public String getNumero(){
+    Docente p = this;
+    Utilizador c = (Docente) p;
+    return c.numero; 
     }
 
     public Docente clone() {

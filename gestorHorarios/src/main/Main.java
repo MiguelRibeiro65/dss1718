@@ -4,9 +4,11 @@
  */
 package main;
 
+import java.io.FileNotFoundException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import main.business.GestorTurnos;
+import main.data.Parserino;
 import main.presentation.IniciarSessao;
 //import main.presentation.MainWindow;
 
@@ -16,11 +18,11 @@ import main.presentation.IniciarSessao;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         GestorTurnos sgt = new GestorTurnos();
-        JFrame j = new IniciarSessao(sgt);
+       // JFrame j = new IniciarSessao(sgt);
        // MainWindow mw = new MainWindow(sgt);
-        
-         j.setVisible(true);
+       new Parserino(sgt);
+        // j.setVisible(true);
     }
 }

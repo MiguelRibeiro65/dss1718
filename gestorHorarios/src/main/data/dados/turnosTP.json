@@ -1,0 +1,1345 @@
+[
+        {
+        "id":"SDC-PSD-P1",
+        "idUC":"SDC-PSD",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b41"
+        },
+        {
+        "id":"SDC-SSI-P1",
+        "idUC":"SDC-SSI",
+        "dia":"Terça-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b41"
+        },
+        {
+        "id":"EA-ICD-P1",
+        "idUC":"EA-ICD",
+        "dia":"Terça-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b42"
+        },
+        {
+        "id":"EA-ABD-P1",
+        "idUC":"EA-ABD",
+        "dia":"Terça-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b42"
+        },
+        {
+        "id":"ESS-ER-P1",
+        "idUC":"ESS-ER",
+        "dia":"Sexta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b43"
+        },
+        {
+        "id":"ESS-AS-P1",
+        "idUC":"ESS-AS",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b43"
+        },
+        {
+        "id":"CPD-AA-P1",
+        "idUC":"CPD-AA",
+        "dia":"Terça-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b44"
+        },
+        {
+        "id":"CPD-PCP-P1",
+        "idUC":"CPD-PCP",
+        "dia":"Terça-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b44"
+        },
+        {
+        "id":"CG-VII-P1",
+        "idUC":"CG-VII",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b45"
+        },
+        {
+        "id":"CG-VC-P1",
+        "idUC":"CG-VC",
+        "dia":"Quinta-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b45"
+        },
+        {
+        "id":"ERS-TPI-P1",
+        "idUC":"ERS-TPI",
+        "dia":"Sexta-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b46"
+        },
+        {
+        "id":"ERS-GR-P1",
+        "idUC":"ERS-GR",
+        "dia":"Quinta-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b46"
+        },
+        {
+        "id":"BIO-AASB-P1",
+        "idUC":"BIO-AASB",
+        "dia":"Sexta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b47"
+        },
+        {
+        "id":"BIO-LB-P1",
+        "idUC":"BIO-LB",
+        "dia":"Sexta-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b47"
+        },
+        {
+        "id":"SI-AI-P1",
+        "idUC":"SI-AI",
+        "dia":"Segunda-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b48"
+        },
+        {
+        "id":"SI-AEC-P1",
+        "idUC":"SI-AEC",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b48"
+        },
+        {
+        "id":"MFES-EM-P1",
+        "idUC":"MFES-EM",
+        "dia":"Quinta-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b49"
+        },
+        {
+        "id":"MFES-ATS-P1",
+        "idUC":"MFES-ATS",
+        "dia":"Terça-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b49"
+        },
+    		{
+        "id":"PC-GCS-P1",
+        "idUC":"PCS-GCS",
+        "dia":"Segunda-feira",
+        "inicio":"10:00:00",
+        "fim":"12:00:00",
+        "capacidade": 50,
+        "docente": "b50"
+        },
+		    {
+        "id":"PC-PRI-P1",
+        "idUC":"PCS-PRI",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b50"
+        },
+        {
+      "id":"MD-P1",
+      "idUC":"MD",
+      "dia":"Terça-Feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b1"
+    },
+    {
+      "id":"VC-P1",
+      "idUC":"VC",
+      "dia":"Quinta-Feira",
+      "inicio":"15:00:00",
+      "fim":"17:00:00",
+      "capacidade": 50,
+      "docente": "b2"
+    
+    },
+    {
+      "id":"CP-P1",
+      "idUC":"CP",
+      "dia":"Quarta-Feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b3"
+    },
+    {
+      "id":"SSI-P1",
+      "idUC":"SSI",
+      "dia":"Terça-Feira",
+      "inicio":"15:00:00",
+      "fim":"17:00:00",
+      "capacidade": 50,
+      "docente": "b4"
+    
+    },
+    {
+      "id":"PDSJ-P1",
+      "idUC":"PDSJ",
+      "dia":"Quarta-Feira",
+      "inicio":"9:00:00",
+      "fim":"11:00:00",
+      "capacidade": 50,
+      "docente": "b5"
+    
+    },
+    {
+      "id":"AEBD-P1",
+      "idUC":"AEBD",
+      "dia":"Terça-Feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b6"
+    },
+    { 
+      "id":"ER-P1",
+      "idUC":"ER",
+      "dia":"Quinta-feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b7"
+    
+    },
+    {
+      "id":"GR-P1",
+      "idUC":"GR",
+      "dia":"Quinta-feira",
+      "inicio":"15:00:00",
+      "fim":"17:00:00",
+      "capacidade": 50,
+      "docente": "b8"
+    
+    },
+    {
+      "id":"ATS-P1",
+      "idUC":"ATS",
+      "dia":"Terça-feira",
+      "inicio":"15:00:00",
+      "fim":"17:00:00",
+      "capacidade": 50,
+      "docente": "b9"
+    },
+    {
+      "id":"SPN-P1",
+      "idUC":"SPN",
+      "dia":"Sexta-feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b10"
+    
+    },
+    {
+      "id":"SDB-P1",
+      "idUC":"SDB",
+      "dia":"Quarta-feira",
+      "inicio":"10:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b11"
+    },
+    {
+      "id":"IATA-P1",
+      "idUC":"IATA",
+      "dia":"Quinta-feira",
+      "inicio":"9:00:00",
+      "fim":"12:00:00",
+      "capacidade": 50,
+      "docente": "b12"
+    
+    },
+    {
+        "id":"AL-P1-A",
+        "idUC":"AL",
+        "dia":"Terça-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b13"
+      },
+      {
+        "id":"AL-P3-A",
+        "idUC":"AL",
+        "dia":"Terça-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b14"
+      },
+      {
+        "id":"AL-P2-A",
+        "idUC":"AL",
+        "dia":"Terça-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b13"
+      },
+      {
+        "id":"AL-P4-A",
+        "idUC":"AL",
+        "dia":"Terça-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b14"
+      },
+      {
+        "id":"AL-P1-B",
+        "idUC":"AL",
+        "dia":"Quinta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b13"
+      },
+      {
+        "id":"AL-P3-B",
+        "idUC":"AL",
+        "dia":"Quinta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b14"
+      },
+      {
+        "id":"AL-P2-B",
+        "idUC":"AL",
+        "dia":"Quinta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b13"
+      },
+      {
+        "id":"AL-P4-B",
+        "idUC":"AL",
+        "dia":"Quinta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b14"
+      },
+      {
+        "id":"CALC-P1-A",
+        "idUC":"CALC",
+        "dia":"Terça-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b15"
+      },
+      {
+        "id":"CALC-P2-A",
+        "idUC":"CALC",
+        "dia":"Terça-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+      {
+        "id":"CALC-P3-A",
+        "idUC":"CALC",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b15"
+      },
+      {
+        "id":"CALC-P4-A",
+        "idUC":"CALC",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+      {
+        "id":"CALC-P1-B",
+        "idUC":"CALC",
+        "dia":"Quinta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b15"
+      },
+      {
+        "id":"CALC-P2-B",
+        "idUC":"CALC",
+        "dia":"Quinta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+      {
+        "id":"CALC-P3-B",
+        "idUC":"CALC",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b15"
+      },
+      {
+        "id":"CALC-P4-B",
+        "idUC":"CALC",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+
+      {
+        "id":"CALC-P5-A",
+        "idUC":"CALC",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+
+      {
+        "id":"CALC-P5-B",
+        "idUC":"CALC",
+        "dia":"Sexta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b16"
+      },
+      {
+        "id":"TMD-P3-A",
+        "idUC":"TMD",
+        "dia":"Terça-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b17"
+      },
+      {
+        "id":"TMD-P4-A",
+        "idUC":"TMD",
+        "dia":"Terça-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b18"
+      },
+      {
+        "id":"TMD-P1-A",
+        "idUC":"TMD",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b17"
+      },
+      {
+        "id":"TMD-P2-A",
+        "idUC":"TMD",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b18"
+      },
+      {
+        "id":"TMD-P3-B",
+        "idUC":"TMD",
+        "dia":"Quinta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b17"
+      },
+      {
+        "id":"TMD-P4-B",
+        "idUC":"TMD",
+        "dia":"Quinta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b18"
+      },
+      {
+        "id":"TMD-P1-B",
+        "idUC":"TMD",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b17"
+      },
+      {
+        "id":"TMD-P2-B",
+        "idUC":"TMD",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b18"
+      },
+      {
+        "id":"PF-P5",
+        "idUC":"PF",
+        "dia":"Quarta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b19"
+      },
+      {
+        "id":"PF-P7",
+        "idUC":"PF",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b20"
+      },
+      {
+        "id":"PF-P3",
+        "idUC":"PF",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b19"
+      },
+      {
+        "id":"PF-P6",
+        "idUC":"PF",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b20"
+      },
+      {
+        "id":"PF-P1",
+        "idUC":"PF",
+        "dia":"Segunda-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b19"
+      },
+      {
+        "id":"PF-P2",
+        "idUC":"PF",
+        "dia":"Segunda-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b20"
+      },
+      {
+        "id":"PF-P4",
+        "idUC":"PF",
+        "dia":"Sexta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b19"
+      },
+      {
+        "id":"PF-P8",
+        "idUC":"PF",
+        "dia":"Sexta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b20"
+      },
+
+      {
+        "id":"EES-P7",
+        "idUC":"EES",
+        "dia":"Sexta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P6",
+        "idUC":"EES",
+        "dia":"Quarta-feira",
+        "inicio":"13:00:00",
+        "fim":"15:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P2",
+        "idUC":"EES",
+        "dia":"Sexta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P4",
+        "idUC":"EES",
+        "dia":"Sexta-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P3",
+        "idUC":"EES",
+        "dia":"Quarta-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P5",
+        "idUC":"EES",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"EES-P1",
+        "idUC":"EES",
+        "dia":"Segunda-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b21"
+      },
+      {
+        "id":"LI1-P3",
+        "idUC":"LI1",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b22"
+      },
+      {
+        "id":"LI1-P6",
+        "idUC":"LI1",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b23"
+      },
+      {
+        "id":"LI1-P7",
+        "idUC":"LI1",
+        "dia":"Segunda-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b22"
+      },
+      {
+        "id":"LI1-P1",
+        "idUC":"LI1",
+        "dia":"Segunda-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b23"
+      },
+      {
+        "id":"LI1-P4",
+        "idUC":"LI1",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b22"
+      },
+      {
+        "id":"LI1-P8",
+        "idUC":"LI1",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b23"
+      },
+      {
+        "id":"LI1-P5",
+        "idUC":"LI1",
+        "dia":"Sexta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b22"
+      },
+
+      {
+        "id":"LI1-P2",
+        "idUC":"LI1",
+        "dia":"Sexta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b23"
+      },
+      {
+        "id":"ISD-P3-A",
+        "idUC":"IDS",
+        "dia":"Terça-feira",
+        "inicio":"9:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"ISD-P2-A",
+        "idUC":"ISD",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"ISD-P1-A",
+        "idUC":"ISD",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"ISD-P3-B",
+        "idUC":"LI1",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"ISD-P1-B",
+        "idUC":"ISD",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"ISD-P2-B",
+        "idUC":"ISD",
+        "dia":"Sexta-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b24"
+      },
+      {
+        "id":"EA-P3",
+        "idUC":"EA",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b25"
+      },
+      {
+        "id":"EA-P1",
+        "idUC":"EA",
+        "dia":"Segunda-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b25"
+      },
+      {
+        "id":"EA-P2",
+        "idUC":"EA",
+        "dia":"Quinta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b26"
+      },
+      {
+        "id":"EA-P5",
+        "idUC":"EA",
+        "dia":"Quinta-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b26"
+      },
+      {
+        "id":"EA-P4",
+        "idUC":"EA",
+        "dia":"Quinta-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b25"
+      },
+      {
+        "id":"EE-P2",
+        "idUC":"EE",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b27"
+      },
+      {
+        "id":"EE-P1",
+        "idUC":"EE",
+        "dia":"Segunda-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b27"
+      },
+      {
+        "id":"EE-P3",
+        "idUC":"EE",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b27"
+      },
+      {
+        "id":"EE-P4",
+        "idUC":"EE",
+        "dia":"Quinta-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b27"
+      },
+      {
+        "id":"AC-P4",
+        "idUC":"AC",
+        "dia":"Terça-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"AC-P3",
+        "idUC":"AC",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"AC-P5",
+        "idUC":"AC",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"AC-P1",
+        "idUC":"AC",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"AC-P2",
+        "idUC":"AC",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"AC-P6",
+        "idUC":"AC",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b28"
+      },
+      {
+        "id":"CD-P1",
+        "idUC":"CD",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b29"
+      },
+      {
+        "id":"CD-P4",
+        "idUC":"CD",
+        "dia":"Quarta-feira",
+        "inicio":"11:00:00",
+        "fim":"13:00:00",
+        "capacidade": 50,
+        "docente": "b29"
+      },
+      {
+        "id":"CD-P3",
+        "idUC":"CD",
+        "dia":"Segunda-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b29"
+      },
+      {
+        "id":"CD-P2",
+        "idUC":"CD",
+        "dia":"Segunda-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b29"
+      },
+      {
+        "id":"ALG-P7",
+        "idUC":"ALG",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b30"
+      },
+      {
+        "id":"ALG-P1",
+        "idUC":"ALG",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b31"
+      },
+      {
+        "id":"ALG-P6",
+        "idUC":"ALG",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b32"
+      },
+      {
+        "id":"ALG-P4",
+        "idUC":"ALG",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b30"
+      },
+
+      {
+        "id":"ALG-P8",
+        "idUC":"ALG",
+        "dia":"Quinta-feira",
+        "inicio":"15:00:00",
+        "fim":"17:00:00",
+        "capacidade": 50,
+        "docente": "b31"
+      },
+
+      {
+        "id":"ALG-P3",
+        "idUC":"ALG",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b32"
+      },
+      {
+        "id":"ALG-P2",
+        "idUC":"ALG",
+        "dia":"Quinta-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b30"
+      },
+
+      {
+        "id":"ALG-P5",
+        "idUC":"ALG",
+        "dia":"Quinta-feira",
+        "inicio":"17:00:00",
+        "fim":"19:00:00",
+        "capacidade": 50,
+        "docente": "b31"
+      },
+      {
+        "id":"BD-P4",
+        "idUC":"BD",
+        "dia":"Segunda-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+      {
+        "id":"BD-P6",
+        "idUC":"BD",
+        "dia":"Terça-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+      {
+        "id":"BD-P1",
+        "idUC":"BD",
+        "dia":"Segunda-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+      {
+        "id":"BD-P2",
+        "idUC":"BD",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+
+      {
+        "id":"BD-P5",
+        "idUC":"BD",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+      {
+        "id":"BD-P3",
+        "idUC":"BD",
+        "dia":"Quinta-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b33"
+      },
+      {
+        "id":"DSS-P6",
+        "idUC":"DSS",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+      {
+        "id":"DSS-P1",
+        "idUC":"DSS",
+        "dia":"Quinta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+      {
+        "id":"DSS-P5",
+        "idUC":"DSS",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+      {
+        "id":"DSS-P4",
+        "idUC":"DSS",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+
+      {
+        "id":"DSS-P2",
+        "idUC":"DSS",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+      {
+        "id":"DSS-P3",
+        "idUC":"DSS",
+        "dia":"Quinta-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b34"
+      },
+      {
+        "id":"MDIO-P2",
+        "idUC":"MDIO",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b35"
+      },
+      {
+        "id":"MDIO-P4",
+        "idUC":"MDIO",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b36"
+      },
+      {
+        "id":"MDIO-P3",
+        "idUC":"MDIO",
+        "dia":"Quinta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b35"
+      },
+      {
+        "id":"MDIO-P1",
+        "idUC":"MDIO",
+        "dia":"Quinta-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b36"
+      },
+      {
+        "id":"SD-P1",
+        "idUC":"SD",
+        "dia":"Terça-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b37"
+      },
+      {
+        "id":"SD-P6",
+        "idUC":"SD",
+        "dia":"Terça-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b38"
+      },
+      {
+        "id":"SD-P2",
+        "idUC":"SD",
+        "dia":"Quinta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b37"
+      },
+      {
+        "id":"SD-P3",
+        "idUC":"SD",
+        "dia":"Segunda-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b38"
+      },
+
+      {
+        "id":"SD-P5",
+        "idUC":"SD",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b37"
+      },
+      {
+        "id":"SD-P4",
+        "idUC":"SD",
+        "dia":"Terça-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b38"
+      },
+      {
+        "id":"RC-P4",
+        "idUC":"RC",
+        "dia":"Segunda-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+      {
+        "id":"RC-P3",
+        "idUC":"RC",
+        "dia":"Terça-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+      {
+        "id":"RC-P6",
+        "idUC":"RC",
+        "dia":"Quinta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+      {
+        "id":"RC-P1",
+        "idUC":"RC",
+        "dia":"Segunda-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+
+      {
+        "id":"RC-P2",
+        "idUC":"RC",
+        "dia":"Segunda-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+      {
+        "id":"RC-P5",
+        "idUC":"RC",
+        "dia":"Segunda-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b39"
+      },
+      {
+        "id":"MNOnL-P5",
+        "idUC":"MNOnL",
+        "dia":"Segunda-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b40"
+      },
+      {
+        "id":"MNOnL-P1",
+        "idUC":"MNOnL",
+        "dia":"Quarta-feira",
+        "inicio":"09:00:00",
+        "fim":"11:00:00",
+        "capacidade": 50,
+        "docente": "b40"
+      },
+      {
+        "id":"MNOnL-P4",
+        "idUC":"MNOnL",
+        "dia":"Terça-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b40"
+      },
+      {
+        "id":"MNOnL-P3",
+        "idUC":"MNOnL",
+        "dia":"Sexta-feira",
+        "inicio":"14:00:00",
+        "fim":"16:00:00",
+        "capacidade": 50,
+        "docente": "b40"
+      },
+
+      {
+        "id":"MNOnL-P2",
+        "idUC":"MNOnL",
+        "dia":"Segunda-feira",
+        "inicio":"16:00:00",
+        "fim":"18:00:00",
+        "capacidade": 50,
+        "docente": "b40"
+      }
+  ]
+
