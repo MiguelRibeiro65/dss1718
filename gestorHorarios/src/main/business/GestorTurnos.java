@@ -1,6 +1,7 @@
 package main.business;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,6 +16,7 @@ import main.data.AlunoDAO;
 import main.data.AulaDAO;
 import main.data.CadeiraDAO;
 import main.data.DirecaoCursoDAO;
+import main.data.ListasUC;
 import main.data.TurnoDAO;
 import main.data.TrocaDAO;
 
@@ -98,6 +100,10 @@ public class GestorTurnos {
     public void adicionarAula(String data, String turno) {
         Aula a = new Aula(data,turno);
         aulasDAO.put(null,a);
+    }
+    
+    public void adicionarAlunosUC(ListasUC a) throws SQLException, ClassNotFoundException{
+        cadeirasDAO.putListasUC(a);
     }
     
     public Map<String,String> getTurnosAluno() {

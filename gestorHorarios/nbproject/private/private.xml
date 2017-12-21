@@ -3,25 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/AdicionarTroca.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Turno.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/TrocaDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/Parserino.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/TurnoDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/AlunoDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/AulaDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/TurnoT.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/AdicionarUC.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/CadeiraDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/ConsultarTurnos.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/FrameAluno.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Docente.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/IniciarSessao.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Aula.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/GestorTurnos.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/Main.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/Connect.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/TurnoTP.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/data/Parserino.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/business/GestorTurnos.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/data/ListasUC.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/data/CadeiraDAO.java</file>
         </group>
     </open-files>
 </project-private>

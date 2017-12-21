@@ -5,6 +5,7 @@
 package main;
 
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import main.business.GestorTurnos;
@@ -18,12 +19,12 @@ import main.presentation.IniciarSessao;
  */
 public class Main {
     
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, SQLException, ClassNotFoundException {
         GestorTurnos sgt = new GestorTurnos();
-        //new Parserino(sgt);
-        JFrame j = new IniciarSessao(sgt);
+        new Parserino(sgt);
+        //JFrame j = new IniciarSessao(sgt);
         //MainWindow mw = new MainWindow(sgt);
        
-        j.setVisible(true);
+        //j.setVisible(true);
     }
 }
