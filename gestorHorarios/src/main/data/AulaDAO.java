@@ -111,7 +111,7 @@ public class AulaDAO implements Map<String,Aula>{
                    ResultSet rs1 = stm.executeQuery();
                    if (rs1.isBeforeFirst())
                    while(rs1.next()) presencas.add(rs1.getString("Aluno_numero"));
-                   al = new Aula(Date.valueOf(rs.getString("data")),rs.getString("Turno_idTurno")); 
+                   al = new Aula(rs.getString("data"),rs.getString("Turno_idTurno")); 
         }
                     
         } catch (Exception e) {
@@ -250,7 +250,7 @@ public class AulaDAO implements Map<String,Aula>{
                 PreparedStatement stm1 = conn.prepareStatement("SELECT * FROM Aluno_has_Aula WHERE Aula_id=?");
                 stm1.setInt(1,rs.getInt("id"));
                 ResultSet rs1 = stm1.executeQuery();
-                Aula a = new Aula(Date.valueOf(rs.getString("data")),String.valueOf(rs.getInt("Turno_idTurno")));
+                Aula a = new Aula(rs.getString("data"),String.valueOf(rs.getInt("Turno_idTurno")));
                 col.add(a);
                 if(rs1.next()){
                 ArrayList<String> presencas = new ArrayList<>();

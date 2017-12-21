@@ -1,4 +1,4 @@
-[
+﻿[
         {
         "id":"SDC-PSD-P1",
         "idUC":"SDC-PSD",
@@ -162,8 +162,8 @@
         "docente": "b49"
         },
     		{
-        "id":"PC-GCS-P1",
-        "idUC":"PCS-GCS",
+        "id":"PLC-GCS-P1",
+        "idUC":"PLC-GCS",
         "dia":"Segunda-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
@@ -171,8 +171,8 @@
         "docente": "b50"
         },
 		    {
-        "id":"PC-PRI-P1",
-        "idUC":"PCS-PRI",
+        "id":"PLC-PRI-P1",
+        "idUC":"PLC-PRI",
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
@@ -266,8 +266,8 @@
       "docente": "b9"
     },
     {
-      "id":"SPN-P1",
-      "idUC":"SPN",
+      "id":"SPLN-P1",
+      "idUC":"SPLN",
       "dia":"Sexta-feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
@@ -741,7 +741,7 @@
       },
       {
         "id":"ISD-P3-A",
-        "idUC":"IDS",
+        "idUC":"ISD",
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
@@ -768,7 +768,7 @@
       },
       {
         "id":"ISD-P3-B",
-        "idUC":"LI1",
+        "idUC":"ISD",
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",

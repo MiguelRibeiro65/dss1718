@@ -103,7 +103,7 @@ public class AdicionarUC extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nome = jTextField1.getText();
         String acron = jTextField2.getText();
-        gestorTurnos.adicionarCadeira(nome,acron);    
+        gestorTurnos.adicionarCadeira(acron,nome);    
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

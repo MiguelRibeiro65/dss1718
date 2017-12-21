@@ -1,4 +1,4 @@
-[
+﻿[
   
         {
         "id":"SDC-PSD-T1",
@@ -164,7 +164,7 @@
         },
 		{
         "id":"PLC-GCS-T1",
-        "idUC":"PLCS-GCS",
+        "idUC":"PLC-GCS",
         "dia":"Segunda-feira",
         "inicio":"09:00:00",
         "fim":"10:00:00",
@@ -173,7 +173,7 @@
         },
 		{
         "id":"PLC-PRI-T1",
-        "idUC":"PLCS-PRI",
+        "idUC":"PLC-PRI",
         "dia":"Segunda-feira",
         "inicio":"14:00:00",
         "fim":"15:00:00",

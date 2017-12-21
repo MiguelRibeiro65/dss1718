@@ -14,11 +14,7 @@ public class Docente extends Utilizador{
     public Docente(Docente a){
         super(a);
     }
-    public String getNumero(){
-    Docente p = this;
-    Utilizador c = (Docente) p;
-    return c.numero; 
-    }
+    
 
     public Docente clone() {
         return new Docente(this);
