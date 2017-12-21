@@ -6,7 +6,7 @@
 package main.business;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 
 /**
  *
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class Aula {
     private int id;
-    private Date data;
+    private String data;
     private String idTurno;
     private ArrayList<String> presencas;
     
@@ -25,7 +25,7 @@ public class Aula {
         presencas=null;
     }
     
-    public Aula(Date data, String idTurno) {
+    public Aula(String data, String idTurno) {
         this.data = data;
         this.idTurno = idTurno;
     }
@@ -34,7 +34,7 @@ public class Aula {
         return this.id;
     }
     
-    public Date getData() {
+    public String getData() {
         return this.data;
     }
     
@@ -50,7 +50,7 @@ public class Aula {
         this.id = id;
     }
     
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data=data;
     }
     

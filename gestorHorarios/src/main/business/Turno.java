@@ -6,6 +6,7 @@
 package main.business;
 
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Turno {
@@ -90,11 +91,11 @@ public class Turno {
         String i;
         String f;
         for(Turno t : horario) {
-            if (inicio.isAfter(t.getInicio())) i = inicio;
+            if (LocalTime.parse(this.inicio).isAfter(LocalTime.parse(t.getInicio()))) i = inicio;
             else i = t.getInicio();
-            if(fim.isBefore(t.getFim())) f = fim;
+            if(LocalTime.parse(this.fim).isBefore(LocalTime.parse(t.getFim()))) f = fim;
             else f = t.getFim();
-            if(i.isBefore(f)) return 1;
+            if(LocalTime.parse(i).isBefore(LocalTime.parse(f))) return 1;
         }
         return 0;
     }
