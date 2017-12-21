@@ -134,4 +134,8 @@ public class GestorTurnos {
                                     .collect(Collectors.toList());
     }
 
+    public List<Cadeira> getCadeiras() {
+        return cadeirasDAO.values().stream().collect(Collectors.toList());
+    }
+
 }//.collect(Collectors.toList())

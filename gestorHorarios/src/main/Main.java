@@ -20,7 +20,7 @@ public class Main {
     
     public static void main(String[] args) throws FileNotFoundException {
         GestorTurnos sgt = new GestorTurnos();
-        new Parserino(sgt);
+        //new Parserino(sgt);
         JFrame j = new IniciarSessao(sgt);
         //MainWindow mw = new MainWindow(sgt);
        
