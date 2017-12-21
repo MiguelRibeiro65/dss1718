@@ -8,6 +8,7 @@ package main.data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -163,7 +164,33 @@ public class CadeiraDAO implements Map<String,Cadeira> {
     public Set<String> keySet() {
         throw new NullPointerException("Not implemented!");
     }
-    
+    public ListasUC putListasUC(ListasUC a) throws SQLException, ClassNotFoundException{
+            ListasUC c = null;
+            ArrayList<String> alunos = new ArrayList<String>();
+            alunos = a.getAlunos();
+            
+            for(String aluno : alunos){
+            
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO aluno_has_uc\n" +
+                "VALUES (?, ?)\n" +
+                "ON DUPLICATE KEY UPDATE aluno_numero=VALUES(aluno_numero) uc_acron=VALUES(uc_acron)", Statement.RETURN_GENERATED_KEYS);
+            stm.setString(1, aluno);
+            stm.setString(2, a.getAcron());
+            stm.executeUpdate();
+            
+            
+            
+            ResultSet rs = stm.getGeneratedKeys();
+            if(rs.next()) {
+                String newId = rs.getString(1);
+                a.setAcron(newId);
+            }
+            }
+            c = a;
+            
+        return c;
+    }
     /**
      * Insere uma cadeira na base de dados
      * @param key

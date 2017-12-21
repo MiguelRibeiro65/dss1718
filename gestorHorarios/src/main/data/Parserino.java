@@ -11,6 +11,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.SQLException;
 import main.business.*;
 /**
  *
@@ -20,13 +21,15 @@ public class Parserino {
    private final static String path = "src//main//data//dados//ucsDC.json";
    private final static String pathtp = "src//main//data//dados//turnosTP.json";
    private final static String patht ="src//main//data//dados//turnosT.json";
+   private final static String pathalunosUC ="src//main//data//dados//listaAlunos.json";
    private GestorTurnos gst;
    
-   public Parserino(GestorTurnos a) throws FileNotFoundException{
+   public Parserino(GestorTurnos a) throws FileNotFoundException, SQLException, ClassNotFoundException{
        gst = a;
        getUCS();
        getTurnosTP();
        getTurnosT();
+       alunosParaUC();
    }
    
    public void getUCS() throws FileNotFoundException{
@@ -61,6 +64,18 @@ public class Parserino {
         ArrayList<Turno> ts = gson.fromJson(reader,turnost);
         for(Turno a : ts){
         gst.adicionarTurno(a);
+        }
+    }
+   public void alunosParaUC() throws FileNotFoundException, SQLException, ClassNotFoundException{
+        JsonReader reader = new JsonReader(new FileReader(pathalunosUC));
+       
+        Gson gson = new Gson();
+        Type al = new TypeToken<ArrayList<ListasUC>>(){}.getType();
+        
+        ArrayList<ListasUC> alunosUcs = gson.fromJson(reader,al);
+        
+        for(ListasUC a : alunosUcs){
+        gst.adicionarAlunosUC(a);
         }
     }
 }
