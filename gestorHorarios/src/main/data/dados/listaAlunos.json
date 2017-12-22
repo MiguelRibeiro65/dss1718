@@ -921,25 +921,25 @@
 {"acron":"SDB", "aluno": "a00152"},
 {"acron":"SDB", "aluno": "a00153"},
 
-{"acron":"CALC", "aluno": "a00154"},
-{"acron":"PF", "aluno": "a00154"},
-{"acron":"AC", "aluno": "a00154"},
-{"acron":"ISD", "aluno": "a00154"},
-{"acron":"CD", "aluno": "a00154"},
-{"acron":"ALG", "aluno": "a00154"},
-{"acron":"EA", "aluno": "a00154"},
-{"acron":"EE", "aluno": "a00154"},
+{"acron":"CALC", "aluno": "a00166"},
+{"acron":"PF", "aluno": "a00166"},
+{"acron":"AC", "aluno": "a00166"},
+{"acron":"ISD", "aluno": "a0016"},
+{"acron":"CD", "aluno": "a00166"},
+{"acron":"ALG", "aluno": "a00166"},
+{"acron":"EA", "aluno": "a00166"},
+{"acron":"EE", "aluno": "a00166"},
 
-{"acron":"AC", "aluno": "a00155"},
-{"acron":"ISD", "aluno": "a00155"},
-{"acron":"ALG", "aluno": "a00155"},
-{"acron":"PF", "aluno": "a00155"},
+{"acron":"AC", "aluno": "a00167"},
+{"acron":"ISD", "aluno": "a00167"},
+{"acron":"ALG", "aluno": "a00167"},
+{"acron":"PF", "aluno": "a00167"},
 
-{"acron":"CPD-PCP", "aluno": "a00156"}
-{"acron":"CPD-AA", "aluno": "a00156"}
-{"acron":"GR", "aluno": "a00156"}
-{"acron":"ER", "aluno": "a00156"}
-{"acron":"SD", "aluno": "a00156"}
+{"acron":"CPD-PCP", "aluno": "a00168"},
+{"acron":"CPD-AA", "aluno": "a00168"},
+{"acron":"GR", "aluno": "a00168"},
+{"acron":"ER", "aluno": "a00168"},
+{"acron":"SD", "aluno": "a00168"}
 
 ]
 

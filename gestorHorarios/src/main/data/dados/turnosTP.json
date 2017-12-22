@@ -448,9 +448,6 @@
         "docente": "b16"
       },
 
-<<<<<<< HEAD
-   
-=======
       {
         "id":"CALC-P5-A",
         "idUC":"CALC",
@@ -460,7 +457,6 @@
         "capacidade": 15,
         "docente": "b16"
       },
->>>>>>> fc9f96789be31d61dd778adf356a8e6529f75211
 
       {
         "id":"CALC-P5-B",
