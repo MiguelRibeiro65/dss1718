@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -36,7 +37,7 @@ public class GestorTurnos {
     private TurnoDAO turnosDAO;
     private TrocaDAO trocasDAO;
     private DirecaoCursoDAO direcaoCursoDAO;
-   
+    private Map<String,Turno> turnos;
     public GestorTurnos() {
         sessao = null; //deveria ser carregado da base de dados
         alunosDAO = new AlunoDAO();
@@ -46,6 +47,8 @@ public class GestorTurnos {
         turnosDAO = new TurnoDAO();
         trocasDAO = new TrocaDAO();
         direcaoCursoDAO = new DirecaoCursoDAO();
+        turnos = new HashMap<>();
+        turnosDAO.values().forEach(x -> turnos.put(x.getID(),x));
     }
 
     public Utilizador getSessao() {
@@ -158,70 +161,126 @@ public class GestorTurnos {
         List<String> t = new ArrayList<>();
         List<String> p = new ArrayList<>();
         int n;
-        for(Aluno a : alunosDAO.values()){
-            for(String uc : a.getUcs()){
-                for(String s: turnosDAO.getC(uc)){
-                if (verificarTipo(s)==1) t.add(s);
-                else p.add(s);
-            }
+        Collection<Turno> coll1 = turnosDAO.values();
+        Collection<Aluno> coll2 = alunosDAO.values();
+        
+        
+        for(Aluno a : coll2){
+            horario=a.getTurnos();
+            coll1.stream().filter(x -> a.getUcs().contains(x.getIdUC())).forEach((s) -> {
+                
+                    if (verificarTipo(s.getID())==1) t.add(s.getID());
+                    else if(verificarTipo(s.getID())==2) p.add(s.getID());
+                });
+            //deleteRep(t,horario,coll1);
             n=nTurnos(1,t);
-            atribuiTurnos(t,horario,n);
+            atribuiTurnos(t,horario,n,coll1);
+            t.clear();
             n+=nTurnos(2,p);
-            atribuiTurnos(p,horario,n);
-            }
-    
+            deleteRep(p,horario,coll1);
+//System.out.println(n);
+            atribuiTurnos(p,horario,n,coll1);
+            p.clear();
+            
+            
+            
+            
+            a.setTurnos(horario);
+            
+            alunosDAO.putTurnos(a);
         }
+        
     }
 
      
 
     
-    public void atribuiTurnos(List<String> turnos,List<String> horario,int n) {
+    public void atribuiTurnos(List<String> turnos,List<String> horario,int n,Collection<Turno> coll1) {
         if (horario.size()==n) return;
-        if (turnos.isEmpty()) {horario.clear();return;}
-
-        for (int i=0;i<turnos.size();i++) {
-                String t = turnos.get(i);
-                if(nAulas(t)==2) {
-                    horario.add(t);
-                    horario.add(turnos.get(i+1));
+        //System.out.println(horario.size());
+        System.out.println(n+"\n\n");
+        String t = turnos.get(0);
+        if(nAulas(t)==0||nAulas(t)==2) {
+                
+                horario.add(t);
+                horario.add(getOutro(t));
+                
+                turnos.remove(t);
+                turnos.remove(getOutro(t));
+                if (horario.size()==n||turnos.isEmpty()) return;
+                    
+                if(deleteRep(turnos,horario,coll1).isEmpty()) {
+                    horario.remove(t);
+                    horario.remove(getOutro(t));
+                    turnos.add(t);
+                    turnos.add(getOutro(t));
+                    atribuiTurnos(turnos,horario,n,coll1);
+                    return;
                 }
-                else {
-                    horario.add(t);
-                }
-                atribuiTurnos(deleteRep(turnos,horario),horario,n);
+                
             }
-        }
+                  
+            else {
+                horario.add(t);
+                turnos.remove(t);
+                if (horario.size()==n||turnos.isEmpty()) return;
+                if(deleteRep(turnos,horario,coll1).isEmpty()) {horario.remove(t);turnos.add(t);atribuiTurnos(turnos,horario,n,coll1);return;}//horario.clear();return;}
+            }
+            turnos=deleteRep(turnos,horario,coll1);
+            atribuiTurnos(turnos,horario,n,coll1);
+        
+    }
+        
     
     
     
     private int nAulas(String turno) {
         String[] split = turno.split("-");
-        for(String s:split) if(s.equals("A")) return 2;
+        for(String s:split) {if(s.equals("A")) return 2;if(s.equals("B")) return 0;}
         return 1;
     }
-    
-    public List<String> deleteRep(List<String> turnos,List<String> horario) {
-        List<String> turnosAux = new ArrayList<>();
-            
+    private int isAorB(String turno) {
+        String[] split = turno.split("-");
+        for(String s:split) {if(s.equals("A")) return 1;if(s.equals("B"))return 2;}
+        return 0;
+    }
+    public List<String> deleteRep(List<String> turnos,List<String> horario,Collection<Turno> coll1) {
+        List<String> turnosAux = new ArrayList<>(turnos);
+        int n=0;    
         for(String s1 : turnos) {
-            Turno t1 = turnosDAO.get(s1);
-            for(String s2 : horario){
-                Turno t2 = turnosDAO.get(s2);
-                if(t1.coincide(t2)==1) turnosAux.add(s1);
-            }
+            Turno t1 = coll1.stream().filter(x->x.getID().equals(s1)).findAny().get();
+            
+                for(String s2 : horario){
+                    //System.out.println(s2); 
+                    Turno t2 = coll1.stream().filter(x->x.getID().equals(s2)).findAny().get();
+                    
+                    if(t1.coincide(t2)==1 || (t1.getIdUC().equals(t2.getIdUC())&&verificarTipo(t1.getID())==verificarTipo(t2.getID()))){
+                        n=1;break;}
+                    }
+                
+                if (n==1) {
+                    turnosAux.remove(s1);
+                    n=0;
+                    turnosAux.remove(getOutro(s1));
+                        
+                        
+                }
         }
         return turnosAux;
     }
 
     private int verificarTipo(String turnoAtual) {
         String[] split = turnoAtual.split("-");
-        int n;
-        for(n=0;!split[n].isEmpty();n++){
-            if(temNumeros(split[n])) break;
+        int n,a=0;
+        n=split.length-1;
+        if(temNumeros(split[n]))a=1; 
+        else if(temNumeros(split[n-1])) {a=1;n-=1;}
+        
+        if(a==1){
+            if (split[n].startsWith("T")) return 1;
+            else if (split[n].startsWith("P")) return 2;
         }
-        if (split[n].startsWith("T")) return 1;
-        else return 2;
+        return 0;
     }
     
     private Boolean temNumeros(String arg) {
@@ -233,30 +292,45 @@ public class GestorTurnos {
     }
 
     private int nTurnos(int i, List<String> turnos) {
-            int n=0;
+            int n;
             int ret=0;
             String [] split;
-            if(n==1){
+            if(i==1){
                 for(String turno : turnos) {
                     split = turno.split("-");
-                    for(n=0;!split[n].isEmpty();n++){
+                    for(n=0;n<split.length;n++){
+                        
                         if(split[n].equals("T1")) {
-                            if(split[n+1].equals("A")) ret+=2;
-                            else ret+=1;
+                            ret+=nAulas(turno);
+                            
                         }
                     }
                 }
-            } else {
+            } else if(i==2){
                 for(String turno : turnos) {
                     split = turno.split("-");
-                    for(n=0;!split[n].isEmpty();n++){
+                    for(n=0;n<split.length;n++){
+                        
                         if(split[n].equals("P1")) {
-                            if(split[n+1].equals("A")) ret+=2;
-                            else ret+=1;
+                            ret+=nAulas(turno);
+                            
                         }
                     }
                 }
             }
             return ret;
     }
+    
+    private String getOutro(String t) {
+        String[] split = t.split("-");
+        String a = split[0];
+        int n;
+        for(n=1;n<split.length-1;n++) a+=("-"+split[n]);
+        if(split[n].equals("B")) a+="-A";
+        else if (split[n].equals("A")) a+="-B";
+        //System.out.println(a);
+        return a;
+    }
+    
+    
 }

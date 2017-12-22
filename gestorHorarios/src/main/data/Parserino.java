@@ -26,9 +26,9 @@ public class Parserino {
    
    public Parserino(GestorTurnos a) throws FileNotFoundException, SQLException, ClassNotFoundException{
        gst = a;
-       getUCS();
-       getTurnosTP();
-       getTurnosT();
+       //getUCS();
+       //getTurnosTP();
+       //getTurnosT();
        alunosParaUC();
    }
    

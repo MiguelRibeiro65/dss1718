@@ -85,7 +85,7 @@
         "id":"CG-VC-T1",
         "idUC":"CG-VC",
         "dia":"Quinta-feira",
-        "inicio":"9:00:00",
+        "inicio":"09:00:00",
         "fim":"10:00:00",
         "capacidade": 50,
         "docente": "b45"

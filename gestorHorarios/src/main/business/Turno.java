@@ -95,6 +95,9 @@ public class Turno {
     }
 
     public int coincide(Turno turno){
+        String dia1=this.dia;
+        String dia2=turno.getDia();
+        if(!dia1.equals(dia2)) return 0;
         LocalTime i;
         LocalTime f;
         LocalTime inicio1 = LocalTime.parse(this.inicio);

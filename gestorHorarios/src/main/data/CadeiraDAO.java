@@ -165,19 +165,22 @@ public class CadeiraDAO implements Map<String,Cadeira> {
         throw new NullPointerException("Not implemented!");
     }
     public ListasUC putListasUC(ListasUC a) throws SQLException, ClassNotFoundException{
-            ListasUC c = null;
             
-            conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO aluno_has_uc\n" +
-                "VALUES (?, ?)\n" +
-                "ON DUPLICATE KEY UPDATE aluno_numero=VALUES(aluno_numero) uc_acron=VALUES(uc_acron)", Statement.RETURN_GENERATED_KEYS);
-            stm.setString(1, a.getAluno());
-            stm.setString(2, a.getAcron());
-            stm.executeUpdate();
-            
-            c = a;
-            
-        return c;
+            try{
+                conn = Connect.connect();
+                PreparedStatement stm = conn.prepareStatement("INSERT INTO aluno_has_uc\n" +
+                    "VALUES (?, ?)\n", Statement.RETURN_GENERATED_KEYS);
+                stm.setString(1, a.getAluno());
+                stm.setString(2, a.getAcron());
+                stm.executeUpdate();
+                
+            } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return a;  
+        
     }
     /**
      * Insere uma cadeira na base de dados

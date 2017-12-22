@@ -1,3 +1,4 @@
+use bdhorarios;
 insert into aluno (numero, nome, email, estatuto, password) values ('a00001', 'Shari Pratty', 'spratty0@answers.com', 1, 'ptlXIJv9dy');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00002', 'Chan Lorey', 'clorey1@discovery.com', 0, 'KvC6TJAp');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00003', 'Myrwyn Neachell', 'mneachell2@tmall.com', 0, 'Vv1f4CwMaLI');

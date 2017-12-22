@@ -1,12 +1,13 @@
 package main.business;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno extends Utilizador {
 
     private int estatuto;
-    private ArrayList<String> ucs;
-    private ArrayList<String> turnos;
+    private List<String> ucs;
+    private List<String> turnos;
     
     public Aluno() {
         super(null,null,null,null);
@@ -22,19 +23,19 @@ public class Aluno extends Utilizador {
         this.turnos = new ArrayList<String>();
     }
 
-    public ArrayList<String> getUcs() {
+    public List<String> getUcs() {
         return ucs;
     }
 
-    public void setUcs(ArrayList<String> ucs) {
+    public void setUcs(List<String> ucs) {
         this.ucs = ucs;
     }
 
-    public ArrayList<String> getTurnos() {
+    public List<String> getTurnos() {
         return turnos;
     }
 
-    public void setTurnos(ArrayList<String> turnos) {
+    public void setTurnos(List<String> turnos) {
         this.turnos = turnos;
     }
 
