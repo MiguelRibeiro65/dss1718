@@ -1,4 +1,4 @@
-use bdhorarios;
+-- ALUNOS
 insert into aluno (numero, nome, email, estatuto, password) values ('a00001', 'Shari Pratty', 'spratty0@answers.com', 1, 'ptlXIJv9dy');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00002', 'Chan Lorey', 'clorey1@discovery.com', 0, 'KvC6TJAp');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00003', 'Myrwyn Neachell', 'mneachell2@tmall.com', 0, 'Vv1f4CwMaLI');
@@ -155,15 +155,15 @@ insert into aluno (numero, nome, email, estatuto, password) values ('a00153', 'C
 insert into aluno (numero, nome, email, estatuto, password) values ('a00154', 'Ly Vautre', 'lvautre49@mapy.cz', 0, 'jxKdC9pIOF0');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00155', 'Mireille Plunket', 'mplunket4a@bing.com', 1, 'P09O9inkQk');
 insert into aluno (numero, nome, email, estatuto, password) values ('a00156', 'Aarika Axe', 'aaxe4b@flickr.com', 0, 'LHGUHrda');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00157", 'Francene Cammack', 'fcammack0@imageshack.us', 0, 'B5KWESrW');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00158", 'Petronella Harcus', 'pharcus1@mapquest.com', 1, 'bI9EtAFfh4L');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00159", 'Alric MacCorkell', 'amaccorkell2@oakley.com', 0, 'jRs78EstX');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00160", 'Gannon Basill', 'gbasill3@mediafire.com', 0, 'CK9ZhC8w');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00161", 'Tori Presland', 'tpresland4@instagram.com', 1, 'CStvXoT');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00162", 'Jon Munnings', 'jmunnings5@narod.ru', 0, 'VOUoyD');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00163", 'Myer Readshall', 'mreadshall6@shareasale.com', 0, '2ApLG7CgTd');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00164", 'Marcellus Breem', 'mbreem7@nationalgeographic.com', 1, 'azCwgJsUE');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00165", 'Malcolm Wolfers', 'mwolfers8@loc.gov', 1, 'oV3eq6X');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00166", 'Erin Mara', 'emara9@4shared.com', 0, 'XLqnX9');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00167", 'Wynny Tallquist', 'wtallquista@freewebs.com', 0, 'KGPEiP8PU');
-insert into aluno (numero, nome, email, estatuto, password) values ("a00168", 'Mia Daveren', 'mdaverenb@jalbum.net', 0, 'VxqIgsUL');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00157', 'Francene Cammack', 'fcammack0@imageshack.us', 0, 'B5KWESrW');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00158', 'Petronella Harcus', 'pharcus1@mapquest.com', 1, 'bI9EtAFfh4L');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00159', 'Alric MacCorkell', 'amaccorkell2@oakley.com', 0, 'jRs78EstX');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00160', 'Gannon Basill', 'gbasill3@mediafire.com', 0, 'CK9ZhC8w');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00161', 'Tori Presland', 'tpresland4@instagram.com', 1, 'CStvXoT');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00162', 'Jon Munnings', 'jmunnings5@narod.ru', 0, 'VOUoyD');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00163', 'Myer Readshall', 'mreadshall6@shareasale.com', 0, '2ApLG7CgTd');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00164', 'Marcellus Breem', 'mbreem7@nationalgeographic.com', 1, 'azCwgJsUE');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00165', 'Malcolm Wolfers', 'mwolfers8@loc.gov', 1, 'oV3eq6X');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00166', 'Erin Mara', 'emara9@4shared.com', 0, 'XLqnX9');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00167', 'Wynny Tallquist', 'wtallquista@freewebs.com', 0, 'KGPEiP8PU');
+insert into aluno (numero, nome, email, estatuto, password) values ('a00168', 'Mia Daveren', 'mdaverenb@jalbum.net', 0, 'VxqIgsUL');
