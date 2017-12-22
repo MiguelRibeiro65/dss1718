@@ -5,7 +5,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b41"
         },
         {
@@ -14,7 +14,7 @@
         "dia":"Terça-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b41"
         },
         {
@@ -23,7 +23,7 @@
         "dia":"Terça-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b42"
         },
         {
@@ -32,7 +32,7 @@
         "dia":"Terça-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b42"
         },
         {
@@ -41,7 +41,7 @@
         "dia":"Sexta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b43"
         },
         {
@@ -50,7 +50,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b43"
         },
         {
@@ -59,7 +59,7 @@
         "dia":"Terça-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b44"
         },
         {
@@ -68,7 +68,7 @@
         "dia":"Terça-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b44"
         },
         {
@@ -77,7 +77,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b45"
         },
         {
@@ -86,7 +86,7 @@
         "dia":"Quinta-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b45"
         },
         {
@@ -95,7 +95,7 @@
         "dia":"Sexta-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b46"
         },
         {
@@ -104,7 +104,7 @@
         "dia":"Quinta-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b46"
         },
         {
@@ -113,7 +113,7 @@
         "dia":"Sexta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b47"
         },
         {
@@ -122,7 +122,7 @@
         "dia":"Sexta-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b47"
         },
         {
@@ -131,7 +131,7 @@
         "dia":"Segunda-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b48"
         },
         {
@@ -140,7 +140,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b48"
         },
         {
@@ -149,7 +149,7 @@
         "dia":"Quinta-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b49"
         },
         {
@@ -158,7 +158,7 @@
         "dia":"Terça-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b49"
         },
     		{
@@ -167,8 +167,8 @@
         "dia":"Segunda-feira",
         "inicio":"10:00:00",
         "fim":"12:00:00",
-        "capacidade": 50,
-        "docente": "b50"
+        "capacidade": 15,
+        "docente": "b15"
         },
 		    {
         "id":"PLC-PRI-P1",
@@ -176,8 +176,8 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
-        "docente": "b50"
+        "capacidade": 15,
+        "docente": "b15"
         },
         {
       "id":"MD-P1",
@@ -185,7 +185,7 @@
       "dia":"Terça-Feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b1"
     },
     {
@@ -194,7 +194,7 @@
       "dia":"Quinta-Feira",
       "inicio":"15:00:00",
       "fim":"17:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b2"
     
     },
@@ -204,7 +204,7 @@
       "dia":"Quarta-Feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b3"
     },
     {
@@ -213,7 +213,7 @@
       "dia":"Terça-Feira",
       "inicio":"15:00:00",
       "fim":"17:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b4"
     
     },
@@ -223,7 +223,7 @@
       "dia":"Quarta-Feira",
       "inicio":"9:00:00",
       "fim":"11:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b5"
     
     },
@@ -233,7 +233,7 @@
       "dia":"Terça-Feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b6"
     },
     { 
@@ -242,7 +242,7 @@
       "dia":"Quinta-feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b7"
     
     },
@@ -252,7 +252,7 @@
       "dia":"Quinta-feira",
       "inicio":"15:00:00",
       "fim":"17:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b8"
     
     },
@@ -262,7 +262,7 @@
       "dia":"Terça-feira",
       "inicio":"15:00:00",
       "fim":"17:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b9"
     },
     {
@@ -271,7 +271,7 @@
       "dia":"Sexta-feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b10"
     
     },
@@ -281,7 +281,7 @@
       "dia":"Quarta-feira",
       "inicio":"10:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b11"
     },
     {
@@ -290,7 +290,7 @@
       "dia":"Quinta-feira",
       "inicio":"9:00:00",
       "fim":"12:00:00",
-      "capacidade": 50,
+      "capacidade": 15,
       "docente": "b12"
     
     },
@@ -300,7 +300,7 @@
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b13"
       },
       {
@@ -309,7 +309,7 @@
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b14"
       },
       {
@@ -318,7 +318,7 @@
         "dia":"Terça-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b13"
       },
       {
@@ -327,7 +327,7 @@
         "dia":"Terça-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b14"
       },
       {
@@ -336,7 +336,7 @@
         "dia":"Quinta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b13"
       },
       {
@@ -345,7 +345,7 @@
         "dia":"Quinta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b14"
       },
       {
@@ -354,7 +354,7 @@
         "dia":"Quinta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b13"
       },
       {
@@ -363,7 +363,7 @@
         "dia":"Quinta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b14"
       },
       {
@@ -372,7 +372,7 @@
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b15"
       },
       {
@@ -381,7 +381,7 @@
         "dia":"Terça-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
       {
@@ -390,7 +390,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b15"
       },
       {
@@ -399,7 +399,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
       {
@@ -408,7 +408,7 @@
         "dia":"Quinta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b15"
       },
       {
@@ -417,7 +417,7 @@
         "dia":"Quinta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
       {
@@ -426,7 +426,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b15"
       },
       {
@@ -435,7 +435,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
 
@@ -445,7 +445,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
 
@@ -455,7 +455,7 @@
         "dia":"Sexta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b16"
       },
       {
@@ -464,7 +464,7 @@
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b17"
       },
       {
@@ -473,7 +473,7 @@
         "dia":"Terça-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b18"
       },
       {
@@ -482,7 +482,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b17"
       },
       {
@@ -491,7 +491,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b18"
       },
       {
@@ -500,7 +500,7 @@
         "dia":"Quinta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b17"
       },
       {
@@ -509,7 +509,7 @@
         "dia":"Quinta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b18"
       },
       {
@@ -518,7 +518,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b17"
       },
       {
@@ -527,7 +527,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b18"
       },
       {
@@ -536,7 +536,7 @@
         "dia":"Quarta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b19"
       },
       {
@@ -545,7 +545,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b20"
       },
       {
@@ -554,7 +554,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b19"
       },
       {
@@ -563,7 +563,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b20"
       },
       {
@@ -572,7 +572,7 @@
         "dia":"Segunda-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b19"
       },
       {
@@ -581,7 +581,7 @@
         "dia":"Segunda-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b20"
       },
       {
@@ -590,7 +590,7 @@
         "dia":"Sexta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b19"
       },
       {
@@ -599,7 +599,7 @@
         "dia":"Sexta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b20"
       },
 
@@ -609,7 +609,7 @@
         "dia":"Sexta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -618,7 +618,7 @@
         "dia":"Quarta-feira",
         "inicio":"13:00:00",
         "fim":"15:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -627,7 +627,7 @@
         "dia":"Sexta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -636,7 +636,7 @@
         "dia":"Sexta-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -645,7 +645,7 @@
         "dia":"Quarta-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -654,7 +654,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -663,7 +663,7 @@
         "dia":"Segunda-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b21"
       },
       {
@@ -672,7 +672,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b22"
       },
       {
@@ -681,7 +681,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b23"
       },
       {
@@ -690,7 +690,7 @@
         "dia":"Segunda-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b22"
       },
       {
@@ -699,7 +699,7 @@
         "dia":"Segunda-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b23"
       },
       {
@@ -708,7 +708,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b22"
       },
       {
@@ -717,7 +717,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b23"
       },
       {
@@ -726,7 +726,7 @@
         "dia":"Sexta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b22"
       },
 
@@ -736,7 +736,7 @@
         "dia":"Sexta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b23"
       },
       {
@@ -745,7 +745,7 @@
         "dia":"Terça-feira",
         "inicio":"9:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -754,7 +754,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -763,7 +763,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -772,7 +772,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -781,7 +781,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -790,7 +790,7 @@
         "dia":"Sexta-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b24"
       },
       {
@@ -799,7 +799,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b25"
       },
       {
@@ -808,7 +808,7 @@
         "dia":"Segunda-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b25"
       },
       {
@@ -817,7 +817,7 @@
         "dia":"Quinta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b26"
       },
       {
@@ -826,7 +826,7 @@
         "dia":"Quinta-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b26"
       },
       {
@@ -835,7 +835,7 @@
         "dia":"Quinta-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b25"
       },
       {
@@ -844,7 +844,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b27"
       },
       {
@@ -853,7 +853,7 @@
         "dia":"Segunda-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b27"
       },
       {
@@ -862,7 +862,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b27"
       },
       {
@@ -871,7 +871,7 @@
         "dia":"Quinta-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b27"
       },
       {
@@ -880,7 +880,7 @@
         "dia":"Terça-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -889,7 +889,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -898,7 +898,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -907,7 +907,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -916,7 +916,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -925,7 +925,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b28"
       },
       {
@@ -934,7 +934,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b29"
       },
       {
@@ -943,7 +943,7 @@
         "dia":"Quarta-feira",
         "inicio":"11:00:00",
         "fim":"13:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b29"
       },
       {
@@ -952,7 +952,7 @@
         "dia":"Segunda-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b29"
       },
       {
@@ -961,7 +961,7 @@
         "dia":"Segunda-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b29"
       },
       {
@@ -970,7 +970,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b30"
       },
       {
@@ -979,7 +979,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b31"
       },
       {
@@ -988,7 +988,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b32"
       },
       {
@@ -997,7 +997,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b30"
       },
 
@@ -1007,7 +1007,7 @@
         "dia":"Quinta-feira",
         "inicio":"15:00:00",
         "fim":"17:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b31"
       },
 
@@ -1017,7 +1017,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b32"
       },
       {
@@ -1026,7 +1026,7 @@
         "dia":"Quinta-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b30"
       },
 
@@ -1036,7 +1036,7 @@
         "dia":"Quinta-feira",
         "inicio":"17:00:00",
         "fim":"19:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b31"
       },
       {
@@ -1045,7 +1045,7 @@
         "dia":"Segunda-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
       {
@@ -1054,7 +1054,7 @@
         "dia":"Terça-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
       {
@@ -1063,7 +1063,7 @@
         "dia":"Segunda-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
       {
@@ -1072,7 +1072,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
 
@@ -1082,7 +1082,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
       {
@@ -1091,7 +1091,7 @@
         "dia":"Quinta-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b33"
       },
       {
@@ -1100,7 +1100,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
       {
@@ -1109,7 +1109,7 @@
         "dia":"Quinta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
       {
@@ -1118,7 +1118,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
       {
@@ -1127,7 +1127,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
 
@@ -1137,7 +1137,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
       {
@@ -1146,7 +1146,7 @@
         "dia":"Quinta-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b34"
       },
       {
@@ -1155,7 +1155,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b35"
       },
       {
@@ -1164,7 +1164,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b36"
       },
       {
@@ -1173,7 +1173,7 @@
         "dia":"Quinta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b35"
       },
       {
@@ -1182,7 +1182,7 @@
         "dia":"Quinta-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b36"
       },
       {
@@ -1191,7 +1191,7 @@
         "dia":"Terça-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b37"
       },
       {
@@ -1200,7 +1200,7 @@
         "dia":"Terça-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b38"
       },
       {
@@ -1209,7 +1209,7 @@
         "dia":"Quinta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b37"
       },
       {
@@ -1218,7 +1218,7 @@
         "dia":"Segunda-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b38"
       },
 
@@ -1228,7 +1228,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b37"
       },
       {
@@ -1237,7 +1237,7 @@
         "dia":"Terça-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b38"
       },
       {
@@ -1246,7 +1246,7 @@
         "dia":"Segunda-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
       {
@@ -1255,7 +1255,7 @@
         "dia":"Terça-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
       {
@@ -1264,7 +1264,7 @@
         "dia":"Quinta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
       {
@@ -1273,7 +1273,7 @@
         "dia":"Segunda-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
 
@@ -1283,7 +1283,7 @@
         "dia":"Segunda-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
       {
@@ -1292,7 +1292,7 @@
         "dia":"Segunda-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b39"
       },
       {
@@ -1301,7 +1301,7 @@
         "dia":"Segunda-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b40"
       },
       {
@@ -1310,7 +1310,7 @@
         "dia":"Quarta-feira",
         "inicio":"09:00:00",
         "fim":"11:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b40"
       },
       {
@@ -1319,7 +1319,7 @@
         "dia":"Terça-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b40"
       },
       {
@@ -1328,7 +1328,7 @@
         "dia":"Sexta-feira",
         "inicio":"14:00:00",
         "fim":"16:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b40"
       },
 
@@ -1338,7 +1338,7 @@
         "dia":"Segunda-feira",
         "inicio":"16:00:00",
         "fim":"18:00:00",
-        "capacidade": 50,
+        "capacidade": 15,
         "docente": "b40"
       }
   ]
