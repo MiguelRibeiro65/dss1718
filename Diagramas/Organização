@@ -32,34 +32,39 @@ Sequência Sub-Sistema (Utilizador, Interface, Facede(Gestor de Turnos)
 Podemos fazer
 -------------------------------------------------------
 
-Autenticação: 
+User -Autenticação: 
 
-Terminar sessão:
+     -Terminar sessão:
 
-Adicionar Aluno && Adicionar Docente (Registo) :
+Direção de Curso -Adicionar Aluno && Adicionar Docente (Registo) :
 
-Adicionar UC:
+	         -Adicionar UC:
 
-Gerar Horário:
+		 -Gerar Horário:
 
-Adicionar Turno:
+		 -Adicionar Turno:
+ 
 
-Editar Turno:
+		 -Apagar Turno:
 
-Apagar Turno:
 
-Adicionar aula:
+Docente -Adicionar aula:
 
-Consultar Turnos:
 
-Pedir Troca:
 
-Remover Pedido:
+Aluno -Consultar Turnos:
+
+      -Pedir Troca:
+
+      -Remover Pedido:
 
 
 
 -----------------------------------------
-
+Implementação
+ -Gerar Horário
+ -Adicionar Aula
+ -Consultar Turnos
 
 
 
