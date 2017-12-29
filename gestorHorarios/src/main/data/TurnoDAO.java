@@ -383,10 +383,20 @@ private Connection conn;
         return false;
     } 
 
-   
+    public Map<String,String> getTurnosDocente(String numero) {
+        Map<String,String> turnos = new HashMap<>();
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM turno WHERE Docente_id=?");
+            stm.setString(1,numero);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()) {
+                turnos.put(rs.getString("idTurno"),rs.getString("uc_acron"));
+            }
+        } catch (Exception e) {;}
+        return turnos;   
     
-    
+    }
+
 }
-
-
    

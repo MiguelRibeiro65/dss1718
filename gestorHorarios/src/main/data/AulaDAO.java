@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import main.business.Aluno;
@@ -105,13 +106,14 @@ public class AulaDAO implements Map<String,Aula>{
             stm.setString(1,(String)key);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
-                   ArrayList<String> presencas = new ArrayList<>();
+                   List<String> presencas = new ArrayList<>();
                    stm = conn.prepareStatement("SELECT * FROM Aluno_has_Aula WHERE Aula_id=?");
                    stm.setString(1,(String)key);
                    ResultSet rs1 = stm.executeQuery();
                    if (rs1.isBeforeFirst())
                    while(rs1.next()) presencas.add(rs1.getString("Aluno_numero"));
-                   al = new Aula(rs.getString("data"),rs.getString("Turno_idTurno")); 
+                   al = new Aula(rs.getString("data"),rs.getString("Turno_idTurno"));
+                   al.setPresencas(presencas);
         }
                     
         } catch (Exception e) {
@@ -153,8 +155,8 @@ public class AulaDAO implements Map<String,Aula>{
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT INTO aula(data,Turno_idTurno)\n" +
-                "VALUES (?, ?)\n");
-            stm.setString(1, value.getData().toString());
+                "VALUES (?, ?)\n", Statement.RETURN_GENERATED_KEYS);
+            stm.setString(1, value.getData());
             stm.setString(2, value.getIdTurno());
             stm.executeUpdate();
             ResultSet rs = stm.getGeneratedKeys();
@@ -269,6 +271,16 @@ public class AulaDAO implements Map<String,Aula>{
         }
         return col;
     }
+
+    public void verificarFaltas(Aula a) {
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM aula\n"+"INNER JOIN Aluno_has_aula\n"+"ON Turno_idTurno = \"?\"");
+            stm.setString(1,a.getIdTurno());
+            ResultSet rs = stm.executeQuery();
+        } catch(Exception e) {
+            
+        }aluno_has_aula.Aluno_numero=\"?\" AND 
     
 }
 

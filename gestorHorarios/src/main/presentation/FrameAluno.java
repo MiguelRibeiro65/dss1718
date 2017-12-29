@@ -16,12 +16,14 @@ import main.business.Utilizador;
 public class FrameAluno extends javax.swing.JFrame {
     
     GestorTurnos gestorTurnos;
+    IniciarSessao is;
     /**
      * Creates new form FrameAluno
      */
-    public FrameAluno(GestorTurnos gestorTurnos) {
+    public FrameAluno(GestorTurnos gestorTurnos,IniciarSessao is) {
         initComponents();
         this.gestorTurnos = gestorTurnos;
+        this.is = is;
         Utilizador u = gestorTurnos.getSessao();
         jLabel6.setText(u.getNumero());
         jLabel5.setText(u.getNome());
@@ -50,6 +52,7 @@ public class FrameAluno extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +109,13 @@ public class FrameAluno extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("LogOut");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,6 +146,8 @@ public class FrameAluno extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)))
                 .addContainerGap())
@@ -168,7 +180,8 @@ public class FrameAluno extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
                 .addContainerGap())
         );
 
@@ -202,6 +215,11 @@ public class FrameAluno extends javax.swing.JFrame {
         jPasswordField1.setText("");
     }//GEN-LAST:event_jPasswordField1FocusGained
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.dispose();
+        is.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,6 +227,7 @@ public class FrameAluno extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

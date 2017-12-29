@@ -329,5 +329,23 @@ public class AlunoDAO implements Map<String,Aluno> {
         }
             
     }
-}
 
+    public ArrayList<String> getAlunosTurno(String turno) {
+        ArrayList<String> alunos = new ArrayList<>();
+        try{    
+                conn = Connect.connect();
+                PreparedStatement stm = conn.prepareStatement("SELECT * FROM aluno_has_turno WHERE Turno_idTurno=?");
+                stm.setString(1,turno);
+                ResultSet rs = stm.executeQuery();
+                
+                while(rs.next()) alunos.add(rs.getString("Aluno_numero"));
+                
+        } catch(Exception e){
+        System.out.println(e.getMessage());
+        } finally {
+            Connect.close(conn);
+        }
+        
+        return alunos;
+    }
+}

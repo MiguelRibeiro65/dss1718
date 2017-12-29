@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -100,9 +101,11 @@ public class GestorTurnos {
         return turnosDAO.keySet();
     }
 
-    public void adicionarAula(String data, String turno) {
+    public void adicionarAula(String data, String turno,List<String> lista) {
         Aula a = new Aula(data,turno);
-        aulasDAO.put(null,a);
+        a.setPresencas(lista);
+        aulasDAO.put("1",a);
+        aulasDAO.verificarFaltas(a);
     }
     
     public void adicionarAlunosUC(ListasUC a) throws SQLException, ClassNotFoundException{
@@ -157,180 +160,58 @@ public class GestorTurnos {
     }
     
     public void gerarTurnos() {
-        List<String> horario = new ArrayList<>();
         List<String> t = new ArrayList<>();
         List<String> p = new ArrayList<>();
         int n;
         Collection<Turno> coll1 = turnosDAO.values();
         Collection<Aluno> coll2 = alunosDAO.values();
-        
+        Horario horario = new Horario(coll1);
         
         for(Aluno a : coll2){
-            horario=a.getTurnos();
             coll1.stream().filter(x -> a.getUcs().contains(x.getIdUC())).forEach((s) -> {
                 
-                    if (verificarTipo(s.getID())==1) t.add(s.getID());
-                    else if(verificarTipo(s.getID())==2) p.add(s.getID());
+                    if (horario.verificarTipo(s.getID())==1) t.add(s.getID());
+                    else if(horario.verificarTipo(s.getID())==2) p.add(s.getID());
                 });
             //deleteRep(t,horario,coll1);
-            n=nTurnos(1,t);
-            atribuiTurnos(t,horario,n,coll1);
+            n=horario.nTurnos(1,t);
+            horario.atribuiTurnos(t,n);
             t.clear();
-            n+=nTurnos(2,p);
-            deleteRep(p,horario,coll1);
+            n+=horario.nTurnos(2,p);
+            horario.deleteRep(p);
 //System.out.println(n);
-            atribuiTurnos(p,horario,n,coll1);
+            horario.atribuiTurnos(p,n);
             p.clear();
             
             
             
             
-            a.setTurnos(horario);
-            
+            a.setTurnos(horario.getHorario());
+            for(String tur:horario.getHorario()){
+                decrementCapacidade(tur,coll1);
+            }
             alunosDAO.putTurnos(a);
+            horario.flush();
         }
         
     }
-
-     
-
-    
-    public void atribuiTurnos(List<String> turnos,List<String> horario,int n,Collection<Turno> coll1) {
-        if (horario.size()==n) return;
-        //System.out.println(horario.size());
-        System.out.println(n+"\n\n");
-        String t = turnos.get(0);
-        if(nAulas(t)==0||nAulas(t)==2) {
-                
-                horario.add(t);
-                horario.add(getOutro(t));
-                
-                turnos.remove(t);
-                turnos.remove(getOutro(t));
-                if (horario.size()==n||turnos.isEmpty()) return;
-                    
-                if(deleteRep(turnos,horario,coll1).isEmpty()) {
-                    horario.remove(t);
-                    horario.remove(getOutro(t));
-                    turnos.add(t);
-                    turnos.add(getOutro(t));
-                    atribuiTurnos(turnos,horario,n,coll1);
-                    return;
-                }
-                
+   
+    private void decrementCapacidade(String t, Collection<Turno> coll1) {
+            Optional tu = coll1.stream().filter(x->x.getID().equals(t)).findFirst();
+            if(tu.isPresent())
+             {  Turno turno = (Turno)tu.get();
+                int aux = turno.getCapacidade()-1;
+                if(aux==0)coll1.remove(turno);
+                else turno.setCapacidade(aux);
             }
-                  
-            else {
-                horario.add(t);
-                turnos.remove(t);
-                if (horario.size()==n||turnos.isEmpty()) return;
-                if(deleteRep(turnos,horario,coll1).isEmpty()) {horario.remove(t);turnos.add(t);atribuiTurnos(turnos,horario,n,coll1);return;}//horario.clear();return;}
-            }
-            turnos=deleteRep(turnos,horario,coll1);
-            atribuiTurnos(turnos,horario,n,coll1);
-        
-    }
-        
-    
-    
-    
-    private int nAulas(String turno) {
-        String[] split = turno.split("-");
-        for(String s:split) {if(s.equals("A")) return 2;if(s.equals("B")) return 0;}
-        return 1;
-    }
-    private int isAorB(String turno) {
-        String[] split = turno.split("-");
-        for(String s:split) {if(s.equals("A")) return 1;if(s.equals("B"))return 2;}
-        return 0;
-    }
-    public List<String> deleteRep(List<String> turnos,List<String> horario,Collection<Turno> coll1) {
-        List<String> turnosAux = new ArrayList<>(turnos);
-        int n=0;    
-        for(String s1 : turnos) {
-            Turno t1 = coll1.stream().filter(x->x.getID().equals(s1)).findAny().get();
             
-                for(String s2 : horario){
-                    //System.out.println(s2); 
-                    Turno t2 = coll1.stream().filter(x->x.getID().equals(s2)).findAny().get();
-                    
-                    if(t1.coincide(t2)==1 || (t1.getIdUC().equals(t2.getIdUC())&&verificarTipo(t1.getID())==verificarTipo(t2.getID()))){
-                        n=1;break;}
-                    }
-                
-                if (n==1) {
-                    turnosAux.remove(s1);
-                    n=0;
-                    turnosAux.remove(getOutro(s1));
-                        
-                        
-                }
-        }
-        return turnosAux;
     }
 
-    private int verificarTipo(String turnoAtual) {
-        String[] split = turnoAtual.split("-");
-        int n,a=0;
-        n=split.length-1;
-        if(temNumeros(split[n]))a=1; 
-        else if(temNumeros(split[n-1])) {a=1;n-=1;}
-        
-        if(a==1){
-            if (split[n].startsWith("T")) return 1;
-            else if (split[n].startsWith("P")) return 2;
-        }
-        return 0;
-    }
-    
-    private Boolean temNumeros(String arg) {
-        String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
-        for(int n=0;n<10;n++){
-            if(arg.endsWith(nums[n])) return true;
-        }
-        return false;
+    public Map<String,String> getTurnosDocente() {
+        return turnosDAO.getTurnosDocente(this.sessao.getNumero());
     }
 
-    private int nTurnos(int i, List<String> turnos) {
-            int n;
-            int ret=0;
-            String [] split;
-            if(i==1){
-                for(String turno : turnos) {
-                    split = turno.split("-");
-                    for(n=0;n<split.length;n++){
-                        
-                        if(split[n].equals("T1")) {
-                            ret+=nAulas(turno);
-                            
-                        }
-                    }
-                }
-            } else if(i==2){
-                for(String turno : turnos) {
-                    split = turno.split("-");
-                    for(n=0;n<split.length;n++){
-                        
-                        if(split[n].equals("P1")) {
-                            ret+=nAulas(turno);
-                            
-                        }
-                    }
-                }
-            }
-            return ret;
+    public Iterable<String> getAlunosTurno(String turno) {
+        return alunosDAO.getAlunosTurno(turno);
     }
-    
-    private String getOutro(String t) {
-        String[] split = t.split("-");
-        String a = split[0];
-        int n;
-        for(n=1;n<split.length-1;n++) a+=("-"+split[n]);
-        if(split[n].equals("B")) a+="-A";
-        else if (split[n].equals("A")) a+="-B";
-        //System.out.println(a);
-        return a;
-    }
-    
-    
 }

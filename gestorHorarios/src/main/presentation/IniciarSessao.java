@@ -118,10 +118,10 @@ public class IniciarSessao extends javax.swing.JFrame {
                 gestorTurnos.iniciarSessao(email,password);
                 Frame frame = null;
                 if (gestorTurnos.getSessao() instanceof DirecaoCurso) 
-                    frame = new FrameDirecao(gestorTurnos);
+                    frame = new FrameDirecao(gestorTurnos,this);
                 else if (gestorTurnos.getSessao() instanceof Docente)
-                    frame = new FrameDocente(gestorTurnos);
-                else frame = new FrameAluno(gestorTurnos);
+                    frame = new FrameDocente(gestorTurnos,this);
+                else frame = new FrameAluno(gestorTurnos,this);
                 frame.setVisible(true);
                 this.dispose();
                 

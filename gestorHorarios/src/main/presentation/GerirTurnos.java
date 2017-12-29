@@ -5,9 +5,12 @@
  */
 package main.presentation;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 import javax.swing.JDialog;
 import main.business.Cadeira;
 import main.business.GestorTurnos;
@@ -19,22 +22,30 @@ import main.business.GestorTurnos;
 public class GerirTurnos extends javax.swing.JFrame {
 
     private GestorTurnos gestorTurnos;
-    private Map<String,Cadeira> ucs;
+    private Set<String> ucs;
     private Set<String> turnos;
     /**
      * Creates new form GerirTurnos
      */
-    public GerirTurnos(GestorTurnos gestorTurnos) {
+    public GerirTurnos(GestorTurnos gestorTurnos,int n) {
         initComponents();
         jComboBox1.removeAllItems();
         jComboBox2.removeAllItems();
         
         this.gestorTurnos= gestorTurnos;
-        turnos = gestorTurnos.getTurnos();
-        ucs = new HashMap<>();
-        gestorTurnos.getCadeiras().stream().forEach(c -> ucs.put(c.getNome(),c));
-        System.out.println(ucs);
-        ucs.forEach((k,v) -> jComboBox1.addItem(k));
+        if(n==1){
+            turnos = gestorTurnos.getTurnos();
+            ucs = new HashSet<>();
+            gestorTurnos.getCadeiras().stream().forEach(c -> ucs.add(c.getNome()));
+            ucs.forEach(k -> jComboBox1.addItem(k));
+        }
+        else {
+            Map<String,String> turnos2 = gestorTurnos.getTurnosDocente();
+            turnos = turnos2.keySet();
+            ucs = turnos2.values().stream().collect(Collectors.toSet());
+        }
+                ucs.forEach(k->jComboBox1.addItem(k));
+                
     }
 
     /**
@@ -129,18 +140,19 @@ public class GerirTurnos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(3, 3, 3)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)
+                        .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jButton2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton4)
                             .addComponent(jButton3))))
@@ -167,7 +179,7 @@ public class GerirTurnos extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String uc = (String) jComboBox1.getSelectedItem();
         if (uc==null) return;
-        String acron = ucs.get(uc).getAcron();
+        String acron = ucs.stream().filter(x->x==uc).findAny().get();
         jComboBox2.removeAllItems();
         gestorTurnos.getTurnosUC(acron).forEach(t -> jComboBox2.addItem(t));
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -189,4 +201,5 @@ public class GerirTurnos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -6,6 +6,7 @@
 package main.business;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,7 +17,7 @@ public class Aula {
     private int id;
     private String data;
     private String idTurno;
-    private ArrayList<String> presencas;
+    private List<String> presencas;
     
     public Aula() {
         id=0;
@@ -42,7 +43,7 @@ public class Aula {
         return this.idTurno;
     }
     
-    public ArrayList<String> getPresencas() {
+    public List<String> getPresencas() {
         return this.presencas;
     }
     
@@ -58,8 +59,8 @@ public class Aula {
         this.idTurno=idTurno;
     }
     
-    public void setPresencas(ArrayList<String> presencas) {
-        ArrayList<String> n = new ArrayList<>();
+    public void setPresencas(List<String> presencas) {
+        List<String> n = new ArrayList<>();
         for(String s:presencas) n.add(s);
         this.presencas = n;
     }

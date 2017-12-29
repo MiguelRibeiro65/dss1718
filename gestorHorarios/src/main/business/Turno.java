@@ -100,7 +100,11 @@ public class Turno {
         if(!dia1.equals(dia2)) return 0;
         LocalTime i;
         LocalTime f;
-        LocalTime inicio1 = LocalTime.parse(this.inicio);
+        LocalTime inicio1=null;
+        inicio1 = LocalTime.parse(this.inicio);
+        
+            
+       
         LocalTime inicio2 = LocalTime.parse(turno.getInicio());
         LocalTime fim1 = LocalTime.parse(this.fim);
         LocalTime fim2 = LocalTime.parse(turno.getFim());

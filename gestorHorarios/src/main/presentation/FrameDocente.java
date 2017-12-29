@@ -17,12 +17,14 @@ import main.business.GestorTurnos;
 public class FrameDocente extends javax.swing.JFrame {
     
     private GestorTurnos gestorTurnos;
+    private IniciarSessao is;
     /**
      * Creates new form FrameDocente
      */
-    public FrameDocente(GestorTurnos gestorTurnos) {
+    public FrameDocente(GestorTurnos gestorTurnos,IniciarSessao is) {
         initComponents();
         this.gestorTurnos = gestorTurnos;
+        this.is = is;
         Docente d = (Docente)gestorTurnos.getSessao();
         jLabel6.setText(d.getNome());
         jTextField2.setText(d.getEmail());
@@ -51,6 +53,7 @@ public class FrameDocente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +111,13 @@ public class FrameDocente extends javax.swing.JFrame {
 
         jLabel6.setText("jLabel6");
 
+        jButton8.setText("LogOut");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,7 +153,9 @@ public class FrameDocente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton8)
+                        .addGap(8, 8, 8)
                         .addComponent(jButton4)))
                 .addContainerGap())
         );
@@ -175,7 +187,8 @@ public class FrameDocente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButton8))
                 .addContainerGap())
         );
 
@@ -206,9 +219,14 @@ public class FrameDocente extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1FocusGained
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JFrame j = new GerirTurnos(gestorTurnos);
+        JFrame j = new GerirTurnos(gestorTurnos,2);
         j.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        this.dispose();
+        is.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 
 
@@ -217,6 +235,7 @@ public class FrameDocente extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
