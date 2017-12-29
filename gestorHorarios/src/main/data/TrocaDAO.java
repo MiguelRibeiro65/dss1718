@@ -141,6 +141,24 @@ public class TrocaDAO implements Map<String,Troca>{
         return null;
     }
     
+    public String[] getAlunoTroca(String t1){
+        
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM troca WHERE turno_idTurno=?");
+            stm.setString(1,t1);
+            ResultSet rs = stm.executeQuery();
+            return  new String[]{ rs.getString("Aluno_numero"), rs.getString("Turno_idTurno") };
+                
+            }
+            
+         catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+        return null;
+    }
     
     
     @Override
@@ -222,6 +240,20 @@ public class TrocaDAO implements Map<String,Troca>{
             Connect.close(conn);
         }
         return al;
+    }
+    
+    public void remove(String aluno,String turno){
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("delete from troca where aluno_numero = ? AND turno_idTurno=?");
+            stm.setString(1,aluno);
+            stm.setString(2,turno);
+            stm.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
     }
     
     /**

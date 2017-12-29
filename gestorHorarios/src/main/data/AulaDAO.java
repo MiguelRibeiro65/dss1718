@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -272,16 +273,39 @@ public class AulaDAO implements Map<String,Aula>{
         return col;
     }
 
-    public void verificarFaltas(Aula a) {
+    public Map<String,Integer> verificarFaltas(Aula a) {
+        String turno = a.getIdTurno();
+        Map<String,Integer> alunos = new HashMap<>(); 
+        int n=0;
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("SELECT * FROM aula\n"+"INNER JOIN Aluno_has_aula\n"+"ON Turno_idTurno = \"?\"");
-            stm.setString(1,a.getIdTurno());
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM aula WHERE Turno_idTurno = ?");
+            stm.setString(1,turno);
             ResultSet rs = stm.executeQuery();
-        } catch(Exception e) {
+            while(rs.next()){
+                stm = conn.prepareStatement("SELECT Aluno_numero FROM aluno_has_aula WHERE Aula_id = ?");
+                stm.setInt(1,rs.getInt("id"));
+                ResultSet rs2 = stm.executeQuery();
+                while(rs2.next()){
+                    String aluno = rs2.getString("Aluno_numero");
+                    alunos.put(aluno,alunos.getOrDefault(aluno,0)+1);
+                }
+                n++;
+            }
             
-        }aluno_has_aula.Aluno_numero=\"?\" AND 
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            Connect.close(conn);
+        }
+        if(n<3) return null;
+        for(String k:alunos.keySet()){
+            
+            if((alunos.get(k)*100)/n>25) alunos.remove(k);
+        }
+        return alunos;
     
+    }
 }
 
 

@@ -43,6 +43,7 @@ public class GerirTurnos extends javax.swing.JFrame {
             Map<String,String> turnos2 = gestorTurnos.getTurnosDocente();
             turnos = turnos2.keySet();
             ucs = turnos2.values().stream().collect(Collectors.toSet());
+            jButton3.setVisible(false);
         }
                 ucs.forEach(k->jComboBox1.addItem(k));
                 

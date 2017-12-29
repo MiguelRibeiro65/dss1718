@@ -29,11 +29,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import main.business.Aluno;
+import main.business.Horario;
 
 public class AlunoDAO implements Map<String,Aluno> {
     
@@ -133,9 +135,9 @@ public class AlunoDAO implements Map<String,Aluno> {
                 PreparedStatement stm2 = conn.prepareStatement("SELECT * FROM aluno_has_turno WHERE Aluno_numero=?");
                 stm2.setString(1,(String)key);
                 ResultSet rs2 = stm2.executeQuery();
-                ArrayList<String> turnos = new ArrayList<>();
+                List<String> turnos = new ArrayList<>();
                 while(rs2.next()) turnos.add(rs2.getString("Turno_idTurno"));
-                al.setTurnos(turnos);   
+                al.setTurnos(new Horario(turnos));   
             }       
         } catch (Exception e) {
             e.printStackTrace();
@@ -192,7 +194,7 @@ public class AlunoDAO implements Map<String,Aluno> {
             }
             
             stm = conn.prepareStatement("INSERT IGNORE INTO aluno_has_turno\n"+"VALUES (?,?)");
-            for (String id : value.getTurnos()){
+            for (String id : value.getTurnos().getHorario()){
                 stm.setString(1,value.getNumero());
                 stm.setString(2,id);
                 stm.executeUpdate();
@@ -294,7 +296,7 @@ public class AlunoDAO implements Map<String,Aluno> {
                 ResultSet rs2 = stm2.executeQuery();
                 ArrayList<String> turnos = new ArrayList<>();
                 while(rs2.next()) turnos.add(rs2.getString("Turno_idTurno"));
-                al.setTurnos(turnos);   
+                al.setTurnos(new Horario(turnos));   
                 
                 col.add(al);
                 
@@ -316,7 +318,7 @@ public class AlunoDAO implements Map<String,Aluno> {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("INSERT IGNORE INTO aluno_has_turno\n"+"VALUES (?,?)");
             
-            for (String id : a.getTurnos()){
+            for (String id : a.getTurnos().getHorario()){
                 //System.out.println(id);
                 stm.setString(1,a.getNumero());
                 stm.setString(2,id);

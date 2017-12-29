@@ -7,20 +7,20 @@ public class Aluno extends Utilizador {
 
     private int estatuto;
     private List<String> ucs;
-    private List<String> turnos;
+    private Horario turnos;
     
     public Aluno() {
         super(null,null,null,null);
         estatuto=0;
         ucs=null;
-        turnos=null;
+        turnos=new Horario();
     }
 
     public Aluno(String numero, String nome, String email,String password,int estatuto) {
         super(numero,nome,email,password);
         this.estatuto = estatuto;
         this.ucs = new ArrayList<String>();
-        this.turnos = new ArrayList<String>();
+        this.turnos = new Horario();
     }
 
     public List<String> getUcs() {
@@ -31,12 +31,12 @@ public class Aluno extends Utilizador {
         this.ucs = ucs;
     }
 
-    public List<String> getTurnos() {
+    public Horario getTurnos() {
         return turnos;
     }
 
-    public void setTurnos(List<String> turnos) {
-        this.turnos = turnos;
+    public void setTurnos(Horario turnos) {
+        this.turnos = new Horario(turnos);
     }
 
     public Aluno(Aluno a){
