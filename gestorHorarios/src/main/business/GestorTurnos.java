@@ -15,6 +15,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.swing.JOptionPane;
 import main.data.DocenteDAO;
 import main.data.AlunoDAO;
 import main.data.AulaDAO;
@@ -134,12 +135,16 @@ public class GestorTurnos {
         if(u2==null) {
             Aluno a1 = (Aluno) getSessao();
             if(a1.getEstatuto()==1 && temEspaco(t2))turnosDAO.updateTurnoAluno(u1,t1,t2);
-            else trocasDAO.put("ss", new Troca(0,t2,sessao.getNumero()));
-            return 0;
+            else {
+                trocasDAO.put("ss", new Troca(0,t2,sessao.getNumero()));
+                return 0;
+            }
         }
-        trocasDAO.remove(u2,t1);
-        turnosDAO.updateTurnoAluno(u1,t1,t2);
-        turnosDAO.updateTurnoAluno(u2,t2,t1);
+        else {
+            trocasDAO.remove(u2,t1);
+            turnosDAO.updateTurnoAluno(u1,t1,t2);
+            turnosDAO.updateTurnoAluno(u2,t2,t1);
+        }
         return 1;
     }
     
@@ -183,7 +188,7 @@ public class GestorTurnos {
         Horario horario = new Horario();
         
         for(Aluno a : coll2){
-            if(!a.getTurnos().getHorario().isEmpty()) horario.setHorario(a.getTurnos().getHorario());
+            
             coll1.stream().filter(x -> a.getUcs().contains(x.getIdUC())).forEach((s) -> {
                 
                     if (horario.verificarTipo(s.getID())==1) t.add(s.getID());
@@ -192,14 +197,14 @@ public class GestorTurnos {
             
             
             
-            //deleteRep(t,horario,coll1);
+            
             n=horario.nTurnos(1,t);
             horario.atribuiTurnos(t,n,coll1);
             t.clear();
             n+=horario.nTurnos(2,p);
-            horario.deleteRep(p,coll1);
-//System.out.println(n);
-            horario.atribuiTurnos(p,n,coll1);
+            List<String> pNew = horario.deleteRep(p,coll1);
+
+            horario.atribuiTurnos(pNew,n,coll1);
             p.clear();
             
             
@@ -251,6 +256,46 @@ public class GestorTurnos {
         if(turnosDAO.get(t2).getCapacidade()>0)return TRUE;
         else return FALSE;
     }
+
+    public Iterable<String> getAlunosUc(String uc) {
+        return alunosDAO.getAlunosUc(uc);
+    }
+
+    public void adicionarAlunoTurno(String aluno, String turno, String uc) {
+        Aluno a = alunosDAO.get(aluno);
+        Horario h = a.getTurnos();
+        String anterior=null;
+        for(String t : h.getHorario()) {
+            if(h.verificarTipo(t)==h.verificarTipo(turno)&&isAorB(t)==isAorB(turno)&&finalCheck(t,uc))anterior=t;
+        }
+        if(turnosDAO.get(turno).getCapacidade()>0)
+            turnosDAO.updateTurnoAluno(aluno,anterior,turno);
+        else JOptionPane.showMessageDialog(null,"O turno encontra-se cheio"); 
+    }
+    
+    public int isAorB(String turno) {
+        if (turno==null) return 0;
+        String[] split = turno.split("-");
+        for(String s:split) {if(s.equals("A")) return 1;if(s.equals("B"))return 2;}
+        return 0;
+    }
+    
+    private boolean finalCheck(String t,String uc) {
+        String[] split = t.split("-");
+        int n = split.length;
+        while(n>0){
+            if(split[n].equals(uc)) return TRUE;
+            n--;
+        }
+        return FALSE;
+    }
+
+    public void removerAlunoTurno(String aluno, String turno) {
+        turnosDAO.removeAT(aluno,turno);
+    }
+
+
+    
 
     
 }

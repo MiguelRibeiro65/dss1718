@@ -5,31 +5,26 @@
  */
 package main.presentation;
 
-import java.util.List;
-import javax.swing.JOptionPane;
-import main.business.Aluno;
 import main.business.GestorTurnos;
-import main.business.Troca;
 
 /**
  *
  * @author Piromaniaco
  */
-public class RemoverTroca extends javax.swing.JDialog {
-    GestorTurnos gestorTurnos;
-    List<Troca> trocas;
+public class RemoverAlunoTurno extends javax.swing.JDialog {
+    
+    private GestorTurnos gestorTurnos;
+    private String turno;
     /**
-     * Creates new form RemoverTroca
+     * Creates new form RemoverAlunoTurno
      */
-    public RemoverTroca(java.awt.Frame parent, boolean modal,GestorTurnos gestor) {
+    public RemoverAlunoTurno(java.awt.Frame parent, boolean modal,GestorTurnos gestorTurnos,String turno) {
         super(parent, modal);
-        gestorTurnos = gestor;
-        Aluno a = (Aluno) gestorTurnos.getSessao();
-        trocas = gestorTurnos.getTrocasAluno(a.getNumero());
         initComponents();
+        this.gestorTurnos = gestorTurnos;
+        this.turno = turno;
         jComboBox1.removeAllItems();
-        for(Troca s:gestorTurnos.getTrocasAluno(a.getNumero())) jComboBox1.addItem(s.getIdTurno());
-        
+        gestorTurnos.getAlunosTurno(turno).forEach(k->jComboBox1.addItem(k));
     }
 
     /**
@@ -48,11 +43,6 @@ public class RemoverTroca extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jButton1.setText("Remover");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,53 +51,52 @@ public class RemoverTroca extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setText("Sair");
+        jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String troca = (String)jComboBox1.getSelectedItem();
-        int n=0;
-        trocas.forEach(t->{
-            if(t.getIdTurno().equals(troca)) gestorTurnos.removerTroca(t);
-        });
-        JOptionPane.showMessageDialog(null,"Troca removida com sucesso");
+        String aluno = (String)jComboBox1.getSelectedItem();
+        gestorTurnos.removerAlunoTurno(aluno,turno);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
- 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

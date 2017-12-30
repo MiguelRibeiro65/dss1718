@@ -239,6 +239,7 @@ public class TrocaDAO implements Map<String,Troca>{
         } finally {
             Connect.close(conn);
         }
+        
         return al;
     }
     

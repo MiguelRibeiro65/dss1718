@@ -393,6 +393,9 @@ private Connection conn;
                 turnos.put(rs.getString("idTurno"),rs.getString("uc_acron"));
             }
         } catch (Exception e) {;}
+        finally {
+            Connect.close(conn);
+        }
         return turnos;   
     
     }
@@ -402,6 +405,19 @@ private Connection conn;
         int n = t.getCapacidade()-1;
         t.setCapacidade(n);
         put(t.getID(),t);
+    }
+
+    public void removeAT(String aluno, String turno) {
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("DELETE FROM aluno_has_turno WHERE Aluno_numero=? AND Turno_idTurno=?");
+            stm.setString(1,aluno);
+            stm.setString(2,turno);
+            ResultSet rs = stm.executeQuery();
+        } catch (Exception e) {;}
+        finally {
+            Connect.close(conn);
+        }
     }
 
    

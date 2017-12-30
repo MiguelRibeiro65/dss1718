@@ -3,15 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/FrameAluno.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/AdicionarTroca.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Horario.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Aluno.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/listaAlunos.json</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/TrocaDAO.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/TurnoDAO.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/Troca.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/GerirTurnos.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/business/GestorTurnos.java</file>
-            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/AlunoDAO.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/Main.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/RemoverTroca.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/CadeiraDAO.java</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/turnosTP.json</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/ucsDC.json</file>
+            <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/turnosT.json</file>
         </group>
     </open-files>
 </project-private>

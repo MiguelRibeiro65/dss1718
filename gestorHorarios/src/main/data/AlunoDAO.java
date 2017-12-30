@@ -319,7 +319,6 @@ public class AlunoDAO implements Map<String,Aluno> {
             PreparedStatement stm = conn.prepareStatement("INSERT IGNORE INTO aluno_has_turno\n"+"VALUES (?,?)");
             
             for (String id : a.getTurnos().getHorario()){
-                //System.out.println(id);
                 stm.setString(1,a.getNumero());
                 stm.setString(2,id);
                 stm.executeUpdate();
@@ -350,4 +349,24 @@ public class AlunoDAO implements Map<String,Aluno> {
         
         return alunos;
     }
+
+    public ArrayList<String> getAlunosUc(String uc) {
+        ArrayList<String> alunos = new ArrayList<>();
+        try{    
+                conn = Connect.connect();
+                PreparedStatement stm = conn.prepareStatement("SELECT * FROM aluno_has_uc WHERE uc_acron=?");
+                stm.setString(1,uc);
+                ResultSet rs = stm.executeQuery();
+                
+                while(rs.next()) alunos.add(rs.getString("Aluno_numero"));
+                
+        } catch(Exception e){
+        System.out.println(e.getMessage());
+        } finally {
+            Connect.close(conn);
+        }
+        
+        return alunos;
+    }
 }
+

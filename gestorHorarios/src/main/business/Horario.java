@@ -41,8 +41,6 @@ public class Horario {
     
     public void atribuiTurnos(List<String> turnos,int n,Collection<Turno> coll) {
         if (horario.size()==n) return;
-        //System.out.println(horario.size());
-        System.out.println(n+"\n\n");
         String t = turnos.get(0);
         if(nAulas(t)==0||nAulas(t)==2) {
                 
@@ -60,8 +58,6 @@ public class Horario {
                 else if(deleteRep(turnos,coll).isEmpty()) {
                     horario.remove(t);
                     horario.remove(getOutro(t));
-                    //turnos.add(t);
-                    //turnos.add(getOutro(t));
                     atribuiTurnos(turnos,n,coll);
                     return;
                 }
@@ -119,19 +115,15 @@ public class Horario {
         return 1;
     }
     
-    private int isAorB(String turno) {
-        String[] split = turno.split("-");
-        for(String s:split) {if(s.equals("A")) return 1;if(s.equals("B"))return 2;}
-        return 0;
-    }
+    
     public List<String> deleteRep(List<String> turnos,Collection<Turno> coll) {
+        
         List<String> turnosAux = new ArrayList<>(turnos);
-        int n=0;    
+        int n=0;
         for(String s1 : turnos) {
             Turno t1 = coll.stream().filter(x->x.getID().equals(s1)).findAny().get();
             
                 for(String s2 : horario){
-                    //System.out.println(s2); 
                     Turno t2 = coll.stream().filter(x->x.getID().equals(s2)).findAny().get();
                     
                     if(t1.coincide(t2)==1 || (t1.getIdUC().equals(t2.getIdUC())&&verificarTipo(t1.getID())==verificarTipo(t2.getID()))){
@@ -180,7 +172,6 @@ public class Horario {
         for(n=1;n<split.length-1;n++) a+=("-"+split[n]);
         if(split[n].equals("B")) a+="-A";
         else if (split[n].equals("A")) a+="-B";
-        //System.out.println(a);
         return a;
     }
 

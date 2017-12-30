@@ -5,6 +5,7 @@
  */
 package main.presentation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,10 +36,6 @@ public class AdicionarTroca extends javax.swing.JDialog {
         jComboBox3.removeAllItems();
         Aluno a = (Aluno) gestorTurnos.getSessao();
         for(String s:gestorTurnos.getCadeirasAluno()) jComboBox1.addItem(s);
-        //String uc = (String)jComboBox1.getItemAt(0);
-        //Stream<String> turnos = turnosAluno.keySet().stream().filter(p -> turnosAluno.get(p).equals(uc));//.filter(p -> p.toString().equals(uc)).map(x -> x.getKey())
-        //for(Object s:turnos.toArray()) jComboBox2.addItem((String)s);
-        //jComboBox2.addItem(s);
     }
 
     /**
@@ -172,8 +169,20 @@ public class AdicionarTroca extends javax.swing.JDialog {
         jComboBox3.removeAllItems();
         verificarTipo(turnoAtual);
         List<String> turnos = gestorTurnos.getTurnosUC(uc);
-        for(String s:turnos) jComboBox3.addItem(s);
+        turnos = turnos.stream().filter(s->gestorTurnos.isAorB(s)==gestorTurnos.isAorB(turnoAtual)).collect(Collectors.toList()); 
+        
+        for(String s:getTurnosTipo(verificarTipo(turnoAtual),turnos)) jComboBox3.addItem(s);
     }//GEN-LAST:event_jComboBox2ActionPerformed
+    
+        
+    private List<String> getTurnosTipo(int i, List<String> turnos) {
+        List<String> aux;
+        if(i==1)
+            aux = turnos.stream().filter(t->verificarTipo(t)==1).collect(Collectors.toList());
+        else aux = turnos.stream().filter(t->verificarTipo(t)==2).collect(Collectors.toList());
+        if(aux==null) return new ArrayList<>();
+        else return aux;
+    }
     
     private int verificarTipo(String turnoAtual) {
         if (turnoAtual==null) return 0;
@@ -185,6 +194,8 @@ public class AdicionarTroca extends javax.swing.JDialog {
         if (split[n].startsWith("T")) return 1;
         else return 2;
     }
+    
+
     
     private Boolean temNumeros(String arg) {
         String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
