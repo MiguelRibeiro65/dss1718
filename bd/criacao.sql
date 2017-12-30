@@ -175,9 +175,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `bdhorarios`.`direcaocurso`
+-- Table `bdhorarios`.`direcaoCurso`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bdhorarios`.`direcaocurso` (
+CREATE TABLE IF NOT EXISTS `bdhorarios`.`direcaoCurso` (
   `email` VARCHAR(45) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
