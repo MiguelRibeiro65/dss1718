@@ -59,6 +59,11 @@ public class Utilizador {
         this.password=password;
     }
     
+    public void verificarPassword(String password) throws PasswordException {
+        if (this.password.equals(password)) return;
+        else throw new PasswordException("A password está errada");
+    }
+    
     public Utilizador clone() {
         return new Utilizador(this);
     }

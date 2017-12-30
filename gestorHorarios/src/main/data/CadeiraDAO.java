@@ -132,7 +132,8 @@ public class CadeiraDAO implements Map<String,Cadeira> {
         List<String> ucs = new ArrayList<>(); 
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("SELECT * FROM uc\nINNER JOIN aluno_has_uc\nON uc.acron=aluno_has_uc.uc_acron");
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM aluno_has_uc WHERE aluno_numero=?");
+            stm.setString(1,(String)key);
             ResultSet rs = stm.executeQuery();
             while(rs.next()) {
                 ucs.add(rs.getString("uc_acron"));

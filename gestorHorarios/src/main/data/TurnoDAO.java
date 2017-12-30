@@ -245,7 +245,6 @@ private Connection conn;
             stm.setInt(5, value.getCapacidade());
             stm.setString(6, value.getDocente());
             stm.setString(7, value.getIdUC());
-            System.out.println(value.getIdUC());
             stm.executeUpdate();
             
             ResultSet rs = stm.getGeneratedKeys();
@@ -397,6 +396,15 @@ private Connection conn;
         return turnos;   
     
     }
+
+    public void decrementCapacidade(String tur) {
+        Turno t = get(tur);
+        int n = t.getCapacidade()-1;
+        t.setCapacidade(n);
+        put(t.getID(),t);
+    }
+
+   
 
 }
    
