@@ -1,5 +1,7 @@
 package main.business;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -66,7 +68,7 @@ public class GestorTurnos {
                 u = docentesDAO.get(numero);  
             
             else u = alunosDAO.get(numero);
-            verificarPassword(u,password);
+            u.verificarPassword(password);
             sessao = u;
         }
         catch(Exception e){
@@ -74,10 +76,7 @@ public class GestorTurnos {
         }
     }
     
-    public void verificarPassword(Utilizador u, String password) throws PasswordException {
-        if (u.getPassword().equals(password)) return;
-        else throw new PasswordException("A password está errada");
-    }
+
    
     public void adicionarAluno(String numero,String nome,String email,String password,int estatuto){
         Aluno a = new Aluno(numero,nome,email,password,estatuto);
@@ -105,7 +104,10 @@ public class GestorTurnos {
         Aula a = new Aula(data,turno);
         a.setPresencas(lista);
         aulasDAO.put("1",a);
-        aulasDAO.verificarFaltas(a);
+        Map<String,Integer> alunos = aulasDAO.verificarFaltas(a);
+        if(alunos==null) return;
+        for(String al:alunos.keySet()) this.adicionarTrocaFaltas(al,turno);
+        
     }
     
     public void adicionarAlunosUC(ListasUC a) throws SQLException, ClassNotFoundException{
@@ -130,7 +132,9 @@ public class GestorTurnos {
         String u1=sessao.getNumero();
         String u2 = trocasDAO.getAlunoTroca(t1,t2);
         if(u2==null) {
-            trocasDAO.put("key", new Troca(0,t2,sessao.getNumero()));
+            Aluno a1 = (Aluno) getSessao();
+            if(a1.getEstatuto()==1 && temEspaco(t2))turnosDAO.updateTurnoAluno(u1,t1,t2);
+            else trocasDAO.put("ss", new Troca(0,t2,sessao.getNumero()));
             return 0;
         }
         trocasDAO.remove(u2,t1);
@@ -138,7 +142,18 @@ public class GestorTurnos {
         turnosDAO.updateTurnoAluno(u2,t2,t1);
         return 1;
     }
-
+    
+    public int adicionarTrocaFaltas(String u1, String t1) {
+        String[] u2 = trocasDAO.getAlunoTroca(t1);
+        if(u2[0]==null) return 0;
+        trocasDAO.remove(u2[0],t1);
+        
+        turnosDAO.updateTurnoAluno(u1,t1,u2[1]);
+        turnosDAO.updateTurnoAluno(u2[0],u2[1],t1);
+        return 1;
+    }
+    
+    
     public List<String> getTurnosUC(String uc) {
         return turnosDAO.values().stream()
                                     .filter(u -> u.getIdUC().equals(uc))
@@ -165,30 +180,35 @@ public class GestorTurnos {
         int n;
         Collection<Turno> coll1 = turnosDAO.values();
         Collection<Aluno> coll2 = alunosDAO.values();
-        Horario horario = new Horario(coll1);
+        Horario horario = new Horario();
         
         for(Aluno a : coll2){
+            if(!a.getTurnos().getHorario().isEmpty()) horario.setHorario(a.getTurnos().getHorario());
             coll1.stream().filter(x -> a.getUcs().contains(x.getIdUC())).forEach((s) -> {
                 
                     if (horario.verificarTipo(s.getID())==1) t.add(s.getID());
                     else if(horario.verificarTipo(s.getID())==2) p.add(s.getID());
                 });
+            
+            
+            
             //deleteRep(t,horario,coll1);
             n=horario.nTurnos(1,t);
-            horario.atribuiTurnos(t,n);
+            horario.atribuiTurnos(t,n,coll1);
             t.clear();
             n+=horario.nTurnos(2,p);
-            horario.deleteRep(p);
+            horario.deleteRep(p,coll1);
 //System.out.println(n);
-            horario.atribuiTurnos(p,n);
+            horario.atribuiTurnos(p,n,coll1);
             p.clear();
             
             
             
             
-            a.setTurnos(horario.getHorario());
+            a.setTurnos(horario);
             for(String tur:horario.getHorario()){
                 decrementCapacidade(tur,coll1);
+                turnosDAO.decrementCapacidade(tur);
             }
             alunosDAO.putTurnos(a);
             horario.flush();
@@ -214,4 +234,23 @@ public class GestorTurnos {
     public Iterable<String> getAlunosTurno(String turno) {
         return alunosDAO.getAlunosTurno(turno);
     }
+
+    public void terminarSessao() {
+        this.sessao = null;
+    }
+
+    public List<Troca> getTrocasAluno(String key) {
+        return trocasDAO.values().stream().filter(t->t.getIdAluno().equals(key)).collect(Collectors.toList());
+    }
+
+    public void removerTroca(Troca t) {
+        trocasDAO.remove(t.getIdAluno(),t.getIdTurno());
+    }
+
+    private Boolean temEspaco(String t2) {
+        if(turnosDAO.get(t2).getCapacidade()>0)return TRUE;
+        else return FALSE;
+    }
+
+    
 }

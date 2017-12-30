@@ -5,21 +5,32 @@
  */
 package main.business;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 public class Horario {
     
     private List<String> horario;
-    Collection<Turno> coll;
 
-    public Horario(Collection<Turno> coll) {
+    public Horario() {
         this.horario = new ArrayList<>();
-        this.coll = coll;
     }
 
+    public Horario(Horario turnos) {
+        List<String> aux = new ArrayList<>();
+        for(String t:turnos.getHorario()) aux.add(t);
+        this.horario=aux;
+    }
+    
+    public Horario(List<String> turnos) {
+        this.horario=turnos;
+    }
+    
     public List<String> getHorario() {
         return horario;
     }
@@ -28,7 +39,7 @@ public class Horario {
         this.horario = horario;
     }
     
-    public void atribuiTurnos(List<String> turnos,int n) {
+    public void atribuiTurnos(List<String> turnos,int n,Collection<Turno> coll) {
         if (horario.size()==n) return;
         //System.out.println(horario.size());
         System.out.println(n+"\n\n");
@@ -46,12 +57,12 @@ public class Horario {
                     horario.remove(getOutro(t));
                     return;
                 }   
-                else if(deleteRep(turnos).isEmpty()) {
+                else if(deleteRep(turnos,coll).isEmpty()) {
                     horario.remove(t);
                     horario.remove(getOutro(t));
                     //turnos.add(t);
                     //turnos.add(getOutro(t));
-                    atribuiTurnos(turnos,n);
+                    atribuiTurnos(turnos,n,coll);
                     return;
                 }
                 
@@ -65,10 +76,10 @@ public class Horario {
                     horario.remove(t);
                     return;
                 }
-                else if(deleteRep(turnos).isEmpty()) {horario.remove(t);atribuiTurnos(turnos,n);return;}//horario.clear();return;}
+                else if(deleteRep(turnos,coll).isEmpty()) {horario.remove(t);atribuiTurnos(turnos,n,coll);return;}//horario.clear();return;}
             }
-            turnos=deleteRep(turnos);
-            atribuiTurnos(turnos,n);
+            turnos=deleteRep(turnos,coll);
+            atribuiTurnos(turnos,n,coll);
         
     }
     
@@ -113,7 +124,7 @@ public class Horario {
         for(String s:split) {if(s.equals("A")) return 1;if(s.equals("B"))return 2;}
         return 0;
     }
-    public List<String> deleteRep(List<String> turnos) {
+    public List<String> deleteRep(List<String> turnos,Collection<Turno> coll) {
         List<String> turnosAux = new ArrayList<>(turnos);
         int n=0;    
         for(String s1 : turnos) {
@@ -176,4 +187,10 @@ public class Horario {
     void flush() {
         this.horario.clear();
     }
-}
+
+    public Boolean contains(String p) {
+        if (horario.contains(p)) return TRUE;
+        return FALSE;
+    }
+
+ }
