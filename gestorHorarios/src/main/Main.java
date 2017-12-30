@@ -21,7 +21,7 @@ public class Main {
     
     public static void main(String[] args) throws FileNotFoundException, SQLException, ClassNotFoundException {
         GestorTurnos sgt = new GestorTurnos();
-        //new Parserino(sgt);
+        new Parserino(sgt);
         JFrame j = new IniciarSessao(sgt);
         j.setVisible(true);
         

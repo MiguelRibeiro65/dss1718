@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/FrameAluno.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/presentation/AdicionarTroca.java</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/listaAlunos.json</file>
@@ -15,6 +16,11 @@
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/turnosTP.json</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/ucsDC.json</file>
             <file>file:/C:/Users/Piromaniaco/git/dss1718/gestorHorarios/src/main/data/dados/turnosT.json</file>
+=======
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/Main.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/presentation/IniciarSessao.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/data/Connect.java</file>
+>>>>>>> 5a550ee40bc701ab174e932355e8a5d819e9b5f3
         </group>
     </open-files>
 </project-private>
