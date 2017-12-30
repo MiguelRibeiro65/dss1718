@@ -22,25 +22,11 @@ USE `bdhorarios` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`aluno` (
   `numero` VARCHAR(12) NOT NULL,
-  `nome` VARCHAR(45) NULL DEFAULT NULL,
-  `email` VARCHAR(45) NULL DEFAULT NULL,
-  `estatuto` TINYINT(4) NULL DEFAULT NULL,
-  PRIMARY KEY (`numero`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bdhorarios`.`uc`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bdhorarios`.`uc` (
-  `idUC` VARCHAR(12) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
-  `acron` VARCHAR(8) NOT NULL,
-  PRIMARY KEY (`idUC`),
-  UNIQUE INDEX `idUC_UNIQUE` (`idUC` ASC),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC),
-  UNIQUE INDEX `acron_UNIQUE` (`acron` ASC))
+  `email` VARCHAR(45) NOT NULL,
+  `estatuto` TINYINT(4) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`numero`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -49,12 +35,26 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `bdhorarios`.`docente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`docente` (
-  `id` VARCHAR(45) NOT NULL,
+  `numero` VARCHAR(45) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`numero`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdhorarios`.`uc`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdhorarios`.`uc` (
+  `acron` VARCHAR(15) NOT NULL,
+  `nome` VARCHAR(70) NOT NULL,
+  PRIMARY KEY (`acron`),
+  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC),
+  UNIQUE INDEX `acron_UNIQUE` (`acron` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -63,25 +63,24 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `bdhorarios`.`turno`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`turno` (
-  `idTurno` INT(11) NOT NULL,
-  `tipo` INT(11) NULL DEFAULT NULL,
-  `dia` VARCHAR(45) NULL DEFAULT NULL,
-  `inicio` VARCHAR(45) NULL DEFAULT NULL,
-  `fim` VARCHAR(45) NULL DEFAULT NULL,
-  `capacidade` VARCHAR(45) NULL DEFAULT NULL,
-  `UC_idUC` VARCHAR(12) NOT NULL,
+  `idTurno` VARCHAR(45) NOT NULL,
+  `dia` VARCHAR(45) NOT NULL,
+  `inicio` VARCHAR(45) NOT NULL,
+  `fim` VARCHAR(45) NOT NULL,
+  `capacidade` INT(11) NOT NULL,
   `Docente_id` VARCHAR(45) NOT NULL,
+  `uc_acron` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`idTurno`),
-  INDEX `UC_idUC_idx` (`UC_idUC` ASC),
   INDEX `fk_Turno_Docente1_idx` (`Docente_id` ASC),
-  CONSTRAINT `UC_idUC`
-    FOREIGN KEY (`UC_idUC`)
-    REFERENCES `bdhorarios`.`uc` (`idUC`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_turno_uc1_idx` (`uc_acron` ASC),
   CONSTRAINT `fk_Turno_Docente1`
     FOREIGN KEY (`Docente_id`)
-    REFERENCES `bdhorarios`.`docente` (`id`)
+    REFERENCES `bdhorarios`.`docente` (`numero`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_turno_uc1`
+    FOREIGN KEY (`uc_acron`)
+    REFERENCES `bdhorarios`.`uc` (`acron`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -92,9 +91,9 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `bdhorarios`.`aula`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`aula` (
-  `id` INT(11) NOT NULL,
-  `data` VARCHAR(45) NULL DEFAULT NULL,
-  `Turno_idTurno` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `data` VARCHAR(45) NOT NULL,
+  `Turno_idTurno` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Aula_Turno1_idx` (`Turno_idTurno` ASC),
   CONSTRAINT `fk_Aula_Turno1`
@@ -111,17 +110,17 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`aluno_has_aula` (
   `Aluno_numero` VARCHAR(12) NOT NULL,
-  `Aula_id` INT(11) NOT NULL,
-  PRIMARY KEY (`Aluno_numero`, `Aula_id`),
-  INDEX `fk_Aluno_has_Aula_Aula1_idx` (`Aula_id` ASC),
+  `aula_id` INT(11) NOT NULL,
+  PRIMARY KEY (`Aluno_numero`, `aula_id`),
   INDEX `fk_Aluno_has_Aula_Aluno1_idx` (`Aluno_numero` ASC),
+  INDEX `fk_aluno_has_aula_aula1_idx` (`aula_id` ASC),
   CONSTRAINT `fk_Aluno_has_Aula_Aluno1`
     FOREIGN KEY (`Aluno_numero`)
     REFERENCES `bdhorarios`.`aluno` (`numero`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Aluno_has_Aula_Aula1`
-    FOREIGN KEY (`Aula_id`)
+  CONSTRAINT `fk_aluno_has_aula_aula1`
+    FOREIGN KEY (`aula_id`)
     REFERENCES `bdhorarios`.`aula` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -134,7 +133,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdhorarios`.`aluno_has_turno` (
   `Aluno_numero` VARCHAR(12) NOT NULL,
-  `Turno_idTurno` INT(11) NOT NULL,
+  `Turno_idTurno` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`Aluno_numero`, `Turno_idTurno`),
   INDEX `fk_Aluno_has_Turno_Turno1_idx` (`Turno_idTurno` ASC),
   INDEX `fk_Aluno_has_Turno_Aluno1_idx` (`Aluno_numero` ASC),
@@ -152,6 +151,66 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
+-- -----------------------------------------------------
+-- Table `bdhorarios`.`aluno_has_uc`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdhorarios`.`aluno_has_uc` (
+  `aluno_numero` VARCHAR(12) NOT NULL,
+  `uc_acron` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`aluno_numero`, `uc_acron`),
+  INDEX `fk_aluno_has_uc_uc1_idx` (`uc_acron` ASC),
+  INDEX `fk_aluno_has_uc_aluno1_idx` (`aluno_numero` ASC),
+  CONSTRAINT `fk_aluno_has_uc_aluno1`
+    FOREIGN KEY (`aluno_numero`)
+    REFERENCES `bdhorarios`.`aluno` (`numero`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_aluno_has_uc_uc1`
+    FOREIGN KEY (`uc_acron`)
+    REFERENCES `bdhorarios`.`uc` (`acron`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdhorarios`.`direcaocurso`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdhorarios`.`direcaocurso` (
+  `email` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`email`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdhorarios`.`troca`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdhorarios`.`troca` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `aluno_numero` VARCHAR(12) NOT NULL,
+  `turno_idTurno` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_aluno_has_turno1_turno1_idx` (`turno_idTurno` ASC),
+  INDEX `fk_aluno_has_turno1_aluno1_idx` (`aluno_numero` ASC),
+  CONSTRAINT `fk_aluno_has_turno1_aluno1`
+    FOREIGN KEY (`aluno_numero`)
+    REFERENCES `bdhorarios`.`aluno` (`numero`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_aluno_has_turno1_turno1`
+    FOREIGN KEY (`turno_idTurno`)
+    REFERENCES `bdhorarios`.`turno` (`idTurno`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
