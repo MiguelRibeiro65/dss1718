@@ -4,6 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/Main.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/presentation/IniciarSessao.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/presentation/FrameAluno.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/business/GestorTurnos.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/presentation/ConsultarTurnos.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/data/AulaDAO.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/business/Aula.java</file>
+            <file>file:/home/maria/Documentos/dss1718/gestorHorarios/src/main/presentation/AdicionarTroca.java</file>
         </group>
     </open-files>
 </project-private>
